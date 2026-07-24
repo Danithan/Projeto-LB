@@ -6,7 +6,7 @@ Projeto desenvolvido em parceria com Guilherme Leite, a partir de uma necessidad
 
 ## Status do projeto
 
-Em desenvolvimento — atualmente na fase de **definir: modelagem de banco de dados / wireframes / escolha de stack**.
+Em desenvolvimento — atualmente na fase de **modelagem do banco de dados / wireframes**.
 
 ## Funcionalidades principais
 
@@ -20,23 +20,26 @@ Em desenvolvimento — atualmente na fase de **definir: modelagem de banco de da
 
 ## Stack tecnológica
 
-> A definir — em avaliação pela equipe.
-
 | Camada | Tecnologia |
 |---|---|
-| Front-end | *(a definir)* |
-| Back-end | *(a definir)* |
-| Banco de dados | *(a definir)* |
-| Geração de PDF | *(a definir)* |
+| Back-end | Django |
+| Front-end (páginas) | Templates do Django + HTML/CSS |
+| Interatividade dos jogos | JavaScript (Vanilla JS) |
+| Banco de dados (desenvolvimento) | SQLite |
+| Banco de dados (produção, futuro) | PostgreSQL |
+| Geração de PDF | WeasyPrint |
+| Estilização | CSS puro / Bootstrap |
+
+Justificativa completa das escolhas em [`docs/decisoes-tecnicas.md`](./docs/decisoes-tecnicas.md).
 
 ## Documentação do processo
 
 Todo o processo de desenvolvimento — do levantamento de requisitos até as decisões técnicas — está documentado na pasta [`docs/`](./docs):
-
+ 
 - [`01-requisitos.md`](./docs/01-requisitos.md) — documento de requisitos funcionais e não funcionais
+- [`decisoes-tecnicas.md`](./docs/decisoes-tecnicas.md) — registro de decisões e justificativas
 - `02-modelagem-bd.md` — modelagem do banco de dados *(em breve)*
 - `03-wireframes/` — telas do aplicativo *(em breve)*
-- `decisoes-tecnicas.md` — registro de decisões e justificativas *(em breve)*
 
 ## Como executar localmente
 
