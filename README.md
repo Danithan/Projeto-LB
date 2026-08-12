@@ -6,7 +6,7 @@ Projeto desenvolvido em parceria com Guilherme Leite, a partir de uma necessidad
 
 ## Status do projeto
 
-Em desenvolvimento — atualmente na fase de **modelagem do banco de dados / wireframes**.
+Em desenvolvimento — atualmente na fase de **wireframes**.
 
 ## Funcionalidades principais
 
@@ -38,7 +38,7 @@ Todo o processo de desenvolvimento — do levantamento de requisitos até as dec
  
 - [`01-requisitos.md`](./docs/01-requisitos.md) — documento de requisitos funcionais e não funcionais
 - [`decisoes-tecnicas.md`](./docs/decisoes-tecnicas.md) — registro de decisões e justificativas
-- `02-modelagem-bd.md` — modelagem do banco de dados *(em breve)*
+- [`02-modelagem-bd.md`](./docs/02-modelagem-bd.md) — modelagem do banco de dados
 - `03-wireframes/` — telas do aplicativo *(em breve)*
 
 ## Como executar localmente
