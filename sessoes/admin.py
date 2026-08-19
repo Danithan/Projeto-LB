@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import SessaoModelo, SessaoRealizada
 
-# Register your models here.
+admin.site.register(SessaoModelo)
+admin.site.register(SessaoRealizada)
