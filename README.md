@@ -6,7 +6,7 @@ Projeto desenvolvido em parceria com Guilherme Leite, a partir de uma necessidad
 
 ## Status do projeto
 
-Em desenvolvimento — fase atual: implementação (models Django).
+Em desenvolvimento — modelagem do banco de dados concluída (apps `criancas`, `exercicios`, `sessoes` e `config` já estruturados). Migrations aplicadas para `Crianca`; pendentes para `SessaoModelo`, `ExercicioModelo`, `SessaoRealizada` e `ExercicioResultado`. Próximas etapas: finalizar migrations, configurar admin, popular catálogo de sessões/exercícios e iniciar o CRUD de Criança.
 
 ## Funcionalidades principais
 
@@ -32,10 +32,24 @@ Em desenvolvimento — fase atual: implementação (models Django).
 
 Justificativa completa das escolhas em [`docs/decisoes-tecnicas.md`](./docs/decisoes-tecnicas.md).
 
+## Estrutura do projeto
+
+```
+Projeto-LB/
+├── config/          # settings, urls e configuração raiz do Django
+├── criancas/        # app: cadastro e CRUD de crianças
+├── sessoes/         # app: catálogo de sessões e fluxo de atendimento
+├── exercicios/      # app: exercícios (pergunta aberta, caça-palavras, organizar letras)
+├── docs/            # documentação do processo de desenvolvimento
+├── manage.py
+├── requirements.txt
+└── README.md
+```
+
 ## Documentação do processo
 
 Todo o processo de desenvolvimento — do levantamento de requisitos até as decisões técnicas — está documentado na pasta [`docs/`](./docs):
- 
+
 - [`01-requisitos.md`](./docs/01-requisitos.md) — documento de requisitos funcionais e não funcionais
 - [`decisoes-tecnicas.md`](./docs/decisoes-tecnicas.md) — registro de decisões e justificativas
 - [`02-modelagem-bd.md`](./docs/02-modelagem-bd.md) — modelagem do banco de dados
@@ -43,12 +57,20 @@ Todo o processo de desenvolvimento — do levantamento de requisitos até as dec
 
 ## Como executar localmente
 
-> Instruções serão adicionadas conforme a stack for definida e o projeto avançar.
+```bash
+git clone https://github.com/Danithan/Projeto-LB.git
+cd Projeto-LB
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
+```
 
 ## Equipe
 
-- Daniel Nathan — [Github](https://github.com/Danithan)
-- Guilherme Leite — [A definir]
+- Daniel Nathan — [GitHub](https://github.com/Danithan)
+- Guilherme Leite — [GitHub](https://github.com/Guilherme-Leite1701)
 
 ## Motivação
 
