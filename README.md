@@ -6,7 +6,7 @@ Projeto desenvolvido em parceria com Guilherme Leite, a partir de uma necessidad
 
 ## Status do projeto
 
-Em desenvolvimento — modelagem do banco de dados concluída (apps `criancas`, `exercicios`, `sessoes` e `config` já estruturados). Migrations aplicadas para `Crianca`; pendentes para `SessaoModelo`, `ExercicioModelo`, `SessaoRealizada` e `ExercicioResultado`. Próximas etapas: finalizar migrations, configurar admin, popular catálogo de sessões/exercícios e iniciar o CRUD de Criança.
+Em desenvolvimento — modelagem do banco de dados concluída e todas as migrations aplicadas (`criancas`, `sessoes`, `exercicios`). Admin configurado para os models principais. CRUD completo de Criança implementado (listar, cadastrar, editar, deletar), com cálculo automático de idade e estilização inicial via Bootstrap + sistema de design próprio. Próximas etapas: popular catálogo de sessões/exercícios via admin, e construir o fluxo de escolha de criança → sessão.
 
 ## Funcionalidades principais
 
@@ -28,7 +28,7 @@ Em desenvolvimento — modelagem do banco de dados concluída (apps `criancas`, 
 | Banco de dados (desenvolvimento) | SQLite |
 | Banco de dados (produção, futuro) | PostgreSQL |
 | Geração de PDF | WeasyPrint |
-| Estilização | CSS puro / Bootstrap |
+| Estilização | Bootstrap + CSS customizado |
 
 Justificativa completa das escolhas em [`docs/decisoes-tecnicas.md`](./docs/decisoes-tecnicas.md).
 
@@ -40,6 +40,7 @@ Projeto-LB/
 ├── criancas/        # app: cadastro e CRUD de crianças
 ├── sessoes/         # app: catálogo de sessões e fluxo de atendimento
 ├── exercicios/      # app: exercícios (pergunta aberta, caça-palavras, organizar letras)
+├── templates/        # templates base compartilhados entre apps
 ├── docs/            # documentação do processo de desenvolvimento
 ├── manage.py
 ├── requirements.txt
@@ -53,7 +54,8 @@ Todo o processo de desenvolvimento — do levantamento de requisitos até as dec
 - [`01-requisitos.md`](./docs/01-requisitos.md) — documento de requisitos funcionais e não funcionais
 - [`decisoes-tecnicas.md`](./docs/decisoes-tecnicas.md) — registro de decisões e justificativas
 - [`02-modelagem-bd.md`](./docs/02-modelagem-bd.md) — modelagem do banco de dados
-- [`03-wireframes/`](./docs/03-wireframes.md) — telas do aplicativo
+- [`03-wireframes.md`](./docs/03-wireframes.md) — telas do aplicativo
+- [`design-system.md`](./docs/design-system.md) — sistema de design (paleta, espaçamento, componentes)
 
 ## Como executar localmente
 
