@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<div class="d-flex justify-content-between align-items-center mb-5">
+    <h1 class="fw-bold">Crianças cadastradas</h1>
+    <a href="{% url 'crianca_criar' %}" class="btn btn-coral px-4 py-2">+ Nova criança</a>
+</div>
+
+<div class="row g-4">
+    {% for crianca in criancas %}
+        <div class="col-12 col-md-4">
+            <div class="card card-item h-100">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="avatar-circle">{{ crianca.nome|first|upper }}</div>
+                        <div>
+                            <h5 class="mb-0 fw-bold">{{ crianca.nome }}</h5>
+                            <span class="text-muted small">{{ crianca.idade }}</span>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <a href="{% url 'crianca_editar' crianca.pk %}" class="btn btn-outline-primary btn-sm flex-fill">Editar</a>
+                        <a href="{% url 'crianca_deletar' crianca.pk %}" class="btn btn-outline-danger btn-sm flex-fill">Deletar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% empty %}
+        <p class="text-muted">Nenhuma criança cadastrada ainda.</p>
+    {% endfor %}
+</div>
+{% endblock %}
