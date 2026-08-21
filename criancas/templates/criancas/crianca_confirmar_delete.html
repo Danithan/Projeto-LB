@@ -1,14 +1,17 @@
 {% extends 'base.html' %}
 
+{% block title %}Confirmar exclusão — Projeto LB{% endblock %}
+
 {% block conteudo %}
-<h1 class="fw-bold mb-4" style="color: #d9534f;">Confirmar exclusão</h1>
+<h1 class="fw-bold mb-4 text-danger">Confirmar exclusão</h1>
 <div class="card card-item p-4" style="max-width: 480px;">
-    <p>Tem certeza que deseja deletar a criança <strong>{{ crianca.nome }}</strong>?</p>
+    <p class="mb-1">Tem certeza que deseja deletar a criança <strong>{{ crianca.nome }}</strong>?</p>
+    <p class="text-muted small mb-4">Essa ação não pode ser desfeita.</p>
     <form method="POST">
         {% csrf_token %}
         <div class="d-flex gap-2">
-            <button type="submit" class="btn btn-danger px-4">Deletar</button>
             <a href="{% url 'crianca_lista' %}" class="btn btn-outline-secondary px-4">Cancelar</a>
+            <button type="submit" class="btn btn-danger px-4">Deletar</button>
         </div>
     </form>
 </div>

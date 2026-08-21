@@ -74,12 +74,42 @@ Mistura, dependendo do elemento:
 ### Botão de perigo (deletar)
 - Outline vermelho (`btn-outline-danger`) na listagem; preenchido (`btn-danger`) na tela de confirmação — reforça que a confirmação é o ponto de não-retorno
 
+## Tokens CSS (implementação)
+
+Desde a refinação do CRUD de Criança, a paleta e a escala de raio/sombra deixaram de existir só como valores soltos no `<style>` de `templates/base.html` e passaram a ser variáveis CSS em `:root`, reaproveitáveis por qualquer tela nova (sessões, exercícios, histórico):
+
+```css
+--color-primary       /* #2D6E7E — ações principais, títulos, links */
+--color-accent        /* #FF6F61 — ação de criar/salvar */
+--color-bg            /* #F5F9FA — fundo da página */
+--color-text / --color-text-muted
+--radius-card          /* 12px */
+--radius-control       /* 8px — inputs */
+--radius-pill          /* 50px — botões */
+--shadow-card / --shadow-card-hover
+```
+
+Telas novas devem consumir essas variáveis em vez de repetir hex/px soltos.
+
+## Botões — alvo de toque
+
+Todo `.btn` tem `min-height: 44px` (WCAG, pensando em uso em tablet pela terapeuta) e feedback tátil (`scale(0.97)` no `:active`). `.btn-sm` (usado nos cards da listagem) fica em 40px — abaixo do ideal, mas aceitável para ações secundárias (Editar/Deletar) dentro de um card já compacto.
+
+## Ordem de botões em confirmação destrutiva
+
+Na tela de confirmar exclusão, o botão "Cancelar" vem **antes** do "Deletar" (nessa ordem, da esquerda pra direita) — a ação mais segura fica na posição que o usuário toca primeiro/por hábito, reduzindo risco de exclusão acidental num público que não tem intimidade com tecnologia. O botão "Deletar" continua preenchido em vermelho (`btn-danger`) pra não perder a clareza de que é uma ação de risco.
+
+## Estados de formulário
+
+Os campos do `CriancaForm` usam `form-control` explícito no widget (Bootstrap não estiliza `<input>` sozinho) e são renderizados campo a campo no template (não `{{ form.as_p }}`), com label, texto de ajuda e lista de erros próprios (`.form-errors`) — abre espaço pra customizar cada campo conforme os próximos formulários (sessão, exercício) forem criados. O foco dos inputs usa anel na cor primária (`--color-primary`) em vez do azul padrão do Bootstrap, pra manter a paleta consistente.
+
 ## Pendências / próximas decisões
 
-- [ ] Migrar cor dos botões de ação (`btn-success` verde) pra usar o coral (`#FF6F61`) da paleta oficial, ao invés das cores padrão do Bootstrap — hoje há uma pequena inconsistência entre a paleta definida aqui e as classes Bootstrap usadas nos templates
-- [ ] Definir estilo visual das telas de sessão e exercício (ainda não construídas) seguindo os mesmos tokens deste documento
-- [ ] Avaliar se o `<input type="date">` nativo do navegador precisa de estilização adicional pra ficar visualmente alinhado ao resto (hoje usa aparência padrão do navegador/SO)
-- [ ] Padronizar se cards usam 12px ou 20px de raio (hoje a listagem de crianças usa 20px via classe customizada `.card-crianca`, mas o documento definiu 12px como padrão — decidir qual prevalece)
+- [x] Cor dos botões de ação já usa coral (`#FF6F61`) via `.btn-coral` — paleta e código estavam alinhados, item fechado.
+- [x] Raio dos cards padronizado em 12px (`--radius-card`) — não existe mais nenhuma classe `.card-crianca` com 20px no código.
+- [x] `<input type="date">` estilizado junto dos demais campos via `.form-control` + `--radius-control`.
+- [ ] Definir estilo visual das telas de sessão e exercício (ainda não construídas) seguindo os mesmos tokens deste documento.
+- [ ] Avaliar se `.btn-sm` (40px) nos cards da listagem deveria virar tamanho padrão (44px) conforme o uso real em tablet for testado com a terapeuta.
 
 ---
-*Última atualização: telas de CRUD de Criança (issue #20)*
+*Última atualização: refinação de craft do CRUD de Criança (tokens CSS, formulário campo a campo, estado vazio, ordem de botões destrutivos)*
