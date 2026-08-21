@@ -7,6 +7,8 @@ class ExercicioModelo(models.Model):
     TIPO_CHOICES = [
         ('pergunta_aberta', 'Pergunta Aberta'),
         ('jogo_palavras', 'Jogo de Palavras'),
+        ('multipla_escolha', 'Múltipla Escolha'),
+        ('verdadeiro_falso', 'Verdadeiro ou Falso'),
     ]
 
     sessao_modelo = models.ForeignKey(SessaoModelo, on_delete=models.PROTECT)
