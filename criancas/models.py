@@ -1,7 +1,9 @@
 from datetime import date
 from django.db import models
+from django.contrib.auth.models import User
 
 class Crianca(models.Model):
+    terapeuta = models.ForeignKey(User, on_delete=models.CASCADE, related_name="criancas", null=True, blank=True)
     nome = models.CharField(max_length=100)
     data_nascimento = models.DateField()
     criada_em = models.DateTimeField(auto_now_add=True)

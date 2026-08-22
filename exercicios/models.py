@@ -9,11 +9,15 @@ class ExercicioModelo(models.Model):
         ('jogo_palavras', 'Jogo de Palavras'),
         ('multipla_escolha', 'Múltipla Escolha'),
         ('verdadeiro_falso', 'Verdadeiro ou Falso'),
+        ('caca_palavras', 'Caça-Palavras'),
+        ('cruzadinha', 'Cruzadinha'),
+        ('ordena_letras', 'Ordene as Letras'),
+        ('preenche_lacunas_letras', 'Lacunas com Letras'),
     ]
 
     sessao_modelo = models.ForeignKey(SessaoModelo, on_delete=models.PROTECT)
     numero = models.IntegerField()
-    tipo = models.CharField(max_length=20, choices=TIPO_CHOICES)
+    tipo = models.CharField(max_length=30, choices=TIPO_CHOICES)
     enunciado = models.TextField()
     configuracao = models.JSONField(blank=True, default=dict)
 

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Sessão: {{ sessao.sessao_modelo.titulo }}{% endblock %}
+
+{% block conteudo %}
+<div class="mb-4 d-flex justify-content-between align-items-center">
+    <h2>{{ sessao.sessao_modelo.titulo }} - {{ sessao.crianca.nome }}</h2>
+    <span class="badge bg-primary">{{ sessao.get_status_display }}</span>
+</div>
+
+<div class="card-item p-4 mb-4 bg-white">
+    <p><strong>Data:</strong> {{ sessao.data|date:"d/m/Y H:i" }}</p>
+    <p><strong>Terapeuta:</strong> {{ sessao.terapeuta.username }}</p>
+    {% if sessao.observacoes %}
+    <p><strong>Observações:</strong> {{ sessao.observacoes }}</p>
+    {% endif %}
+</div>
+
+<div id="exercicios-container">
+    <!-- Exercises will be dynamically injected here via JS -->
+</div>
+
+<!-- Serializing exercise data safely -->
+{{ exercicios_data|json_script:"exercicios-data" }}
+
+{% include 'sessoes/exercicios_components.html' %}
+{% endblock %}
+

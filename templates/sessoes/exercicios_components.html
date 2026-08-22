@@ -1,0 +1,377 @@
+<style>
+/* Base Game Styles */
+.game-grid {
+    display: inline-grid;
+    gap: 4px;
+    background: #f0f0f0;
+    padding: 10px;
+    border-radius: var(--radius-card);
+}
+
+.game-cell {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s;
+    border: 1px solid #ccc;
+}
+
+.game-cell.selected {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary-strong);
+}
+
+.game-cell.found {
+    background: var(--color-accent);
+    color: white;
+    border-color: var(--color-accent-hover);
+}
+
+/* Crossword Specific */
+.crossword-grid {
+    position: relative;
+    background: transparent;
+    padding: 0;
+}
+.crossword-input {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    background: transparent;
+    text-transform: uppercase;
+}
+.crossword-input:focus {
+    background: rgba(45, 110, 126, 0.1);
+}
+.crossword-cell-wrapper {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border: 1px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.crossword-number {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    font-size: 0.6rem;
+    line-height: 1;
+}
+
+/* Unscramble */
+.unscramble-row {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+.unscramble-input {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 1px solid var(--color-primary);
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+.unscramble-input.shaded {
+    background: #e0e0e0;
+}
+
+/* Phrases Fill */
+.phrase-input {
+    display: inline-block;
+    width: 150px;
+    border: none;
+    border-bottom: 2px solid var(--color-primary);
+    background: transparent;
+    text-align: center;
+    font-weight: bold;
+    outline: none;
+    color: var(--color-primary);
+}
+.phrase-input:focus {
+    border-bottom-color: var(--color-accent);
+}
+</style>
+
+<script>
+const ExerciseRenderers = {
+    // 1. Path Word Search & Fill Blanks
+    preenche_lacunas_letras: function(container, ex) {
+        const config = ex.configuracao;
+        
+        // Render Grid
+        const gridContainer = document.createElement('div');
+        gridContainer.className = "game-grid mb-4";
+        gridContainer.style.gridTemplateColumns = `repeat(${config.grid[0].length}, 40px)`;
+        
+        let isDragging = false;
+        
+        config.grid.forEach((row, rowIndex) => {
+            row.forEach((letter, colIndex) => {
+                const cell = document.createElement('div');
+                cell.className = "game-cell";
+                cell.innerText = letter;
+                cell.dataset.r = rowIndex;
+                cell.dataset.c = colIndex;
+                
+                // Interaction
+                cell.addEventListener('mousedown', () => { isDragging = true; cell.classList.toggle('selected'); });
+                cell.addEventListener('mouseenter', () => { if(isDragging) cell.classList.toggle('selected'); });
+                
+                gridContainer.appendChild(cell);
+            });
+        });
+        
+        document.addEventListener('mouseup', () => { isDragging = false; });
+        
+        container.appendChild(gridContainer);
+        
+        // Render Phrases
+        const phrasesContainer = document.createElement('div');
+        config.frases.forEach((fraseTemplate, i) => {
+            const p = document.createElement('p');
+            p.innerHTML = fraseTemplate.replace(/\{(\d+)\}/g, `<input type="text" class="phrase-input" data-answer-idx="$1" />`);
+            phrasesContainer.appendChild(p);
+        });
+        container.appendChild(phrasesContainer);
+        
+        // Validation Button
+        const btn = document.createElement('button');
+        btn.className = "btn btn-coral mt-3";
+        btn.innerText = "Verificar Respostas";
+        btn.onclick = () => {
+            let correct = true;
+            phrasesContainer.querySelectorAll('.phrase-input').forEach(input => {
+                const answer = config.respostas[input.dataset.answerIdx];
+                if (input.value.toUpperCase() === answer.toUpperCase()) {
+                    input.style.borderBottomColor = "green";
+                    input.style.color = "green";
+                } else {
+                    input.style.borderBottomColor = "red";
+                    correct = false;
+                }
+            });
+            if(correct) alert("Parabéns! Respostas corretas!");
+        };
+        container.appendChild(btn);
+    },
+    
+    // 2. Crossword
+    cruzadinha: function(container, ex) {
+        const config = ex.configuracao;
+        
+        // Determine grid bounds based on cell coordinates
+        let maxX = 0, maxY = 0;
+        config.celulas.forEach(c => {
+            if (c.x > maxX) maxX = c.x;
+            if (c.y > maxY) maxY = c.y;
+        });
+        
+        const gridWrapper = document.createElement('div');
+        gridWrapper.className = "crossword-grid mb-4";
+        gridWrapper.style.width = `${(maxX + 1) * 40}px`;
+        gridWrapper.style.height = `${(maxY + 1) * 40}px`;
+        
+        config.celulas.forEach(cell => {
+            const cellDiv = document.createElement('div');
+            cellDiv.className = "crossword-cell-wrapper";
+            cellDiv.style.left = `${cell.x * 40}px`;
+            cellDiv.style.top = `${cell.y * 40}px`;
+            
+            if (cell.numero) {
+                const num = document.createElement('span');
+                num.className = "crossword-number";
+                num.innerText = cell.numero;
+                cellDiv.appendChild(num);
+            }
+            
+            if (cell.editavel) {
+                const input = document.createElement('input');
+                input.className = "crossword-input";
+                input.maxLength = 1;
+                // auto-advance logic could be added here
+                cellDiv.appendChild(input);
+            } else {
+                cellDiv.style.background = "#333"; // block
+            }
+            
+            gridWrapper.appendChild(cellDiv);
+        });
+        
+        container.appendChild(gridWrapper);
+        
+        if (config.dicas && config.dicas.length > 0) {
+            const dicas = document.createElement('div');
+            dicas.innerHTML = "<h5>Dicas:</h5><ul>" + config.dicas.map(d => `<li>${d}</li>`).join('') + "</ul>";
+            container.appendChild(dicas);
+        }
+    },
+    
+    // 3. and 4. Word Search (with or without phrases)
+    caca_palavras: function(container, ex) {
+        const config = ex.configuracao;
+        
+        const gridContainer = document.createElement('div');
+        gridContainer.className = "game-grid mb-4";
+        gridContainer.style.gridTemplateColumns = `repeat(${config.grid[0].length}, 40px)`;
+        
+        let isDragging = false;
+        
+        config.grid.forEach((row, rowIndex) => {
+            for(let i=0; i<row.length; i++) {
+                const letter = row[i];
+                const cell = document.createElement('div');
+                cell.className = "game-cell";
+                cell.innerText = letter;
+                
+                cell.addEventListener('mousedown', () => { isDragging = true; cell.classList.toggle('selected'); });
+                cell.addEventListener('mouseenter', () => { if(isDragging) cell.classList.toggle('selected'); });
+                
+                gridContainer.appendChild(cell);
+            }
+        });
+        
+        document.addEventListener('mouseup', () => { isDragging = false; });
+        
+        container.appendChild(gridContainer);
+        
+        // Phrases if provided (like Parachoques)
+        if (config.frases) {
+            const phrasesContainer = document.createElement('div');
+            config.frases.forEach((fraseTemplate, i) => {
+                const p = document.createElement('p');
+                p.innerHTML = fraseTemplate.replace(/\{(\d+)\}/g, `<input type="text" class="phrase-input" data-answer-idx="$1" />`);
+                phrasesContainer.appendChild(p);
+            });
+            container.appendChild(phrasesContainer);
+        }
+        
+        // Word list if provided (like Colors)
+        if (config.palavras) {
+            const wordList = document.createElement('div');
+            wordList.innerHTML = "<h5>Encontre:</h5><p>" + config.palavras.join(', ') + "</p>";
+            container.appendChild(wordList);
+        }
+    },
+    
+    // 5. Unscramble & Hidden Word
+    ordena_letras: function(container, ex) {
+        const config = ex.configuracao;
+        
+        const allInputs = [];
+        
+        config.palavras.forEach(wordObj => {
+            const row = document.createElement('div');
+            row.className = "unscramble-row d-flex align-items-center";
+            
+            const label = document.createElement('div');
+            label.className = "me-3 fw-bold";
+            label.style.width = "100px";
+            label.innerText = wordObj.embaralhada;
+            row.appendChild(label);
+            
+            for(let i=0; i<wordObj.resposta.length; i++) {
+                const input = document.createElement('input');
+                input.className = "unscramble-input";
+                input.maxLength = 1;
+                if (wordObj.sombreadas.includes(i)) {
+                    input.classList.add('shaded');
+                }
+                row.appendChild(input);
+                allInputs.push(input);
+                
+                // Auto focus next
+                input.addEventListener('input', function() {
+                    if (this.value && this.nextElementSibling && this.nextElementSibling.tagName === 'INPUT') {
+                        this.nextElementSibling.focus();
+                    }
+                });
+            }
+            container.appendChild(row);
+        });
+        
+        // Final word
+        if (config.palavra_final) {
+            const finalRow = document.createElement('div');
+            finalRow.className = "unscramble-row mt-4 p-3 bg-light rounded";
+            finalRow.innerHTML = `<strong class="me-3">Animal Oculto:</strong>`;
+            
+            for(let i=0; i<config.palavra_final.length; i++) {
+                const input = document.createElement('input');
+                input.className = "unscramble-input shaded";
+                input.maxLength = 1;
+                finalRow.appendChild(input);
+            }
+            container.appendChild(finalRow);
+        }
+    }
+};
+
+document.addEventListener("DOMContentLoaded", function() {
+    const dataElement = document.getElementById('exercicios-data');
+    if (!dataElement) return;
+    
+    let exerciciosData = [];
+    try {
+        exerciciosData = JSON.parse(dataElement.textContent);
+    } catch (e) {
+        console.error("Erro ao fazer parse dos dados dos exercícios:", e);
+        return;
+    }
+
+    const container = document.getElementById('exercicios-container');
+    if (exerciciosData.length === 0) {
+        container.innerHTML = `<div class="empty-state">Nenhum exercício configurado para esta sessão.</div>`;
+        return;
+    }
+
+    container.innerHTML = ''; // clear
+
+    exerciciosData.forEach(ex => {
+        const card = document.createElement('div');
+        card.className = "card-item p-4 mb-4 bg-white";
+        
+        const title = document.createElement('h4');
+        title.className = "mb-3";
+        title.innerText = `Exercício ${ex.numero} - ${ex.tipo.replace(/_/g, ' ').toUpperCase()}`;
+        
+        const enunciado = document.createElement('p');
+        enunciado.className = "text-muted mb-4";
+        enunciado.innerText = ex.enunciado;
+        
+        const corpoExercicio = document.createElement('div');
+        corpoExercicio.id = `exercicio-corpo-${ex.id}`;
+        
+        card.appendChild(title);
+        card.appendChild(enunciado);
+        card.appendChild(corpoExercicio);
+        
+        container.appendChild(card);
+        
+        // Call the specific renderer if it exists
+        if (ExerciseRenderers[ex.tipo]) {
+            ExerciseRenderers[ex.tipo](corpoExercicio, ex);
+        } else {
+            corpoExercicio.innerHTML = `<div class="alert alert-warning">Renderizador não implementado para o tipo: ${ex.tipo}</div>`;
+        }
+    });
+});
+</script>
