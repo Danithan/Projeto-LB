@@ -1,12 +1,49 @@
-from django.shortcuts import render, get_object_or_404
-from .models import SessaoRealizada
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect, get_object_or_404
+from django.utils import timezone
+from criancas.models import Crianca
+from .models import SessaoRealizada, SessaoModelo
 from exercicios.models import ExercicioModelo
 
+
+def _crianca_do_terapeuta_ou_404(request, crianca_id):
+    if request.user.is_superuser:
+        return get_object_or_404(Crianca, pk=crianca_id)
+    return get_object_or_404(Crianca, pk=crianca_id, terapeuta=request.user)
+
+
+@login_required
+def escolher_sessao(request, crianca_id):
+    crianca = _crianca_do_terapeuta_ou_404(request, crianca_id)
+
+    if request.method == 'POST':
+        sessao_modelo = get_object_or_404(SessaoModelo, pk=request.POST.get('sessao_modelo_id'))
+        sessao_realizada = SessaoRealizada.objects.create(
+            crianca=crianca,
+            sessao_modelo=sessao_modelo,
+            terapeuta=request.user,
+            data=timezone.now(),
+            status='em_andamento',
+        )
+        return redirect('sessoes:sessao_detail', sessao_id=sessao_realizada.id)
+
+    sessoes_modelo = SessaoModelo.objects.order_by('numero')
+    return render(request, 'sessoes/escolher_sessao.html', {
+        'crianca': crianca,
+        'sessoes_modelo': sessoes_modelo,
+    })
+
+
+@login_required
 def sessao_detail(request, sessao_id):
-    sessao_realizada = get_object_or_404(SessaoRealizada, pk=sessao_id)
+    if request.user.is_superuser:
+        sessao_realizada = get_object_or_404(SessaoRealizada, pk=sessao_id)
+    else:
+        sessao_realizada = get_object_or_404(SessaoRealizada, pk=sessao_id, terapeuta=request.user)
+
     # Get all exercises defined for this session's model
     exercicios_modelo = ExercicioModelo.objects.filter(sessao_modelo=sessao_realizada.sessao_modelo).order_by('numero')
-    
+
     # We will pass the first exercise config as JSON, or all of them.
     # For now, let's pass a list of dicts with their id, numero, tipo, and configuracao
     exercicios_data = []
@@ -18,7 +55,7 @@ def sessao_detail(request, sessao_id):
             'enunciado': ex.enunciado,
             'configuracao': ex.configuracao,
         })
-        
+
     return render(request, 'sessoes/sessao_detail.html', {
         'sessao': sessao_realizada,
         'exercicios_data': exercicios_data,

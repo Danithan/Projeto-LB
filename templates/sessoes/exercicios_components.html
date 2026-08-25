@@ -313,7 +313,7 @@ const ExerciseRenderers = {
             const finalRow = document.createElement('div');
             finalRow.className = "unscramble-row mt-4 p-3 bg-light rounded";
             finalRow.innerHTML = `<strong class="me-3">Animal Oculto:</strong>`;
-            
+
             for(let i=0; i<config.palavra_final.length; i++) {
                 const input = document.createElement('input');
                 input.className = "unscramble-input shaded";
@@ -322,6 +322,129 @@ const ExerciseRenderers = {
             }
             container.appendChild(finalRow);
         }
+    },
+
+    // 6. Pergunta Aberta (respostas abertas, terapeuta avalia manualmente)
+    pergunta_aberta: function(container, ex) {
+        const config = ex.configuracao;
+
+        (config.itens || []).forEach((item) => {
+            const wrapper = document.createElement('div');
+            wrapper.className = "mb-3";
+
+            const texto = document.createElement('p');
+            texto.className = "mb-2";
+            texto.innerHTML = (item.texto || '').replace(/\n/g, '<br>');
+            wrapper.appendChild(texto);
+
+            const textarea = document.createElement('textarea');
+            textarea.className = "form-control";
+            textarea.rows = 2;
+            wrapper.appendChild(textarea);
+
+            container.appendChild(wrapper);
+        });
+    },
+
+    // 7. Multipla Escolha
+    multipla_escolha: function(container, ex) {
+        const config = ex.configuracao;
+        const groups = [];
+
+        (config.perguntas || []).forEach((pergunta, qIndex) => {
+            const wrapper = document.createElement('div');
+            wrapper.className = "mb-4";
+
+            const texto = document.createElement('p');
+            texto.className = "mb-2";
+            texto.innerHTML = (pergunta.texto || '').replace(/\n/g, '<br>');
+            wrapper.appendChild(texto);
+
+            const inputs = [];
+            (pergunta.opcoes || []).forEach((opcao, oIndex) => {
+                const optWrapper = document.createElement('div');
+                optWrapper.className = "form-check";
+
+                const input = document.createElement('input');
+                input.type = "radio";
+                input.className = "form-check-input";
+                input.name = `mc-${ex.id}-${qIndex}`;
+                input.value = oIndex;
+
+                const label = document.createElement('label');
+                label.className = "form-check-label";
+                label.innerText = opcao;
+
+                optWrapper.appendChild(input);
+                optWrapper.appendChild(label);
+                wrapper.appendChild(optWrapper);
+                inputs.push(input);
+            });
+
+            container.appendChild(wrapper);
+            groups.push({ inputs, correta: pergunta.correta });
+        });
+
+        const btn = document.createElement('button');
+        btn.className = "btn btn-coral mt-3";
+        btn.innerText = "Verificar Respostas";
+        btn.onclick = () => {
+            groups.forEach(group => {
+                const selected = group.inputs.find(i => i.checked);
+                if (!selected) return;
+                selected.parentElement.style.color = (Number(selected.value) === group.correta) ? "green" : "red";
+            });
+        };
+        container.appendChild(btn);
+    },
+
+    // 8. Verdadeiro ou Falso
+    verdadeiro_falso: function(container, ex) {
+        const config = ex.configuracao;
+        const groups = [];
+
+        (config.afirmacoes || []).forEach((afirmacao, aIndex) => {
+            const wrapper = document.createElement('div');
+            wrapper.className = "mb-3 d-flex align-items-center justify-content-between";
+
+            const texto = document.createElement('span');
+            texto.innerText = afirmacao.texto;
+            wrapper.appendChild(texto);
+
+            const optsWrapper = document.createElement('div');
+            const inputs = {};
+            [['V', true], ['F', false]].forEach(([label, value]) => {
+                const optLabel = document.createElement('label');
+                optLabel.className = "me-3";
+
+                const input = document.createElement('input');
+                input.type = "radio";
+                input.name = `vf-${ex.id}-${aIndex}`;
+                input.className = "me-1";
+
+                optLabel.appendChild(input);
+                optLabel.appendChild(document.createTextNode(label));
+                optsWrapper.appendChild(optLabel);
+                inputs[String(value)] = input;
+            });
+            wrapper.appendChild(optsWrapper);
+
+            container.appendChild(wrapper);
+            groups.push({ wrapper, inputs, correta: afirmacao.correta });
+        });
+
+        const btn = document.createElement('button');
+        btn.className = "btn btn-coral mt-3";
+        btn.innerText = "Verificar Respostas";
+        btn.onclick = () => {
+            groups.forEach(group => {
+                const selected = Object.entries(group.inputs).find(([, input]) => input.checked);
+                if (!selected) return;
+                const [value] = selected;
+                group.wrapper.style.color = (value === String(group.correta)) ? "green" : "red";
+            });
+        };
+        container.appendChild(btn);
     }
 };
 

@@ -27,6 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Ainda não existe uma tela de login própria do app — reaproveita a do admin,
+# já que toda terapeuta já precisa de uma conta de staff pra usar o admin.
+LOGIN_URL = '/admin/login/'
+
 
 # Application definition
 

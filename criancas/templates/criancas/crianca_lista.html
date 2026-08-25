@@ -26,6 +26,7 @@
                             <span class="text-muted small">{{ crianca.idade }}</span>
                         </div>
                     </div>
+                    <a href="{% url 'sessoes:escolher_sessao' crianca.pk %}" class="btn btn-coral btn-sm mb-2">Iniciar sessão</a>
                     <div class="d-flex gap-2 mt-auto">
                         <a href="{% url 'crianca_editar' crianca.pk %}" class="btn btn-outline-primary btn-sm flex-fill">Editar</a>
                         <a href="{% url 'crianca_deletar' crianca.pk %}" class="btn btn-outline-danger btn-sm flex-fill">Deletar</a>

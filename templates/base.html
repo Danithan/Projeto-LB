@@ -163,8 +163,29 @@
             box-shadow: 0 0 0 3px rgba(45, 110, 126, 0.35);
         }
     </style>
+    <style>
+        .app-nav {
+            background-color: var(--color-surface);
+            border-bottom: 1px solid var(--color-border);
+            padding: 0.9rem 0;
+        }
+        .app-nav a {
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .app-nav .brand {
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+    </style>
 </head>
 <body>
+    <nav class="app-nav">
+        <div class="container d-flex align-items-center gap-4">
+            <a href="{% url 'crianca_lista' %}" class="brand">Projeto LB</a>
+            <a href="{% url 'crianca_lista' %}" class="text-muted">Crianças</a>
+        </div>
+    </nav>
     <div class="container my-5">
         {% block conteudo %}
         {% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Escolher sessão — {{ crianca.nome }}{% endblock %}
+
+{% block conteudo %}
+<div class="mb-5">
+    <a href="{% url 'crianca_lista' %}" class="text-muted small">&larr; Voltar para crianças</a>
+    <h1 class="fw-bold mb-1 mt-2">Escolher sessão</h1>
+    <span class="text-muted">Atendimento de {{ crianca.nome }} ({{ crianca.idade }})</span>
+</div>
+
+{% if sessoes_modelo %}
+<div class="row g-4">
+    {% for sessao_modelo in sessoes_modelo %}
+        <div class="col-12 col-md-4">
+            <form method="post" class="h-100">
+                {% csrf_token %}
+                <input type="hidden" name="sessao_modelo_id" value="{{ sessao_modelo.id }}">
+                <button type="submit" class="card card-item h-100 w-100 text-start border-0 bg-white p-0" style="cursor: pointer;">
+                    <div class="card-body p-4">
+                        <span class="text-muted small">Sessão {{ sessao_modelo.numero }}</span>
+                        <h5 class="fw-bold mt-1 mb-2">{{ sessao_modelo.titulo }}</h5>
+                        {% if sessao_modelo.descricao %}
+                            <p class="text-muted small mb-0">{{ sessao_modelo.descricao|truncatewords:20 }}</p>
+                        {% endif %}
+                    </div>
+                </button>
+            </form>
+        </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="empty-state">
+    <h5 class="fw-bold mb-2" style="color: var(--color-text);">Nenhuma sessão cadastrada ainda</h5>
+    <p class="mb-0">Cadastre sessões e exercícios pelo admin para poder iniciar um atendimento.</p>
+</div>
+{% endif %}
+{% endblock %}
