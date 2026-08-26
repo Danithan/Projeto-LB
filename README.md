@@ -6,17 +6,20 @@ Projeto desenvolvido em parceria com Guilherme Leite, a partir de uma necessidad
 
 ## Status do projeto
 
-Em desenvolvimento — modelagem do banco de dados concluída e todas as migrations aplicadas (`criancas`, `sessoes`, `exercicios`). Admin configurado para os models principais. CRUD completo de Criança implementado (listar, cadastrar, editar, deletar), com cálculo automático de idade e estilização inicial via Bootstrap + sistema de design próprio. Próximas etapas: popular catálogo de sessões/exercícios via admin, e construir o fluxo de escolha de criança → sessão.
+Em desenvolvimento — modelagem do banco de dados concluída, migrations aplicadas e admin configurado para os models principais. CRUD completo de Criança implementado. Fluxo de atendimento funcionando de ponta a ponta: escolher criança → escolher sessão → responder exercícios → salvar resultado → exportar relatório em PDF (por sessão e consolidado). Cinco tipos de exercício com correção e salvamento de resultado implementados (pergunta aberta, múltipla escolha, verdadeiro/falso, caça-palavras, organizar letras).
+
+Pendências conhecidas: as 10 sessões reais ainda não foram cadastradas — hoje existe só um piloto com conteúdo de teste (inventado, não copiado do material da terapeuta), aguardando ela avaliar o formato antes de entrarmos com o conteúdo definitivo. O fluxo de correção também precisa de revisão: cada exercício salva seu resultado individualmente ao ser verificado, mas o ideal é um envio único no fim da sessão que só marca como concluída se tudo estiver certo (ver issues abertas no repositório).
 
 ## Funcionalidades principais
 
 - Cadastro de crianças (nome + data de nascimento, com cálculo automático de idade em anos/meses)
 - Suporte a múltiplas crianças, com troca entre atendimentos
-- 10 sessões com 9 exercícios cada, sem ordem obrigatória — a terapeuta escolhe
-- Dois tipos de exercício: perguntas abertas/categoria (ex.: "diga 3 animais com a letra B") e jogos de palavras (caça-palavras, organizar letras)
+- Fluxo de atendimento: escolher criança → escolher sessão → responder exercícios
+- 10 sessões com 9 exercícios cada, sem ordem obrigatória — a terapeuta escolhe (catálogo real ainda em construção)
+- Cinco tipos de exercício com correção automática: pergunta aberta, múltipla escolha, verdadeiro/falso, caça-palavras e organizar letras
 - Registro de desempenho por exercício: % de acerto, número de tentativas, tempo e pontuação
 - Histórico de desempenho por criança e por sessão
-- Exportação de relatórios em PDF (por sessão e consolidado)
+- Exportação de relatórios em PDF (por sessão e consolidado, com tempo total por sessão)
 
 ## Stack tecnológica
 
@@ -36,12 +39,16 @@ Justificativa completa das escolhas em [`docs/decisoes-tecnicas.md`](./docs/deci
 
 ```
 Projeto-LB/
-├── config/          # settings, urls e configuração raiz do Django
-├── criancas/        # app: cadastro e CRUD de crianças
-├── sessoes/         # app: catálogo de sessões e fluxo de atendimento
-├── exercicios/      # app: exercícios (pergunta aberta, caça-palavras, organizar letras)
-├── templates/        # templates base compartilhados entre apps
-├── docs/            # documentação do processo de desenvolvimento
+├── config/               # settings, urls e configuração raiz do Django
+├── criancas/             # app: cadastro e CRUD de crianças
+├── sessoes/              # app: catálogo de sessões, fluxo de atendimento e relatórios
+│   ├── catalogo_data.py         # conteúdo das sessões/exercícios
+│   └── management/commands/     # seed_catalogo: popula o catálogo a partir de catalogo_data.py
+├── exercicios/           # app: exercícios (pergunta aberta, múltipla escolha, verdadeiro/falso, caça-palavras, organizar letras)
+├── templates/
+│   ├── sessoes/          # tela de sessão e renderizadores JS dos exercícios
+│   └── relatorios/       # templates dos relatórios em PDF
+├── docs/                 # documentação do processo de desenvolvimento
 ├── manage.py
 ├── requirements.txt
 └── README.md
@@ -66,6 +73,7 @@ python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 python manage.py migrate
+python manage.py seed_catalogo  # popula o catálogo de sessões/exercícios (piloto)
 python manage.py runserver
 ```
 
