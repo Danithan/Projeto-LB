@@ -20,3 +20,6 @@ class Crianca(models.Model):
             meses %= 12
 
         return f"{anos} anos e {meses} meses"
+
+    def __str__(self):
+        return self.nome

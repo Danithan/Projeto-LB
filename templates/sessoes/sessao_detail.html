@@ -16,7 +16,8 @@
     {% endif %}
 </div>
 
-<div id="exercicios-container">
+{% csrf_token %}
+<div id="exercicios-container" data-sessao-id="{{ sessao.id }}">
     <!-- Exercises will be dynamically injected here via JS -->
 </div>
 

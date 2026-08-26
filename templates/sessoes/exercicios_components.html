@@ -112,6 +112,31 @@
 </style>
 
 <script>
+function getCookie(name) {
+    const match = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+    return match ? decodeURIComponent(match.pop()) : null;
+}
+
+function salvarResultado(ex, { percentual, pontuacao, tempoInicio }) {
+    const container = document.getElementById('exercicios-container');
+    const sessaoId = container && container.dataset.sessaoId;
+    if (!sessaoId) return;
+
+    const tempoSegundos = Math.max(0, Math.round((Date.now() - tempoInicio) / 1000));
+    fetch(`/sessoes/${sessaoId}/exercicios/${ex.id}/resultado/`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCookie('csrftoken'),
+        },
+        body: JSON.stringify({
+            percentual_acerto: percentual,
+            tempo_segundos: tempoSegundos,
+            pontuacao: pontuacao,
+        }),
+    }).catch(err => console.error('Erro ao salvar resultado do exercício', ex.id, err));
+}
+
 const ExerciseRenderers = {
     // 1. Path Word Search & Fill Blanks
     preenche_lacunas_letras: function(container, ex) {
@@ -228,31 +253,92 @@ const ExerciseRenderers = {
     // 3. and 4. Word Search (with or without phrases)
     caca_palavras: function(container, ex) {
         const config = ex.configuracao;
-        
+        const tempoInicio = Date.now();
+
         const gridContainer = document.createElement('div');
         gridContainer.className = "game-grid mb-4";
         gridContainer.style.gridTemplateColumns = `repeat(${config.grid[0].length}, 40px)`;
-        
+
         let isDragging = false;
-        
+        let selecionadas = [];
+        const palavrasAlvo = (config.palavras || []).map(w => w.toUpperCase());
+        const encontradas = new Set();
+
+        const listaDiv = document.createElement('div');
+        listaDiv.className = "mt-3";
+
+        function atualizarLista() {
+            listaDiv.innerHTML = "<h5>Encontre:</h5><p>" + palavrasAlvo.map(w =>
+                encontradas.has(w) ? `<s>${w}</s>` : w
+            ).join(', ') + "</p>";
+        }
+
+        function salvarProgresso() {
+            const total = palavrasAlvo.length || 1;
+            const percentual = Math.round((encontradas.size / total) * 100);
+            salvarResultado(ex, { percentual, pontuacao: percentual, tempoInicio });
+        }
+
+        function limparSelecao() {
+            selecionadas.forEach(cell => cell.classList.remove('selected'));
+            selecionadas = [];
+        }
+
+        function verificarSelecao() {
+            if (selecionadas.length < 2) { limparSelecao(); return; }
+
+            const coords = selecionadas.map(c => ({ r: Number(c.dataset.r), c: Number(c.dataset.c), el: c }));
+            const dr = coords[1].r - coords[0].r;
+            const dc = coords[1].c - coords[0].c;
+            const passoValido = Math.abs(dr) <= 1 && Math.abs(dc) <= 1 && !(dr === 0 && dc === 0);
+            const linhaReta = passoValido && coords.every((p, i) => p.r === coords[0].r + dr * i && p.c === coords[0].c + dc * i);
+
+            if (linhaReta) {
+                const palavra = coords.map(p => p.el.innerText).join('');
+                const invertida = palavra.split('').reverse().join('');
+                const achou = palavrasAlvo.find(w => (w === palavra || w === invertida) && !encontradas.has(w));
+                if (achou) {
+                    encontradas.add(achou);
+                    coords.forEach(p => p.el.classList.add('found'));
+                    atualizarLista();
+                    salvarProgresso();
+                }
+            }
+            limparSelecao();
+        }
+
         config.grid.forEach((row, rowIndex) => {
-            for(let i=0; i<row.length; i++) {
-                const letter = row[i];
+            row.forEach((letter, colIndex) => {
                 const cell = document.createElement('div');
                 cell.className = "game-cell";
                 cell.innerText = letter;
-                
-                cell.addEventListener('mousedown', () => { isDragging = true; cell.classList.toggle('selected'); });
-                cell.addEventListener('mouseenter', () => { if(isDragging) cell.classList.toggle('selected'); });
-                
+                cell.dataset.r = rowIndex;
+                cell.dataset.c = colIndex;
+
+                cell.addEventListener('mousedown', () => {
+                    isDragging = true;
+                    if (!cell.classList.contains('found')) {
+                        cell.classList.add('selected');
+                        selecionadas.push(cell);
+                    }
+                });
+                cell.addEventListener('mouseenter', () => {
+                    if (isDragging && !selecionadas.includes(cell) && !cell.classList.contains('found')) {
+                        cell.classList.add('selected');
+                        selecionadas.push(cell);
+                    }
+                });
+
                 gridContainer.appendChild(cell);
-            }
+            });
         });
-        
-        document.addEventListener('mouseup', () => { isDragging = false; });
-        
+
+        document.addEventListener('mouseup', () => {
+            if (isDragging) { isDragging = false; verificarSelecao(); }
+        });
+
         container.appendChild(gridContainer);
-        
+
         // Phrases if provided (like Parachoques)
         if (config.frases) {
             const phrasesContainer = document.createElement('div');
@@ -263,31 +349,31 @@ const ExerciseRenderers = {
             });
             container.appendChild(phrasesContainer);
         }
-        
-        // Word list if provided (like Colors)
-        if (config.palavras) {
-            const wordList = document.createElement('div');
-            wordList.innerHTML = "<h5>Encontre:</h5><p>" + config.palavras.join(', ') + "</p>";
-            container.appendChild(wordList);
+
+        if (palavrasAlvo.length > 0) {
+            atualizarLista();
+            container.appendChild(listaDiv);
         }
     },
     
     // 5. Unscramble & Hidden Word
     ordena_letras: function(container, ex) {
         const config = ex.configuracao;
-        
-        const allInputs = [];
-        
+        const tempoInicio = Date.now();
+
+        const palavraChecks = [];
+
         config.palavras.forEach(wordObj => {
             const row = document.createElement('div');
             row.className = "unscramble-row d-flex align-items-center";
-            
+
             const label = document.createElement('div');
             label.className = "me-3 fw-bold";
             label.style.width = "100px";
             label.innerText = wordObj.embaralhada;
             row.appendChild(label);
-            
+
+            const inputs = [];
             for(let i=0; i<wordObj.resposta.length; i++) {
                 const input = document.createElement('input');
                 input.className = "unscramble-input";
@@ -296,8 +382,8 @@ const ExerciseRenderers = {
                     input.classList.add('shaded');
                 }
                 row.appendChild(input);
-                allInputs.push(input);
-                
+                inputs.push(input);
+
                 // Auto focus next
                 input.addEventListener('input', function() {
                     if (this.value && this.nextElementSibling && this.nextElementSibling.tagName === 'INPUT') {
@@ -306,13 +392,14 @@ const ExerciseRenderers = {
                 });
             }
             container.appendChild(row);
+            palavraChecks.push({ inputs, resposta: wordObj.resposta.toUpperCase() });
         });
-        
+
         // Final word
         if (config.palavra_final) {
             const finalRow = document.createElement('div');
             finalRow.className = "unscramble-row mt-4 p-3 bg-light rounded";
-            finalRow.innerHTML = `<strong class="me-3">Animal Oculto:</strong>`;
+            finalRow.innerHTML = `<strong class="me-3">Palavra Oculta:</strong>`;
 
             for(let i=0; i<config.palavra_final.length; i++) {
                 const input = document.createElement('input');
@@ -322,11 +409,30 @@ const ExerciseRenderers = {
             }
             container.appendChild(finalRow);
         }
+
+        const btn = document.createElement('button');
+        btn.className = "btn btn-coral mt-3";
+        btn.innerText = "Verificar Respostas";
+        btn.onclick = () => {
+            let corretas = 0;
+            palavraChecks.forEach(({ inputs, resposta }) => {
+                const digitado = inputs.map(i => i.value.toUpperCase()).join('');
+                const acertou = digitado === resposta;
+                inputs.forEach(i => { i.style.borderColor = acertou ? "green" : "#C0392B"; });
+                if (acertou) corretas++;
+            });
+            const total = palavraChecks.length || 1;
+            const percentual = Math.round((corretas / total) * 100);
+            salvarResultado(ex, { percentual, pontuacao: percentual, tempoInicio });
+        };
+        container.appendChild(btn);
     },
 
     // 6. Pergunta Aberta (respostas abertas, terapeuta avalia manualmente)
     pergunta_aberta: function(container, ex) {
         const config = ex.configuracao;
+        const tempoInicio = Date.now();
+        const textareas = [];
 
         (config.itens || []).forEach((item) => {
             const wrapper = document.createElement('div');
@@ -343,13 +449,28 @@ const ExerciseRenderers = {
             wrapper.appendChild(textarea);
 
             container.appendChild(wrapper);
+            textareas.push(textarea);
         });
+
+        const btn = document.createElement('button');
+        btn.className = "btn btn-coral mt-3";
+        btn.innerText = "Salvar respostas";
+        btn.onclick = () => {
+            const respondidos = textareas.filter(t => t.value.trim().length > 0).length;
+            const total = textareas.length || 1;
+            const percentual = Math.round((respondidos / total) * 100);
+            salvarResultado(ex, { percentual, pontuacao: percentual, tempoInicio });
+            btn.innerText = "Respostas salvas!";
+            btn.disabled = true;
+        };
+        container.appendChild(btn);
     },
 
     // 7. Multipla Escolha
     multipla_escolha: function(container, ex) {
         const config = ex.configuracao;
         const groups = [];
+        const tempoInicio = Date.now();
 
         (config.perguntas || []).forEach((pergunta, qIndex) => {
             const wrapper = document.createElement('div');
@@ -389,11 +510,17 @@ const ExerciseRenderers = {
         btn.className = "btn btn-coral mt-3";
         btn.innerText = "Verificar Respostas";
         btn.onclick = () => {
+            let corretas = 0;
             groups.forEach(group => {
                 const selected = group.inputs.find(i => i.checked);
                 if (!selected) return;
-                selected.parentElement.style.color = (Number(selected.value) === group.correta) ? "green" : "red";
+                const acertou = Number(selected.value) === group.correta;
+                selected.parentElement.style.color = acertou ? "green" : "red";
+                if (acertou) corretas++;
             });
+            const total = groups.length || 1;
+            const percentual = Math.round((corretas / total) * 100);
+            salvarResultado(ex, { percentual, pontuacao: percentual, tempoInicio });
         };
         container.appendChild(btn);
     },
@@ -402,6 +529,7 @@ const ExerciseRenderers = {
     verdadeiro_falso: function(container, ex) {
         const config = ex.configuracao;
         const groups = [];
+        const tempoInicio = Date.now();
 
         (config.afirmacoes || []).forEach((afirmacao, aIndex) => {
             const wrapper = document.createElement('div');
@@ -437,12 +565,18 @@ const ExerciseRenderers = {
         btn.className = "btn btn-coral mt-3";
         btn.innerText = "Verificar Respostas";
         btn.onclick = () => {
+            let corretas = 0;
             groups.forEach(group => {
                 const selected = Object.entries(group.inputs).find(([, input]) => input.checked);
                 if (!selected) return;
                 const [value] = selected;
-                group.wrapper.style.color = (value === String(group.correta)) ? "green" : "red";
+                const acertou = value === String(group.correta);
+                group.wrapper.style.color = acertou ? "green" : "red";
+                if (acertou) corretas++;
             });
+            const total = groups.length || 1;
+            const percentual = Math.round((corretas / total) * 100);
+            salvarResultado(ex, { percentual, pontuacao: percentual, tempoInicio });
         };
         container.appendChild(btn);
     }

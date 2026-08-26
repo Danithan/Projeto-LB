@@ -26,6 +26,9 @@ class ExercicioModelo(models.Model):
             models.UniqueConstraint(fields=['sessao_modelo', 'numero'], name='numero_unico_por_sessao')
         ]
 
+    def __str__(self):
+        return f"{self.sessao_modelo} - Exercício {self.numero} ({self.get_tipo_display()})"
+
 class ExercicioResultado(models.Model):
     sessao_realizada = models.ForeignKey(SessaoRealizada, on_delete=models.CASCADE)
     exercicio_modelo = models.ForeignKey(ExercicioModelo, on_delete=models.PROTECT)
@@ -35,3 +38,14 @@ class ExercicioResultado(models.Model):
     tempo_segundos = models.IntegerField()
     pontuacao = models.IntegerField()
     respondido_em = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=['sessao_realizada', 'exercicio_modelo'],
+                name='resultado_unico_por_exercicio_sessao',
+            )
+        ]
+
+    def __str__(self):
+        return f"{self.exercicio_modelo} - {self.percentual_acerto}%"

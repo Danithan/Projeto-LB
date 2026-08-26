@@ -5,6 +5,17 @@ class ExercicioModeloAdmin(admin.ModelAdmin):
     pass # All admins can see models/templates
 
 class ExercicioResultadoAdmin(admin.ModelAdmin):
+    list_display = (
+        'sessao_realizada',
+        'exercicio_modelo',
+        'percentual_acerto',
+        'tentativas',
+        'pontuacao',
+        'tempo_segundos',
+        'respondido_em',
+    )
+    list_filter = ('sessao_realizada__crianca', 'exercicio_modelo__tipo')
+
     def get_queryset(self, request):
         qs = super().get_queryset(request)
         if request.user.is_superuser:
