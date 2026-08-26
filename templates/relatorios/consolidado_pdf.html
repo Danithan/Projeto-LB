@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Relatório Consolidado — {{ crianca.nome }}</title>
+{% include 'relatorios/_base_pdf.html' %}
+</head>
+<body>
+    <h1>Relatório Consolidado</h1>
+    <div class="meta">
+        <p><strong>Criança:</strong> {{ crianca.nome }} ({{ crianca.idade }})</p>
+        {% if crianca.terapeuta %}
+        <p><strong>Terapeuta:</strong> {{ crianca.terapeuta.get_full_name|default:crianca.terapeuta.username }}</p>
+        {% endif %}
+    </div>
+
+    <div class="resumo">
+        <div class="card">
+            <div class="valor">{{ total_sessoes }}</div>
+            <div class="label">Sessões realizadas</div>
+        </div>
+        <div class="card">
+            <div class="valor">{{ sessoes_concluidas }}</div>
+            <div class="label">Sessões concluídas</div>
+        </div>
+        <div class="card">
+            <div class="valor">{% if media_geral is not None %}{{ media_geral|floatformat:0 }}%{% else %}—{% endif %}</div>
+            <div class="label">Média geral de acerto</div>
+        </div>
+    </div>
+
+    <h2>Histórico de sessões</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Sessão</th>
+                <th>Status</th>
+                <th>Respondidos</th>
+                <th>Média de acerto</th>
+                <th>Tempo total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for linha in linhas %}
+            <tr>
+                <td>{{ linha.sessao.data|date:"d/m/Y" }}</td>
+                <td>{{ linha.sessao.sessao_modelo.titulo }}</td>
+                <td>{{ linha.sessao.get_status_display }}</td>
+                <td>{{ linha.total_respondidos }}/{{ linha.total_exercicios }}</td>
+                <td>{% if linha.media_percentual is not None %}{{ linha.media_percentual|floatformat:0 }}%{% else %}—{% endif %}</td>
+                <td>{{ linha.tempo_total }}</td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="6" class="sem-resposta">Nenhuma sessão realizada ainda.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <footer>Gerado em {{ gerado_em|date:"d/m/Y H:i" }} — Projeto LB</footer>
+</body>
+</html>

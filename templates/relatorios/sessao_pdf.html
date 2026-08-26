@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Relatório — {{ sessao.sessao_modelo.titulo }}</title>
+{% include 'relatorios/_base_pdf.html' %}
+</head>
+<body>
+    <h1>Relatório de Sessão</h1>
+    <div class="meta">
+        <p><strong>Criança:</strong> {{ sessao.crianca.nome }} ({{ sessao.crianca.idade }})</p>
+        <p><strong>Sessão:</strong> {{ sessao.sessao_modelo.titulo }}</p>
+        <p><strong>Data:</strong> {{ sessao.data|date:"d/m/Y H:i" }}</p>
+        <p><strong>Terapeuta:</strong> {{ sessao.terapeuta.get_full_name|default:sessao.terapeuta.username }}</p>
+        <p><strong>Status:</strong> {{ sessao.get_status_display }}</p>
+        {% if sessao.observacoes %}<p><strong>Observações:</strong> {{ sessao.observacoes }}</p>{% endif %}
+    </div>
+
+    <div class="resumo">
+        <div class="card">
+            <div class="valor">{{ total_respondidos }}/{{ total_exercicios }}</div>
+            <div class="label">Exercícios respondidos</div>
+        </div>
+        <div class="card">
+            <div class="valor">{% if media_percentual is not None %}{{ media_percentual|floatformat:0 }}%{% else %}—{% endif %}</div>
+            <div class="label">Média de acerto</div>
+        </div>
+    </div>
+
+    <h2>Exercícios</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Tipo</th>
+                <th>Enunciado</th>
+                <th>% Acerto</th>
+                <th>Tentativas</th>
+                <th>Tempo</th>
+                <th>Pontuação</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for linha in linhas %}
+            <tr>
+                <td>{{ linha.exercicio.numero }}</td>
+                <td>{{ linha.exercicio.get_tipo_display }}</td>
+                <td>{{ linha.exercicio.enunciado|truncatechars:60 }}</td>
+                {% if linha.resultado %}
+                <td>{{ linha.resultado.percentual_acerto|floatformat:0 }}%</td>
+                <td>{{ linha.resultado.tentativas }}</td>
+                <td>{{ linha.resultado.tempo_segundos }}s</td>
+                <td>{{ linha.resultado.pontuacao }}</td>
+                {% else %}
+                <td colspan="4" class="sem-resposta">Não respondido</td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <footer>Gerado em {{ gerado_em|date:"d/m/Y H:i" }} — Projeto LB</footer>
+</body>
+</html>

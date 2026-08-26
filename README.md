@@ -69,6 +69,13 @@ python manage.py migrate
 python manage.py runserver
 ```
 
+**Windows**: a geração de PDF (WeasyPrint) depende do runtime nativo do GTK3
+(Pango/GObject), que não vem com o `pip install`. Instale o [GTK+ for Windows
+Runtime Environment](https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer)
+(ou `winget install tschoonj.GTKForWindows`) e abra um terminal novo depois —
+o instalador já ajusta o PATH do sistema. No Linux, `apt-get install
+libpango-1.0-0 libpangoft2-1.0-0` costuma bastar.
+
 ## Equipe
 
 - Daniel Nathan — [GitHub](https://github.com/Danithan)

@@ -5,7 +5,10 @@
 {% block conteudo %}
 <div class="mb-4 d-flex justify-content-between align-items-center">
     <h2>{{ sessao.sessao_modelo.titulo }} - {{ sessao.crianca.nome }}</h2>
-    <span class="badge bg-primary">{{ sessao.get_status_display }}</span>
+    <div class="d-flex align-items-center gap-3">
+        <span class="badge bg-primary">{{ sessao.get_status_display }}</span>
+        <a href="{% url 'sessoes:relatorio_sessao_pdf' sessao.id %}" class="btn btn-outline-primary btn-sm" target="_blank">Exportar PDF</a>
+    </div>
 </div>
 
 <div class="card-item p-4 mb-4 bg-white">

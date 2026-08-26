@@ -27,6 +27,7 @@
                         </div>
                     </div>
                     <a href="{% url 'sessoes:escolher_sessao' crianca.pk %}" class="btn btn-coral btn-sm mb-2">Iniciar sessão</a>
+                    <a href="{% url 'sessoes:relatorio_consolidado_pdf' crianca.pk %}" class="btn btn-outline-primary btn-sm mb-2" target="_blank">Relatório PDF</a>
                     <div class="d-flex gap-2 mt-auto">
                         <a href="{% url 'crianca_editar' crianca.pk %}" class="btn btn-outline-primary btn-sm flex-fill">Editar</a>
                         <a href="{% url 'crianca_deletar' crianca.pk %}" class="btn btn-outline-danger btn-sm flex-fill">Deletar</a>
