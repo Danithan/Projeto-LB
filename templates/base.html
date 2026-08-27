@@ -181,9 +181,22 @@
 </head>
 <body>
     <nav class="app-nav">
-        <div class="container d-flex align-items-center gap-4">
-            <a href="{% url 'crianca_lista' %}" class="brand">Projeto LB</a>
-            <a href="{% url 'crianca_lista' %}" class="text-muted">Crianças</a>
+        <div class="container d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center gap-4">
+                <a href="{% if user.is_authenticated %}{% url 'crianca_lista' %}{% else %}{% url 'home' %}{% endif %}" class="brand">Projeto LB</a>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'crianca_lista' %}" class="text-muted">Crianças</a>
+                {% endif %}
+            </div>
+            {% if user.is_authenticated %}
+                <div class="d-flex align-items-center gap-3">
+                    <span class="text-muted small">{{ user.get_full_name|default:user.username }}</span>
+                    <form method="post" action="{% url 'logout' %}" class="m-0">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-outline-primary btn-sm">Sair</button>
+                    </form>
+                </div>
+            {% endif %}
         </div>
     </nav>
     <div class="container my-5">
