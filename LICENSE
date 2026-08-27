@@ -1,21 +1,39 @@
-MIT License
+Todos os Direitos Reservados (All Rights Reserved)
 
-Copyright (c) 2026 Daniel Nathan
+Copyright (c) 2026 Daniel Nathan e Guilherme de Lima Leite
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Este repositório é disponibilizado publicamente apenas para fins de
+visualização, avaliação técnica, portfólio e processos seletivos (ex.:
+recrutadores e entrevistadores analisando o código-fonte).
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Nenhuma permissão é concedida, de forma implícita ou explícita, para usar,
+copiar, modificar, mesclar, publicar, distribuir, sublicenciar, vender ou
+criar obras derivadas deste software, no todo ou em parte, para qualquer
+finalidade comercial ou não comercial, exceto a leitura e análise do
+código-fonte conforme descrito acima.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+O simples acesso, clonagem ("clone") ou bifurcação ("fork") deste
+repositório no GitHub não concede nenhuma licença de uso além da
+visualização do código.
+
+Qualquer uso comercial, distribuição, revenda ou disponibilização deste
+software (incluindo, mas não se limitando a, plataformas como Hotmart,
+lojas de aplicativos ou qualquer outro meio de comercialização) depende de
+autorização prévia e por escrito dos titulares dos direitos autorais
+listados acima, mediante acordo de licenciamento específico.
+
+O SOFTWARE É FORNECIDO "COMO ESTÁ", SEM GARANTIA DE QUALQUER TIPO, EXPRESSA
+OU IMPLÍCITA, INCLUINDO, MAS NÃO SE LIMITANDO A, GARANTIAS DE
+COMERCIALIZAÇÃO, ADEQUAÇÃO A UM PROPÓSITO ESPECÍFICO E NÃO VIOLAÇÃO. EM
+NENHUMA HIPÓTESE OS AUTORES OU TITULARES DOS DIREITOS AUTORAIS SERÃO
+RESPONSÁVEIS POR QUALQUER REIVINDICAÇÃO, DANO OU OUTRA RESPONSABILIDADE,
+SEJA EM AÇÃO CONTRATUAL, EXTRACONTRATUAL OU DE OUTRA FORMA, DECORRENTE DE,
+OU EM CONEXÃO COM O SOFTWARE OU O USO OU OUTRAS NEGOCIAÇÕES NO SOFTWARE.
+
+---
+
+English summary: All rights reserved. This repository is made public
+solely for viewing, technical evaluation, portfolio, and recruitment
+purposes. No permission is granted to use, copy, modify, distribute, or
+commercialize this software, in whole or in part, without prior written
+authorization from the copyright holders named above.
