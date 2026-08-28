@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Editar Exercício - {{ exercicio.numero }}{% endblock %}
+
+{% block conteudo %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card-item p-4">
+            <h2 class="mb-4">Editar Exercício {{ exercicio.numero }}</h2>
+            <p class="text-muted mb-4">
+                Configure as propriedades deste exercício. As opções e respostas devem ser separadas por vírgula.
+            </p>
+
+            <form method="post">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ request.META.HTTP_REFERER }}">
+                
+                <div class="form-field">
+                    <label for="enunciado" class="form-label">Enunciado (Prompt)</label>
+                    <textarea class="form-control" id="enunciado" name="enunciado" rows="3" required>{{ exercicio.configuracao.prompt }}</textarea>
+                </div>
+                
+                <div class="form-field">
+                    <label for="opcoes" class="form-label">Opções</label>
+                    <input type="text" class="form-control" id="opcoes" name="opcoes" value="{{ exercicio.configuracao.opcoes|join:', ' }}">
+                    <div class="form-text">Separe as opções por vírgula. Ex: Maçã, Banana, Pera</div>
+                </div>
+
+                <div class="form-field">
+                    <label for="respostasValidas" class="form-label">Respostas Válidas (Gabarito)</label>
+                    <input type="text" class="form-control" id="respostasValidas" name="respostasValidas" value="{{ exercicio.configuracao.respostasValidas|join:', ' }}" required>
+                    <div class="form-text">Separe as respostas válidas por vírgula. Ex: Maçã, Pera</div>
+                </div>
+
+                <div class="d-flex justify-content-end gap-3 mt-4">
+                    <button type="button" class="btn btn-outline-primary" onclick="window.history.back()">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

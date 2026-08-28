@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 class Crianca(models.Model):
     terapeuta = models.ForeignKey(User, on_delete=models.CASCADE, related_name="criancas", null=True, blank=True)
+    usuario = models.OneToOneField(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='perfil_crianca')
     nome = models.CharField(max_length=100)
     data_nascimento = models.DateField()
     criada_em = models.DateTimeField(auto_now_add=True)

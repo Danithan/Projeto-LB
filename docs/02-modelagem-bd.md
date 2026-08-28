@@ -5,14 +5,26 @@ Este documento descreve as entidades principais do Projeto LB, seus campos e rel
 ## Visão geral das entidades
 
 - **Crianca**: cadastro de cada criança atendida.
-- **SessaoModelo**: o "catálogo" fixo das 10 sessões (conteúdo, não histórico de atendimento).
-- **ExercicioModelo**: os 9 exercícios de cada sessão do catálogo.
+- **Tema**: categorização temática visual das sessões (ex.: Estimulação & Formas, Alfabetização & Linguagem).
+- **SessaoModelo**: o "catálogo" das sessões (nomenclatura, objetivo terapêutico, tema e faixa etária recomendada).
+- **ExercicioModelo**: os exercícios de cada sessão do catálogo.
 - **SessaoRealizada**: registro de que uma criança passou (ou está passando) por uma sessão específica, em uma data específica. É aqui que entra o histórico.
 - **ExercicioResultado**: o desempenho da criança em cada exercício dentro de uma sessão realizada (% de acerto, tentativas, tempo, pontuação).
 
-A ideia central: **SessaoModelo/ExercicioModelo são o conteúdo fixo** (definido uma vez, reaproveitado para todas as crianças), enquanto **SessaoRealizada/ExercicioResultado são o histórico real de atendimento** de cada criança.
+A ideia central: **Tema/SessaoModelo/ExercicioModelo são o conteúdo fixo e estrutural** (definido uma vez, reaproveitado para todas as crianças), enquanto **SessaoRealizada/ExercicioResultado são o histórico real de atendimento** de cada criança.
 
 ## Entidades
+
+### Tema
+
+| Campo | Tipo | Observações |
+|---|---|---|
+| id | PK | |
+| nome | CharField (unique) | Ex.: "Alfabetização & Linguagem", "Raciocínio & Lógica" |
+| descricao | TextField | opcional |
+| cor | CharField | código HEX para identificação visual e badges |
+| icone | CharField | classe de ícone Bootstrap (ex.: bi-shapes, bi-fonts) |
+| criado_em | DateTimeField (auto) | |
 
 ### Terapeuta
 
@@ -33,9 +45,12 @@ Usa o `User` padrão do Django (com `AbstractUser` ou um `Profile` associado, se
 | Campo | Tipo | Observações |
 |---|---|---|
 | id | PK | |
-| numero | IntegerField | 1 a 10 |
-| titulo | CharField | |
+| numero | IntegerField | 1 a 10 (ou números de teste no piloto) |
+| titulo | CharField | Nomenclatura oficial da sessão |
+| objetivo | TextField | Objetivo pedagógico e meta terapêutica |
 | descricao | TextField | opcional |
+| faixa_etaria | CharField | Recomendação etária (3 a 5 anos, 6 a 10 anos, 11+ anos) |
+| tema | FK -> Tema | Categoria temática da sessão (opcional/SET_NULL) |
 
 ### ExercicioModelo
 

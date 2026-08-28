@@ -1,10 +1,22 @@
 from django.contrib import admin
-from .models import SessaoModelo, SessaoRealizada
+from .models import SessaoModelo, SessaoRealizada, Tema
 from criancas.models import Crianca
 
-class SessaoModeloAdmin(admin.ModelAdmin):
-    pass # SessaoModelos are templates, so everyone sees them.
 
+@admin.register(Tema)
+class TemaAdmin(admin.ModelAdmin):
+    list_display = ('nome', 'cor', 'icone', 'criado_em')
+    search_fields = ('nome', 'descricao')
+
+
+@admin.register(SessaoModelo)
+class SessaoModeloAdmin(admin.ModelAdmin):
+    list_display = ('numero', 'titulo', 'tema', 'faixa_etaria')
+    list_filter = ('tema', 'faixa_etaria')
+    search_fields = ('titulo', 'objetivo', 'descricao')
+    ordering = ('numero',)
+
+@admin.register(SessaoRealizada)
 class SessaoRealizadaAdmin(admin.ModelAdmin):
     list_display = ('sessao_modelo', 'crianca', 'terapeuta', 'data', 'status')
     
@@ -24,5 +36,3 @@ class SessaoRealizadaAdmin(admin.ModelAdmin):
             obj.terapeuta = request.user
         super().save_model(request, obj, form, change)
 
-admin.site.register(SessaoModelo, SessaoModeloAdmin)
-admin.site.register(SessaoRealizada, SessaoRealizadaAdmin)

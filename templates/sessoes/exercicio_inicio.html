@@ -1,0 +1,49 @@
+{% extends 'base_ludica.html' %}
+
+{% block title %}Vamos começar?{% endblock %}
+
+{% block conteudo %}
+<style>
+    /* Gentle entry animation for children */
+    @keyframes float-gentle {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+    }
+    .animate-float {
+        animation: float-gentle 4s ease-in-out infinite;
+    }
+    
+    @keyframes fade-in-up {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+        animation: fade-in-up 0.8s ease-out forwards;
+    }
+</style>
+
+<div class="flex-1 flex flex-col items-center justify-center p-container-padding overflow-hidden">
+    <main class="w-full max-w-[600px] flex flex-col items-center text-center opacity-0 animate-fade-in">
+        <!-- Playful Icon Wrapper -->
+        <div class="mb-stack-md relative animate-float">
+            <!-- Decorative soft glowing background circle -->
+            <div class="absolute inset-0 bg-tertiary-fixed rounded-full blur-xl opacity-60"></div>
+            <!-- Main Icon Circle -->
+            <div class="relative bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-full p-8 shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-tertiary-fixed-dim">
+                <span class="material-symbols-outlined block text-[80px]" style="font-variation-settings: 'FILL' 1;">
+                    rocket_launch
+                </span>
+            </div>
+        </div>
+        <!-- Clean, large welcoming text -->
+        <h1 class="font-display-lg text-display-lg text-primary mb-stack-lg md:text-display-lg text-headline-lg-mobile">
+            Vamos começar?
+        </h1>
+        <!-- Action button -->
+        <a href="{% url 'sessoes:jogar_exercicio' sessao.id exercicio.id %}" class="inline-block bg-inverse-primary text-on-primary-container font-title-md text-title-md py-6 px-16 rounded-full shadow-sm border border-primary-fixed hover:bg-primary-fixed transition-all duration-300 transform hover:scale-105 active:scale-95 min-w-[280px] max-w-full text-center" style="text-decoration:none;">
+            Começar
+        </a>
+    </main>
+</div>
+{% endblock %}

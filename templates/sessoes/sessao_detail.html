@@ -8,6 +8,7 @@
     <div class="d-flex align-items-center gap-3">
         <span class="badge bg-primary">{{ sessao.get_status_display }}</span>
         <a href="{% url 'sessoes:relatorio_sessao_pdf' sessao.id %}" class="btn btn-outline-primary btn-sm" target="_blank">Exportar PDF</a>
+        <a href="{% url 'sessoes:executar_sessao' sessao.id %}" class="btn btn-primary btn-sm">Iniciar com a Criança</a>
     </div>
 </div>
 

@@ -1,0 +1,6309 @@
+[
+  {
+    "id": 1,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Sombras e Pares",
+    "engineType": "SHADOW_PAIR",
+    "prompt": "Ligar a imagem da Maçã à sua sombra.",
+    "opcoes": [
+      "Sombra redonda com caule",
+      "Sombra quadrada"
+    ],
+    "respostasValidas": [
+      "Sombra redonda com caule"
+    ],
+    "competenciaAlvo": "Discriminação Visual",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 2,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Sombras e Pares",
+    "engineType": "SHADOW_PAIR",
+    "prompt": "Ligar a Borboleta de asas abertas à sombra.",
+    "opcoes": [
+      "Sombra de asas abertas",
+      "Sombra de asas fechadas"
+    ],
+    "respostasValidas": [
+      "Sombra de asas abertas"
+    ],
+    "competenciaAlvo": "Emparelhamento Espacial",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 3,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Sombras e Pares",
+    "engineType": "SHADOW_PAIR",
+    "prompt": "Ligar o Gato sentado à sua sombra.",
+    "opcoes": [
+      "Sombra de cão a correr",
+      "Sombra de gato sentado"
+    ],
+    "respostasValidas": [
+      "Sombra de gato sentado"
+    ],
+    "competenciaAlvo": "Atenção Sustentada",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 4,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Sombras e Pares",
+    "engineType": "SHADOW_PAIR",
+    "prompt": "Ligar o Carro à sua sombra.",
+    "opcoes": [
+      "Sombra de bicicleta",
+      "Sombra de veículo de 4 rodas"
+    ],
+    "respostasValidas": [
+      "Sombra de veículo de 4 rodas"
+    ],
+    "competenciaAlvo": "Identificação de Contornos",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 5,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Sombras e Pares",
+    "engineType": "SHADOW_PAIR",
+    "prompt": "Ligar a Árvore à sua sombra.",
+    "opcoes": [
+      "Sombra de flor",
+      "Sombra de tronco com copa"
+    ],
+    "respostasValidas": [
+      "Sombra de tronco com copa"
+    ],
+    "competenciaAlvo": "Raciocínio Espacial",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 6,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Sombras e Pares",
+    "engineType": "SHADOW_PAIR",
+    "prompt": "Ligar o Sol à sua sombra.",
+    "opcoes": [
+      "Sombra circular com raios",
+      "Sombra de nuvem"
+    ],
+    "respostasValidas": [
+      "Sombra circular com raios"
+    ],
+    "competenciaAlvo": "Discriminação Visual",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 7,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Sombras e Pares",
+    "engineType": "SHADOW_PAIR",
+    "prompt": "Ligar a Estrela do mar à sombra.",
+    "opcoes": [
+      "Sombra de peixe",
+      "Sombra com cinco pontas"
+    ],
+    "respostasValidas": [
+      "Sombra com cinco pontas"
+    ],
+    "competenciaAlvo": "Correspondência Geométrica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 8,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Sombras e Pares",
+    "engineType": "SHADOW_PAIR",
+    "prompt": "Ligar o Peixe à sua sombra.",
+    "opcoes": [
+      "Sombra oval com nadadeira",
+      "Sombra redonda"
+    ],
+    "respostasValidas": [
+      "Sombra oval com nadadeira"
+    ],
+    "competenciaAlvo": "Atenção ao Detalhe",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 9,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Sombras e Pares",
+    "engineType": "SHADOW_PAIR",
+    "prompt": "Ligar a Casa à sua sombra.",
+    "opcoes": [
+      "Sombra retangular com teto",
+      "Sombra de prédio"
+    ],
+    "respostasValidas": [
+      "Sombra retangular com teto"
+    ],
+    "competenciaAlvo": "Emparelhamento Espacial",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 10,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Sombras e Pares",
+    "engineType": "SHADOW_PAIR",
+    "prompt": "Ligar o Pato à sua sombra.",
+    "opcoes": [
+      "Sombra de ave com bico chato",
+      "Sombra de águia"
+    ],
+    "respostasValidas": [
+      "Sombra de ave com bico chato"
+    ],
+    "competenciaAlvo": "Reconhecimento de Forma",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 11,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Sombras e Pares",
+    "engineType": "SHADOW_PAIR",
+    "prompt": "Ligar o Urso à sua sombra.",
+    "opcoes": [
+      "Sombra felpuda e redonda",
+      "Sombra de cobra"
+    ],
+    "respostasValidas": [
+      "Sombra felpuda e redonda"
+    ],
+    "competenciaAlvo": "Discriminação Visual",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 12,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Sombras e Pares",
+    "engineType": "SHADOW_PAIR",
+    "prompt": "Ligar a Flor à sua sombra.",
+    "opcoes": [
+      "Sombra com caule e pétalas",
+      "Sombra de folha"
+    ],
+    "respostasValidas": [
+      "Sombra com caule e pétalas"
+    ],
+    "competenciaAlvo": "Correspondência Geométrica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 13,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Sombras e Pares",
+    "engineType": "SHADOW_PAIR",
+    "prompt": "Ligar a Nuvem à sua sombra.",
+    "opcoes": [
+      "Sombra irregular arredondada",
+      "Sombra de lua"
+    ],
+    "respostasValidas": [
+      "Sombra irregular arredondada"
+    ],
+    "competenciaAlvo": "Percepção de Limites",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 14,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Sombras e Pares",
+    "engineType": "SHADOW_PAIR",
+    "prompt": "Ligar o Lápis à sua sombra.",
+    "opcoes": [
+      "Sombra longa com ponta",
+      "Sombra de livro"
+    ],
+    "respostasValidas": [
+      "Sombra longa com ponta"
+    ],
+    "competenciaAlvo": "Atenção Sustentada",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 15,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Sombras e Pares",
+    "engineType": "SHADOW_PAIR",
+    "prompt": "Ligar a Bola à sua sombra.",
+    "opcoes": [
+      "Sombra perfeitamente circular",
+      "Sombra quadrada"
+    ],
+    "respostasValidas": [
+      "Sombra perfeitamente circular",
+      "Sombra circular"
+    ],
+    "competenciaAlvo": "Emparelhamento Espacial",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 16,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "O Que Não Pertence?",
+    "engineType": "INTRUDER_SELECTION",
+    "prompt": "Qual não faz parte do grupo? Cachorro, Gato, Vaca, Sapato",
+    "opcoes": [
+      "Cachorro",
+      "Gato",
+      "Vaca",
+      "Sapato"
+    ],
+    "respostasValidas": [
+      "Sapato",
+      "Sapato (não é animal)"
+    ],
+    "competenciaAlvo": "Exclusão por Categoria",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 17,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "O Que Não Pertence?",
+    "engineType": "INTRUDER_SELECTION",
+    "prompt": "Qual não faz parte do grupo? Maçã, Banana, Uva, Cadeira",
+    "opcoes": [
+      "Maçã",
+      "Banana",
+      "Uva",
+      "Cadeira"
+    ],
+    "respostasValidas": [
+      "Cadeira",
+      "Cadeira (não é alimento)"
+    ],
+    "competenciaAlvo": "Raciocínio Dedutivo",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 18,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "O Que Não Pertence?",
+    "engineType": "INTRUDER_SELECTION",
+    "prompt": "Qual não faz parte do grupo? Carro, Ônibus, Bicicleta, Árvore",
+    "opcoes": [
+      "Carro",
+      "Ônibus",
+      "Bicicleta",
+      "Árvore"
+    ],
+    "respostasValidas": [
+      "Árvore",
+      "Árvore (não é veículo)"
+    ],
+    "competenciaAlvo": "Classificação Semântica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 19,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "O Que Não Pertence?",
+    "engineType": "INTRUDER_SELECTION",
+    "prompt": "Qual não faz parte do grupo? Camisa, Calça, Meia, Caderno",
+    "opcoes": [
+      "Camisa",
+      "Calça",
+      "Meia",
+      "Caderno"
+    ],
+    "respostasValidas": [
+      "Caderno",
+      "Caderno (não é roupa)"
+    ],
+    "competenciaAlvo": "Exclusão Lógica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 20,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "O Que Não Pertence?",
+    "engineType": "INTRUDER_SELECTION",
+    "prompt": "Qual não faz parte do grupo? Lápis, Borracha, Caderno, Garfo",
+    "opcoes": [
+      "Lápis",
+      "Borracha",
+      "Caderno",
+      "Garfo"
+    ],
+    "respostasValidas": [
+      "Garfo",
+      "Garfo (não é material escolar)"
+    ],
+    "competenciaAlvo": "Organização Conceptual",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 21,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "O Que Não Pertence?",
+    "engineType": "INTRUDER_SELECTION",
+    "prompt": "Qual não faz parte do grupo? Cama, Sofá, Mesa, Sol",
+    "opcoes": [
+      "Cama",
+      "Sofá",
+      "Mesa",
+      "Sol"
+    ],
+    "respostasValidas": [
+      "Sol",
+      "Sol (não é móvel de casa)"
+    ],
+    "competenciaAlvo": "Categorização Ambiental",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 22,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "O Que Não Pertence?",
+    "engineType": "INTRUDER_SELECTION",
+    "prompt": "Qual não faz parte do grupo? Azul, Vermelho, Amarelo, Cachorro",
+    "opcoes": [
+      "Azul",
+      "Vermelho",
+      "Amarelo",
+      "Cachorro"
+    ],
+    "respostasValidas": [
+      "Cachorro",
+      "Cachorro (não é cor)"
+    ],
+    "competenciaAlvo": "Exclusão por Atributo",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 23,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "O Que Não Pertence?",
+    "engineType": "INTRUDER_SELECTION",
+    "prompt": "Qual não faz parte do grupo? Olho, Nariz, Boca, Bola",
+    "opcoes": [
+      "Olho",
+      "Nariz",
+      "Boca",
+      "Bola"
+    ],
+    "respostasValidas": [
+      "Bola",
+      "Bola (não é parte do corpo)"
+    ],
+    "competenciaAlvo": "Esquema Corporal",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 24,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "O Que Não Pertence?",
+    "engineType": "INTRUDER_SELECTION",
+    "prompt": "Qual não faz parte do grupo? Sol, Nuvem, Estrela, Cama",
+    "opcoes": [
+      "Sol",
+      "Nuvem",
+      "Estrela",
+      "Cama"
+    ],
+    "respostasValidas": [
+      "Cama",
+      "Cama (não fica no céu)"
+    ],
+    "competenciaAlvo": "Raciocínio Dedutivo",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 25,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "O Que Não Pertence?",
+    "engineType": "INTRUDER_SELECTION",
+    "prompt": "Qual não faz parte do grupo? Copo, Prato, Colher, Gato",
+    "opcoes": [
+      "Copo",
+      "Prato",
+      "Colher",
+      "Gato"
+    ],
+    "respostasValidas": [
+      "Gato",
+      "Gato (não é utensílio)"
+    ],
+    "competenciaAlvo": "Classificação Semântica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 26,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "O Que Não Pertence?",
+    "engineType": "INTRUDER_SELECTION",
+    "prompt": "Qual não faz parte do grupo? Formiga, Abelha, Borboleta, Elefante",
+    "opcoes": [
+      "Formiga",
+      "Abelha",
+      "Borboleta",
+      "Elefante"
+    ],
+    "respostasValidas": [
+      "Elefante",
+      "Elefante (não é inseto)"
+    ],
+    "competenciaAlvo": "Comparação de Tamanhos",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 27,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "O Que Não Pertence?",
+    "engineType": "INTRUDER_SELECTION",
+    "prompt": "Qual não faz parte do grupo? Água, Suco, Leite, Pão",
+    "opcoes": [
+      "Água",
+      "Suco",
+      "Leite",
+      "Pão"
+    ],
+    "respostasValidas": [
+      "Pão",
+      "Pão (não é líquido)"
+    ],
+    "competenciaAlvo": "Diferenciação de Estado",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 28,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "O Que Não Pertence?",
+    "engineType": "INTRUDER_SELECTION",
+    "prompt": "Qual não faz parte do grupo? Mão, Pé, Braço, Chapéu",
+    "opcoes": [
+      "Mão",
+      "Pé",
+      "Braço",
+      "Chapéu"
+    ],
+    "respostasValidas": [
+      "Chapéu",
+      "Chapéu (não é do corpo)"
+    ],
+    "competenciaAlvo": "Esquema Corporal",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 29,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "O Que Não Pertence?",
+    "engineType": "INTRUDER_SELECTION",
+    "prompt": "Qual não faz parte do grupo? Violão, Tambor, Flauta, Maçã",
+    "opcoes": [
+      "Violão",
+      "Tambor",
+      "Flauta",
+      "Maçã"
+    ],
+    "respostasValidas": [
+      "Maçã",
+      "Maçã (não faz música)"
+    ],
+    "competenciaAlvo": "Exclusão Lógica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 30,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "O Que Não Pertence?",
+    "engineType": "INTRUDER_SELECTION",
+    "prompt": "Qual não faz parte do grupo? Escova, Sabonete, Shampoo, Bicicleta",
+    "opcoes": [
+      "Escova",
+      "Sabonete",
+      "Shampoo",
+      "Bicicleta"
+    ],
+    "respostasValidas": [
+      "Bicicleta",
+      "Bicicleta (não é higiene)"
+    ],
+    "competenciaAlvo": "Organização Conceptual",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 31,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Categorização Simples",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Qual destes animais vive na água?",
+    "opcoes": [
+      "Gato",
+      "Peixe",
+      "Pássaro"
+    ],
+    "respostasValidas": [
+      "Peixe"
+    ],
+    "competenciaAlvo": "Associação de Habitat",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 32,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Categorização Simples",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Qual objeto usamos para dormir?",
+    "opcoes": [
+      "Cadeira",
+      "Cama",
+      "Mesa"
+    ],
+    "respostasValidas": [
+      "Cama"
+    ],
+    "competenciaAlvo": "Função de Objetos",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 33,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Categorização Simples",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Qual destes alimentos é uma fruta?",
+    "opcoes": [
+      "Cenoura",
+      "Maçã",
+      "Alface"
+    ],
+    "respostasValidas": [
+      "Maçã"
+    ],
+    "competenciaAlvo": "Reconhecimento Alimentar",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 34,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Categorização Simples",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Qual destes animais sabe voar?",
+    "opcoes": [
+      "Pássaro",
+      "Cachorro",
+      "Tartaruga"
+    ],
+    "respostasValidas": [
+      "Pássaro"
+    ],
+    "competenciaAlvo": "Associação de Movimento",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 35,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Categorização Simples",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "O que vestimos nos nossos pés?",
+    "opcoes": [
+      "Luva",
+      "Chapéu",
+      "Sapato"
+    ],
+    "respostasValidas": [
+      "Sapato"
+    ],
+    "competenciaAlvo": "Esquema Corporal",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 36,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Categorização Simples",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "O que ilumina e aquece o nosso dia?",
+    "opcoes": [
+      "Lua",
+      "Sol",
+      "Estrela"
+    ],
+    "respostasValidas": [
+      "Sol"
+    ],
+    "competenciaAlvo": "Conhecimento Geral",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 37,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Categorização Simples",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Qual destes animais é muito grande?",
+    "opcoes": [
+      "Formiga",
+      "Elefante",
+      "Joaninha"
+    ],
+    "respostasValidas": [
+      "Elefante"
+    ],
+    "competenciaAlvo": "Noção de Grandeza",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 38,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Categorização Simples",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "O que usamos quando está a chover?",
+    "opcoes": [
+      "Guarda-chuva",
+      "Óculos de sol",
+      "Chinelo"
+    ],
+    "respostasValidas": [
+      "Guarda-chuva"
+    ],
+    "competenciaAlvo": "Relação Causa-Efeito",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 39,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Categorização Simples",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Que animal nos fornece o leite?",
+    "opcoes": [
+      "Vaca",
+      "Galinha",
+      "Sapo"
+    ],
+    "respostasValidas": [
+      "Vaca"
+    ],
+    "competenciaAlvo": "Associação de Origem",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 40,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Categorização Simples",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Que objeto usamos para desenhar?",
+    "opcoes": [
+      "Borracha",
+      "Lápis",
+      "Régua"
+    ],
+    "respostasValidas": [
+      "Lápis"
+    ],
+    "competenciaAlvo": "Função de Objetos",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 41,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Categorização Simples",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Qual destes animais anda muito devagar?",
+    "opcoes": [
+      "Cavalo",
+      "Leopardo",
+      "Tartaruga"
+    ],
+    "respostasValidas": [
+      "Tartaruga"
+    ],
+    "competenciaAlvo": "Noção de Velocidade",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 42,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Categorização Simples",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "O que usamos na nossa cabeça?",
+    "opcoes": [
+      "Chapéu",
+      "Meia",
+      "Cinto"
+    ],
+    "respostasValidas": [
+      "Chapéu"
+    ],
+    "competenciaAlvo": "Esquema Corporal",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 43,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Categorização Simples",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Qual destes alimentos tem um sabor doce?",
+    "opcoes": [
+      "Limão",
+      "Bolo",
+      "Sal"
+    ],
+    "respostasValidas": [
+      "Bolo"
+    ],
+    "competenciaAlvo": "Discriminação Sensorial",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 44,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Categorização Simples",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Onde guardamos a nossa roupa?",
+    "opcoes": [
+      "Geladeira",
+      "Guarda-roupa",
+      "Fogão"
+    ],
+    "respostasValidas": [
+      "Guarda-roupa"
+    ],
+    "competenciaAlvo": "Orientação Espacial/Função",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 45,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Categorização Simples",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Qual destes animais faz 'Miau'?",
+    "opcoes": [
+      "Cachorro",
+      "Pato",
+      "Gato"
+    ],
+    "respostasValidas": [
+      "Gato"
+    ],
+    "competenciaAlvo": "Associação Sonora",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 46,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Sequências Visuais",
+    "engineType": "NUMERIC_SEQUENCE",
+    "prompt": "Complete: Círculo, Quadrado, Círculo, Quadrado...",
+    "opcoes": [
+      "Círculo",
+      "Triângulo"
+    ],
+    "respostasValidas": [
+      "Círculo"
+    ],
+    "competenciaAlvo": "Reconhecimento de Padrões",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 47,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Sequências Visuais",
+    "engineType": "NUMERIC_SEQUENCE",
+    "prompt": "Complete: Sol, Lua, Sol, Lua...",
+    "opcoes": [
+      "Estrela",
+      "Sol"
+    ],
+    "respostasValidas": [
+      "Sol"
+    ],
+    "competenciaAlvo": "Pensamento Algorítmico",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 48,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Sequências Visuais",
+    "engineType": "NUMERIC_SEQUENCE",
+    "prompt": "Complete: Gato, Cão, Gato, Cão...",
+    "opcoes": [
+      "Gato",
+      "Pato"
+    ],
+    "respostasValidas": [
+      "Gato"
+    ],
+    "competenciaAlvo": "Memória de Trabalho",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 49,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Sequências Visuais",
+    "engineType": "NUMERIC_SEQUENCE",
+    "prompt": "Complete: Vermelho, Azul, Vermelho, Azul...",
+    "opcoes": [
+      "Amarelo",
+      "Vermelho"
+    ],
+    "respostasValidas": [
+      "Vermelho"
+    ],
+    "competenciaAlvo": "Sequenciação Cromática",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 50,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Sequências Visuais",
+    "engineType": "NUMERIC_SEQUENCE",
+    "prompt": "Complete: Grande, Pequeno, Grande, Pequeno...",
+    "opcoes": [
+      "Grande",
+      "Médio"
+    ],
+    "respostasValidas": [
+      "Grande"
+    ],
+    "competenciaAlvo": "Relação de Proporção",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 51,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Sequências Visuais",
+    "engineType": "NUMERIC_SEQUENCE",
+    "prompt": "Complete: Flor, Borboleta, Flor, Borboleta...",
+    "opcoes": [
+      "Flor",
+      "Árvore"
+    ],
+    "respostasValidas": [
+      "Flor"
+    ],
+    "competenciaAlvo": "Reconhecimento de Padrões",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 52,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Sequências Visuais",
+    "engineType": "NUMERIC_SEQUENCE",
+    "prompt": "Complete: Maçã, Banana, Maçã, Banana...",
+    "opcoes": [
+      "Laranja",
+      "Maçã"
+    ],
+    "respostasValidas": [
+      "Maçã"
+    ],
+    "competenciaAlvo": "Memória de Curto Prazo",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 53,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Sequências Visuais",
+    "engineType": "NUMERIC_SEQUENCE",
+    "prompt": "Complete: Estrela, Círculo, Estrela, Círculo...",
+    "opcoes": [
+      "Estrela",
+      "Quadrado"
+    ],
+    "respostasValidas": [
+      "Estrela"
+    ],
+    "competenciaAlvo": "Pensamento Algorítmico",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 54,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Sequências Visuais",
+    "engineType": "NUMERIC_SEQUENCE",
+    "prompt": "Complete: Sapo, Peixe, Sapo, Peixe...",
+    "opcoes": [
+      "Sapo",
+      "Cobra"
+    ],
+    "respostasValidas": [
+      "Sapo"
+    ],
+    "competenciaAlvo": "Sequenciação Lógica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 55,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Sequências Visuais",
+    "engineType": "NUMERIC_SEQUENCE",
+    "prompt": "Complete: Dia, Noite, Dia, Noite...",
+    "opcoes": [
+      "Dia",
+      "Tarde"
+    ],
+    "respostasValidas": [
+      "Dia"
+    ],
+    "competenciaAlvo": "Ciclos Naturais",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 56,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Sequências Visuais",
+    "engineType": "NUMERIC_SEQUENCE",
+    "prompt": "Complete: Triângulo, Quadrado, Triângulo...",
+    "opcoes": [
+      "Círculo",
+      "Quadrado"
+    ],
+    "respostasValidas": [
+      "Quadrado"
+    ],
+    "competenciaAlvo": "Memória Visual",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 57,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Sequências Visuais",
+    "engineType": "NUMERIC_SEQUENCE",
+    "prompt": "Complete: Pássaro, Ninho, Pássaro, Ninho...",
+    "opcoes": [
+      "Pássaro",
+      "Ovo"
+    ],
+    "respostasValidas": [
+      "Pássaro"
+    ],
+    "competenciaAlvo": "Reconhecimento de Padrões",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 58,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Sequências Visuais",
+    "engineType": "NUMERIC_SEQUENCE",
+    "prompt": "Complete: Lápis, Papel, Lápis, Papel...",
+    "opcoes": [
+      "Lápis",
+      "Borracha"
+    ],
+    "respostasValidas": [
+      "Lápis"
+    ],
+    "competenciaAlvo": "Pensamento Sequencial",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 59,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Sequências Visuais",
+    "engineType": "NUMERIC_SEQUENCE",
+    "prompt": "Complete: Mão, Pé, Mão, Pé...",
+    "opcoes": [
+      "Braço",
+      "Mão"
+    ],
+    "respostasValidas": [
+      "Mão"
+    ],
+    "competenciaAlvo": "Esquema Corporal em Série",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 60,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Sequências Visuais",
+    "engineType": "NUMERIC_SEQUENCE",
+    "prompt": "Complete: Carro, Moto, Carro, Moto...",
+    "opcoes": [
+      "Carro",
+      "Barco"
+    ],
+    "respostasValidas": [
+      "Carro"
+    ],
+    "competenciaAlvo": "Atenção Alternada",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 61,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Quem Sou Eu?",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Tenho uma tromba comprida e sou muito pesado.",
+    "opcoes": [
+      "Elefante",
+      "Macaco"
+    ],
+    "respostasValidas": [
+      "Elefante"
+    ],
+    "competenciaAlvo": "Dedução Simples",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 62,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Quem Sou Eu?",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Sou amarelo, brilho no céu e aqueço o dia.",
+    "opcoes": [
+      "Lua",
+      "Sol"
+    ],
+    "respostasValidas": [
+      "Sol"
+    ],
+    "competenciaAlvo": "Conhecimento do Mundo",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 63,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Quem Sou Eu?",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Tenho quatro patas e adoro ladrar.",
+    "opcoes": [
+      "Gato",
+      "Cão"
+    ],
+    "respostasValidas": [
+      "Cão"
+    ],
+    "competenciaAlvo": "Associação Auditivo-Visual",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 64,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Quem Sou Eu?",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Sou vermelha e doce. A Branca de Neve comeu-me.",
+    "opcoes": [
+      "Laranja",
+      "Maçã"
+    ],
+    "respostasValidas": [
+      "Maçã"
+    ],
+    "competenciaAlvo": "Memória Semântica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 65,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Quem Sou Eu?",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Tenho quatro rodas e levo-te a passear.",
+    "opcoes": [
+      "Avião",
+      "Carro"
+    ],
+    "respostasValidas": [
+      "Carro"
+    ],
+    "competenciaAlvo": "Associação Funcional",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 66,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Quem Sou Eu?",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Vivo na água e nado com nadadeiras.",
+    "opcoes": [
+      "Pato",
+      "Peixe"
+    ],
+    "respostasValidas": [
+      "Peixe"
+    ],
+    "competenciaAlvo": "Conhecimento Ambiental",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 67,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Quem Sou Eu?",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Sou macio e apoias a cabeça em mim para dormir.",
+    "opcoes": [
+      "Livro",
+      "Travesseiro"
+    ],
+    "respostasValidas": [
+      "Travesseiro"
+    ],
+    "competenciaAlvo": "Utilidade Diária",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 68,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Quem Sou Eu?",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Voo pelas flores e antes era uma lagarta.",
+    "opcoes": [
+      "Abelha",
+      "Borboleta"
+    ],
+    "respostasValidas": [
+      "Borboleta"
+    ],
+    "competenciaAlvo": "Dedução Simples",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 69,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Quem Sou Eu?",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Caio das nuvens e molho a rua toda.",
+    "opcoes": [
+      "Neve",
+      "Chuva"
+    ],
+    "respostasValidas": [
+      "Chuva"
+    ],
+    "competenciaAlvo": "Conhecimento Natural",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 70,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Quem Sou Eu?",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Sou verde por fora, vermelha por dentro.",
+    "opcoes": [
+      "Maçã",
+      "Melancia"
+    ],
+    "respostasValidas": [
+      "Melancia"
+    ],
+    "competenciaAlvo": "Discriminação de Cor/Fruta",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 71,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Quem Sou Eu?",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Dou leite, como erva e faço \"Muuu\".",
+    "opcoes": [
+      "Ovelha",
+      "Vaca"
+    ],
+    "respostasValidas": [
+      "Vaca"
+    ],
+    "competenciaAlvo": "Dedução Sensorial",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 72,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Quem Sou Eu?",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Tenho dentes mas não mordo. Arrumo o teu cabelo.",
+    "opcoes": [
+      "Escova de dentes",
+      "Pente"
+    ],
+    "respostasValidas": [
+      "Pente"
+    ],
+    "competenciaAlvo": "Pensamento Metafórico Simples",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 73,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Quem Sou Eu?",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Sou muito comprida e rastejo pelo chão.",
+    "opcoes": [
+      "Minhoca",
+      "Cobra"
+    ],
+    "respostasValidas": [
+      "Cobra"
+    ],
+    "competenciaAlvo": "Associação de Movimento",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 74,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Quem Sou Eu?",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Tenho duas rodas e precisas de te equilibrar em mim.",
+    "opcoes": [
+      "Carro",
+      "Bicicleta"
+    ],
+    "respostasValidas": [
+      "Bicicleta"
+    ],
+    "competenciaAlvo": "Utilidade de Transporte",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 75,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Quem Sou Eu?",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Sou gelado e derreto se não me comeres rápido.",
+    "opcoes": [
+      "Bolo",
+      "Gelado"
+    ],
+    "respostasValidas": [
+      "Gelado"
+    ],
+    "competenciaAlvo": "Relação Térmica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 76,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Associação Utilidade",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Com que objeto a Chave faz par?",
+    "opcoes": [
+      "Cadeado",
+      "Livro",
+      "Garfo"
+    ],
+    "respostasValidas": [
+      "Cadeado"
+    ],
+    "competenciaAlvo": "Causa e Efeito",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 77,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Associação Utilidade",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "O que a Escova de dentes limpa?",
+    "opcoes": [
+      "Cabelo",
+      "Dente",
+      "Sapato"
+    ],
+    "respostasValidas": [
+      "Dente"
+    ],
+    "competenciaAlvo": "Higiene Pessoal",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 78,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Associação Utilidade",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "O que comemos com a Colher?",
+    "opcoes": [
+      "Sopa",
+      "Pão",
+      "Maçã"
+    ],
+    "respostasValidas": [
+      "Sopa"
+    ],
+    "competenciaAlvo": "Funcionalidade",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 79,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Associação Utilidade",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "O que o Regador molha?",
+    "opcoes": [
+      "Computador",
+      "Planta",
+      "Cama"
+    ],
+    "respostasValidas": [
+      "Planta"
+    ],
+    "competenciaAlvo": "Ação e Objeto Alvo",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 80,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Associação Utilidade",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "O que usamos juntamente com o Pincel?",
+    "opcoes": [
+      "Tinta",
+      "Sabão",
+      "Terra"
+    ],
+    "respostasValidas": [
+      "Tinta"
+    ],
+    "competenciaAlvo": "Emparelhamento de Materiais",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 81,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Associação Utilidade",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "O que colocamos no Prato?",
+    "opcoes": [
+      "Comida",
+      "Roupa",
+      "Brinquedo"
+    ],
+    "respostasValidas": [
+      "Comida"
+    ],
+    "competenciaAlvo": "Rotinas Diárias",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 82,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Associação Utilidade",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "O que a Tesoura corta?",
+    "opcoes": [
+      "Papel",
+      "Água",
+      "Pedra"
+    ],
+    "respostasValidas": [
+      "Papel"
+    ],
+    "competenciaAlvo": "Ferramenta e Material",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 83,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Associação Utilidade",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "O que usamos para varrer o Chão?",
+    "opcoes": [
+      "Pente",
+      "Vassoura",
+      "Garfo"
+    ],
+    "respostasValidas": [
+      "Vassoura"
+    ],
+    "competenciaAlvo": "Limpeza",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 84,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Associação Utilidade",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Onde batemos com o Martelo?",
+    "opcoes": [
+      "Prego",
+      "Vidro",
+      "Almofada"
+    ],
+    "respostasValidas": [
+      "Prego"
+    ],
+    "competenciaAlvo": "Causa e Efeito",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 85,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Associação Utilidade",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "O que bebemos na Chávena?",
+    "opcoes": [
+      "Leite/Café",
+      "Areia",
+      "Tinta"
+    ],
+    "respostasValidas": [
+      "Leite/Café",
+      "Leite",
+      "Café"
+    ],
+    "competenciaAlvo": "Recipientes e Conteúdos",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 86,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Associação Utilidade",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "O que limpamos com o Sabonete?",
+    "opcoes": [
+      "Corpo",
+      "Carro",
+      "Parede"
+    ],
+    "respostasValidas": [
+      "Corpo"
+    ],
+    "competenciaAlvo": "Cuidados Pessoais",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 87,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Associação Utilidade",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Onde escrevemos com o Lápis?",
+    "opcoes": [
+      "Papel",
+      "Espelho",
+      "Casca"
+    ],
+    "respostasValidas": [
+      "Papel"
+    ],
+    "competenciaAlvo": "Associação de Utilidade",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 88,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Associação Utilidade",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Onde penduramos o Cabide?",
+    "opcoes": [
+      "Guarda-roupa",
+      "Frigorífico"
+    ],
+    "respostasValidas": [
+      "Guarda-roupa"
+    ],
+    "competenciaAlvo": "Organização Espacial",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 89,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Associação Utilidade",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "O que usamos para proteger os Olhos do sol?",
+    "opcoes": [
+      "Chapéu",
+      "Óculos de Sol"
+    ],
+    "respostasValidas": [
+      "Óculos de Sol",
+      "Óculos de sol"
+    ],
+    "competenciaAlvo": "Proteção e Função",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 90,
+    "faixaEtaria": "3 a 5 anos",
+    "faseDesenvolvimento": "Estimulação Sensório-Motora e Pré-Operatória",
+    "categoriaLogica": "Associação Utilidade",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "O que guardamos dentro da Mochila?",
+    "opcoes": [
+      "Livros e Cadernos",
+      "Água"
+    ],
+    "respostasValidas": [
+      "Livros e Cadernos"
+    ],
+    "competenciaAlvo": "Relação Continente/Conteúdo",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 91,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Palavras Embaralhadas",
+    "engineType": "ANAGRAM_ORDER",
+    "prompt": "Desembaralhe as letras para formar a palavra: O B L O",
+    "opcoes": [
+      "O",
+      "B",
+      "L",
+      "O"
+    ],
+    "respostasValidas": [
+      "BOLO",
+      "LOBO"
+    ],
+    "competenciaAlvo": "Planeamento Lexical",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 92,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Palavras Embaralhadas",
+    "engineType": "ANAGRAM_ORDER",
+    "prompt": "Desembaralhe as letras: A S C A",
+    "opcoes": [
+      "A",
+      "S",
+      "C",
+      "A"
+    ],
+    "respostasValidas": [
+      "CASA",
+      "SACA"
+    ],
+    "competenciaAlvo": "Flexibilidade Ortográfica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 93,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Palavras Embaralhadas",
+    "engineType": "ANAGRAM_ORDER",
+    "prompt": "Desembaralhe as letras: M O A R",
+    "opcoes": [
+      "M",
+      "O",
+      "A",
+      "R"
+    ],
+    "respostasValidas": [
+      "AMOR",
+      "ROMA",
+      "RAMO",
+      "MORA"
+    ],
+    "competenciaAlvo": "Atenção e Reorganização",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 94,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Palavras Embaralhadas",
+    "engineType": "ANAGRAM_ORDER",
+    "prompt": "Desembaralhe as letras: T G A O",
+    "opcoes": [
+      "T",
+      "G",
+      "A",
+      "O"
+    ],
+    "respostasValidas": [
+      "GATO",
+      "TOGA"
+    ],
+    "competenciaAlvo": "Acesso Lexical",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 95,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Palavras Embaralhadas",
+    "engineType": "ANAGRAM_ORDER",
+    "prompt": "Desembaralhe as letras: D V I A",
+    "opcoes": [
+      "D",
+      "V",
+      "I",
+      "A"
+    ],
+    "respostasValidas": [
+      "VIDA",
+      "DIVA"
+    ],
+    "competenciaAlvo": "Descodificação Visual",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 96,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Palavras Embaralhadas",
+    "engineType": "ANAGRAM_ORDER",
+    "prompt": "Desembaralhe as letras: Z A U L",
+    "opcoes": [
+      "Z",
+      "A",
+      "U",
+      "L"
+    ],
+    "respostasValidas": [
+      "AZUL"
+    ],
+    "competenciaAlvo": "Ortografia Básica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 97,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Palavras Embaralhadas",
+    "engineType": "ANAGRAM_ORDER",
+    "prompt": "Desembaralhe as letras: V ÃO O A",
+    "opcoes": [
+      "V",
+      "ÃO",
+      "O",
+      "A"
+    ],
+    "respostasValidas": [
+      "AVIÃO"
+    ],
+    "competenciaAlvo": "Consciência Fonológica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 98,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Palavras Embaralhadas",
+    "engineType": "ANAGRAM_ORDER",
+    "prompt": "Desembaralhe as letras: R O R R Á V E",
+    "opcoes": [
+      "R",
+      "O",
+      "R",
+      "R",
+      "Á",
+      "V",
+      "E"
+    ],
+    "respostasValidas": [
+      "ÁRVORE"
+    ],
+    "competenciaAlvo": "Manipulação Silábica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 99,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Palavras Embaralhadas",
+    "engineType": "ANAGRAM_ORDER",
+    "prompt": "Desembaralhe as letras: L ÃO O I V",
+    "opcoes": [
+      "L",
+      "ÃO",
+      "O",
+      "I",
+      "V"
+    ],
+    "respostasValidas": [
+      "VIOLÃO"
+    ],
+    "competenciaAlvo": "Planeamento Lexical",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 100,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Palavras Embaralhadas",
+    "engineType": "ANAGRAM_ORDER",
+    "prompt": "Desembaralhe as letras: F G O O",
+    "opcoes": [
+      "F",
+      "G",
+      "O",
+      "O"
+    ],
+    "respostasValidas": [
+      "FOGO"
+    ],
+    "competenciaAlvo": "Atenção Visual",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 101,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Palavras Embaralhadas",
+    "engineType": "ANAGRAM_ORDER",
+    "prompt": "Desembaralhe as letras: R A T O",
+    "opcoes": [
+      "R",
+      "A",
+      "T",
+      "O"
+    ],
+    "respostasValidas": [
+      "RATO",
+      "TORA",
+      "ROTA"
+    ],
+    "competenciaAlvo": "Descodificação Flexível",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 102,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Palavras Embaralhadas",
+    "engineType": "ANAGRAM_ORDER",
+    "prompt": "Desembaralhe as letras: G A O L",
+    "opcoes": [
+      "G",
+      "A",
+      "O",
+      "L"
+    ],
+    "respostasValidas": [
+      "LAGO",
+      "GOLA",
+      "GALO"
+    ],
+    "competenciaAlvo": "Combinação Lexical",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 103,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Palavras Embaralhadas",
+    "engineType": "ANAGRAM_ORDER",
+    "prompt": "Desembaralhe as letras: B ÃO S A",
+    "opcoes": [
+      "B",
+      "ÃO",
+      "S",
+      "A"
+    ],
+    "respostasValidas": [
+      "SABÃO"
+    ],
+    "competenciaAlvo": "Construção Ortográfica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 104,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Palavras Embaralhadas",
+    "engineType": "ANAGRAM_ORDER",
+    "prompt": "Desembaralhe as letras: C M A A",
+    "opcoes": [
+      "C",
+      "M",
+      "A",
+      "A"
+    ],
+    "respostasValidas": [
+      "CAMA",
+      "MACA"
+    ],
+    "competenciaAlvo": "Organização Cognitiva",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 105,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Palavras Embaralhadas",
+    "engineType": "ANAGRAM_ORDER",
+    "prompt": "Desembaralhe as letras: I O R",
+    "opcoes": [
+      "I",
+      "O",
+      "R"
+    ],
+    "respostasValidas": [
+      "RIO"
+    ],
+    "competenciaAlvo": "Raciocínio Espacial",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 106,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Qual Letra Falta?",
+    "engineType": "GAP_FILL",
+    "prompt": "C A C H O _ R O",
+    "opcoes": [
+      "R",
+      "M",
+      "P"
+    ],
+    "respostasValidas": [
+      "R"
+    ],
+    "competenciaAlvo": "Ortografia de Dígrafos",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 107,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Qual Letra Falta?",
+    "engineType": "GAP_FILL",
+    "prompt": "P A S S A _ I N H O",
+    "opcoes": [
+      "R",
+      "S",
+      "T"
+    ],
+    "respostasValidas": [
+      "R"
+    ],
+    "competenciaAlvo": "Discriminação Fonológica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 108,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Qual Letra Falta?",
+    "engineType": "GAP_FILL",
+    "prompt": "E S T _ E L A",
+    "opcoes": [
+      "P",
+      "R",
+      "M"
+    ],
+    "respostasValidas": [
+      "R"
+    ],
+    "competenciaAlvo": "Estruturas Consonânticas",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 109,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Qual Letra Falta?",
+    "engineType": "GAP_FILL",
+    "prompt": "B I _ I C L E T A",
+    "opcoes": [
+      "S",
+      "C",
+      "Z"
+    ],
+    "respostasValidas": [
+      "C"
+    ],
+    "competenciaAlvo": "Regras Ortográficas (C/S)",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 110,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Qual Letra Falta?",
+    "engineType": "GAP_FILL",
+    "prompt": "C _ V A L O",
+    "opcoes": [
+      "O",
+      "A",
+      "E"
+    ],
+    "respostasValidas": [
+      "A"
+    ],
+    "competenciaAlvo": "Identificação Vocálica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 111,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Qual Letra Falta?",
+    "engineType": "GAP_FILL",
+    "prompt": "M O _ I L A",
+    "opcoes": [
+      "X",
+      "CH",
+      "G"
+    ],
+    "respostasValidas": [
+      "CH"
+    ],
+    "competenciaAlvo": "Ortografia Complexa (X/CH)",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 112,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Qual Letra Falta?",
+    "engineType": "GAP_FILL",
+    "prompt": "T A _ T A R U G A",
+    "opcoes": [
+      "R",
+      "L",
+      "S"
+    ],
+    "respostasValidas": [
+      "R"
+    ],
+    "competenciaAlvo": "Final de Sílaba",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 113,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Qual Letra Falta?",
+    "engineType": "GAP_FILL",
+    "prompt": "G I R _ F A",
+    "opcoes": [
+      "E",
+      "A",
+      "O"
+    ],
+    "respostasValidas": [
+      "A"
+    ],
+    "competenciaAlvo": "Reconhecimento Lexical",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 114,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Qual Letra Falta?",
+    "engineType": "GAP_FILL",
+    "prompt": "F E _ J ÃO",
+    "opcoes": [
+      "I",
+      "E",
+      "U"
+    ],
+    "respostasValidas": [
+      "I"
+    ],
+    "competenciaAlvo": "Ditongos",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 115,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Qual Letra Falta?",
+    "engineType": "GAP_FILL",
+    "prompt": "E S C _ L A",
+    "opcoes": [
+      "O",
+      "A",
+      "U"
+    ],
+    "respostasValidas": [
+      "O"
+    ],
+    "competenciaAlvo": "Memória Ortográfica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 116,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Qual Letra Falta?",
+    "engineType": "GAP_FILL",
+    "prompt": "B O _ E C A",
+    "opcoes": [
+      "M",
+      "N",
+      "P"
+    ],
+    "respostasValidas": [
+      "N"
+    ],
+    "competenciaAlvo": "Consciência Fonológica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 117,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Qual Letra Falta?",
+    "engineType": "GAP_FILL",
+    "prompt": "M A _ A C O",
+    "opcoes": [
+      "C",
+      "S",
+      "Z"
+    ],
+    "respostasValidas": [
+      "C"
+    ],
+    "competenciaAlvo": "Discriminação Visual",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 118,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Qual Letra Falta?",
+    "engineType": "GAP_FILL",
+    "prompt": "T E L E _ I S ÃO",
+    "opcoes": [
+      "F",
+      "V",
+      "M"
+    ],
+    "respostasValidas": [
+      "V"
+    ],
+    "competenciaAlvo": "Associação Som/Letra",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 119,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Qual Letra Falta?",
+    "engineType": "GAP_FILL",
+    "prompt": "L _ R A N J A",
+    "opcoes": [
+      "O",
+      "A",
+      "E"
+    ],
+    "respostasValidas": [
+      "A"
+    ],
+    "competenciaAlvo": "Reconhecimento Lexical",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 120,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Qual Letra Falta?",
+    "engineType": "GAP_FILL",
+    "prompt": "S A P A _ O",
+    "opcoes": [
+      "P",
+      "T",
+      "C"
+    ],
+    "respostasValidas": [
+      "T"
+    ],
+    "competenciaAlvo": "Fecho Ortográfico",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 121,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Verdadeiro ou Falso",
+    "engineType": "TRUE_FALSE",
+    "prompt": "As vacas fornecem-nos o leite.",
+    "opcoes": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "respostasValidas": [
+      "Verdadeiro",
+      "V",
+      "True"
+    ],
+    "competenciaAlvo": "Conhecimento Geral",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 122,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Verdadeiro ou Falso",
+    "engineType": "TRUE_FALSE",
+    "prompt": "O sol brilha intensamente durante a noite.",
+    "opcoes": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "respostasValidas": [
+      "Falso",
+      "F",
+      "False"
+    ],
+    "competenciaAlvo": "Lógica e Ciclos",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 123,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Verdadeiro ou Falso",
+    "engineType": "TRUE_FALSE",
+    "prompt": "Os peixes conseguem respirar fora de água.",
+    "opcoes": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "respostasValidas": [
+      "Falso",
+      "F",
+      "False"
+    ],
+    "competenciaAlvo": "Ciências da Natureza",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 124,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Verdadeiro ou Falso",
+    "engineType": "TRUE_FALSE",
+    "prompt": "O gelo é feito de água que congelou.",
+    "opcoes": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "respostasValidas": [
+      "Verdadeiro",
+      "V",
+      "True"
+    ],
+    "competenciaAlvo": "Estados da Matéria",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 125,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Verdadeiro ou Falso",
+    "engineType": "TRUE_FALSE",
+    "prompt": "Um triângulo possui quatro lados.",
+    "opcoes": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "respostasValidas": [
+      "Falso",
+      "F",
+      "False"
+    ],
+    "competenciaAlvo": "Geometria Básica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 126,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Verdadeiro ou Falso",
+    "engineType": "TRUE_FALSE",
+    "prompt": "As formigas são animais maiores que os elefantes.",
+    "opcoes": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "respostasValidas": [
+      "Falso",
+      "F",
+      "False"
+    ],
+    "competenciaAlvo": "Noção de Proporção",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 127,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Verdadeiro ou Falso",
+    "engineType": "TRUE_FALSE",
+    "prompt": "O número 5 representa uma quantidade maior que o 2.",
+    "opcoes": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "respostasValidas": [
+      "Verdadeiro",
+      "V",
+      "True"
+    ],
+    "competenciaAlvo": "Valor Numérico",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 128,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Verdadeiro ou Falso",
+    "engineType": "TRUE_FALSE",
+    "prompt": "Os pássaros constroem ninhos para os seus ovos.",
+    "opcoes": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "respostasValidas": [
+      "Verdadeiro",
+      "V",
+      "True"
+    ],
+    "competenciaAlvo": "Conhecimento Ambiental",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 129,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Verdadeiro ou Falso",
+    "engineType": "TRUE_FALSE",
+    "prompt": "O mês de dezembro é o último mês do ano.",
+    "opcoes": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "respostasValidas": [
+      "Verdadeiro",
+      "V",
+      "True"
+    ],
+    "competenciaAlvo": "Orientação Temporal",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 130,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Verdadeiro ou Falso",
+    "engineType": "TRUE_FALSE",
+    "prompt": "A maçã é uma fruta que tem a cor azul.",
+    "opcoes": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "respostasValidas": [
+      "Falso",
+      "F",
+      "False"
+    ],
+    "competenciaAlvo": "Memória Semântica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 131,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Verdadeiro ou Falso",
+    "engineType": "TRUE_FALSE",
+    "prompt": "Um dia completo tem 24 horas.",
+    "opcoes": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "respostasValidas": [
+      "Verdadeiro",
+      "V",
+      "True"
+    ],
+    "competenciaAlvo": "Noção de Tempo",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 132,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Verdadeiro ou Falso",
+    "engineType": "TRUE_FALSE",
+    "prompt": "Lisboa é a capital de Espanha.",
+    "opcoes": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "respostasValidas": [
+      "Falso",
+      "F",
+      "False"
+    ],
+    "competenciaAlvo": "Geografia Básica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 133,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Verdadeiro ou Falso",
+    "engineType": "TRUE_FALSE",
+    "prompt": "O inverno é a estação mais quente de todo o ano.",
+    "opcoes": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "respostasValidas": [
+      "Falso",
+      "F",
+      "False"
+    ],
+    "competenciaAlvo": "Ciclos Climáticos",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 134,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Verdadeiro ou Falso",
+    "engineType": "TRUE_FALSE",
+    "prompt": "A cor do céu num dia limpo e ensolarado é azul.",
+    "opcoes": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "respostasValidas": [
+      "Verdadeiro",
+      "V",
+      "True"
+    ],
+    "competenciaAlvo": "Percepção Ambiental",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 135,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Verdadeiro ou Falso",
+    "engineType": "TRUE_FALSE",
+    "prompt": "A lagarta transforma-se numa borboleta.",
+    "opcoes": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "respostasValidas": [
+      "Verdadeiro",
+      "V",
+      "True"
+    ],
+    "competenciaAlvo": "Biologia Simples",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 136,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Problemas Lógicos",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "O João tinha 3 maçãs. Ganhou mais 2. Quantas tem?",
+    "opcoes": [
+      "4",
+      "5",
+      "6"
+    ],
+    "respostasValidas": [
+      "5"
+    ],
+    "competenciaAlvo": "Adição Simples",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 137,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Problemas Lógicos",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "A Maria tinha 5 euros, gastou 2 euros. Quanto sobrou?",
+    "opcoes": [
+      "3",
+      "4",
+      "7"
+    ],
+    "respostasValidas": [
+      "3"
+    ],
+    "competenciaAlvo": "Subtração Simples",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 138,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Problemas Lógicos",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Numa caixa cabem 6 lápis. Estão lá 4. Faltam quantos?",
+    "opcoes": [
+      "1",
+      "2",
+      "3"
+    ],
+    "respostasValidas": [
+      "2"
+    ],
+    "competenciaAlvo": "Complemento Numérico",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 139,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Problemas Lógicos",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Um cão tem 4 patas. Dois cães juntos têm quantas?",
+    "opcoes": [
+      "6",
+      "8",
+      "10"
+    ],
+    "respostasValidas": [
+      "8"
+    ],
+    "competenciaAlvo": "Multiplicação Básica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 140,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Problemas Lógicos",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Se hoje é terça-feira, que dia será amanhã?",
+    "opcoes": [
+      "Segunda",
+      "Quarta"
+    ],
+    "respostasValidas": [
+      "Quarta"
+    ],
+    "competenciaAlvo": "Orientação Temporal",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 141,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Problemas Lógicos",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Tenho 10 cromos. Dei 5 ao amigo. Com quantos fiquei?",
+    "opcoes": [
+      "4",
+      "5",
+      "15"
+    ],
+    "respostasValidas": [
+      "5"
+    ],
+    "competenciaAlvo": "Subtração Simples",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 142,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Problemas Lógicos",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Uma bicicleta tem 2 rodas. E 3 bicicletas?",
+    "opcoes": [
+      "5",
+      "6",
+      "8"
+    ],
+    "respostasValidas": [
+      "6"
+    ],
+    "competenciaAlvo": "Multiplicação Básica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 143,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Problemas Lógicos",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "O Pedro tem 7 anos. A irmã tem 9. Quem é mais velho?",
+    "opcoes": [
+      "Pedro",
+      "Irmã"
+    ],
+    "respostasValidas": [
+      "Irmã"
+    ],
+    "competenciaAlvo": "Comparação Numérica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 144,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Problemas Lógicos",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Num aquário havia 8 peixes. 3 fugiram. Quantos ficaram?",
+    "opcoes": [
+      "5",
+      "11",
+      "4"
+    ],
+    "respostasValidas": [
+      "5"
+    ],
+    "competenciaAlvo": "Lógica de Subtração",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 145,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Problemas Lógicos",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Uma piza foi cortada em 4 fatias. Comi 1. Sobraram?",
+    "opcoes": [
+      "2",
+      "3",
+      "4"
+    ],
+    "respostasValidas": [
+      "3"
+    ],
+    "competenciaAlvo": "Fração/Subtração",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 146,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Problemas Lógicos",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Tenho duas notas de 5 euros. Quantos euros tenho?",
+    "opcoes": [
+      "5",
+      "10",
+      "20"
+    ],
+    "respostasValidas": [
+      "10"
+    ],
+    "competenciaAlvo": "Valor do Dinheiro",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 147,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Problemas Lógicos",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Um inseto tem 6 pernas. Perdeu 1. Com quantas ficou?",
+    "opcoes": [
+      "5",
+      "7",
+      "4"
+    ],
+    "respostasValidas": [
+      "5"
+    ],
+    "competenciaAlvo": "Subtração Concreta",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 148,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Problemas Lógicos",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Uma mão tem 5 dedos. Duas mãos têm quantos?",
+    "opcoes": [
+      "5",
+      "10",
+      "15"
+    ],
+    "respostasValidas": [
+      "10"
+    ],
+    "competenciaAlvo": "Dobro Matemático",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 149,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Problemas Lógicos",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "O Lucas dormiu às 20h e dormiu 10 horas. Acordou às?",
+    "opcoes": [
+      "5h",
+      "6h",
+      "7h"
+    ],
+    "respostasValidas": [
+      "6h",
+      "6"
+    ],
+    "competenciaAlvo": "Cálculo de Tempo",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 150,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Problemas Lógicos",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Havia 7 pássaros na árvore. Chegaram mais 4. Total?",
+    "opcoes": [
+      "10",
+      "11",
+      "12"
+    ],
+    "respostasValidas": [
+      "11"
+    ],
+    "competenciaAlvo": "Adição Simples",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 151,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Intruso Complexo",
+    "engineType": "INTRUDER_SELECTION",
+    "prompt": "Martelo, Serrote, Alicate, Maçã",
+    "opcoes": [
+      "Martelo",
+      "Serrote",
+      "Alicate",
+      "Maçã"
+    ],
+    "respostasValidas": [
+      "Maçã",
+      "Maçã (não é ferramenta)"
+    ],
+    "competenciaAlvo": "Exclusão Abstrata",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 152,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Intruso Complexo",
+    "engineType": "INTRUDER_SELECTION",
+    "prompt": "Carro, Mota, Comboio, Avião",
+    "opcoes": [
+      "Carro",
+      "Mota",
+      "Comboio",
+      "Avião"
+    ],
+    "respostasValidas": [
+      "Avião",
+      "Avião (não anda no solo)"
+    ],
+    "competenciaAlvo": "Categorização de Transporte",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 153,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Intruso Complexo",
+    "engineType": "INTRUDER_SELECTION",
+    "prompt": "Natação, Futebol, Basquete, Voleibol",
+    "opcoes": [
+      "Natação",
+      "Futebol",
+      "Basquete",
+      "Voleibol"
+    ],
+    "respostasValidas": [
+      "Natação",
+      "Natação (sem bola)"
+    ],
+    "competenciaAlvo": "Classificação Desportiva",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 154,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Intruso Complexo",
+    "engineType": "INTRUDER_SELECTION",
+    "prompt": "Violão, Violino, Bateria, Guitarra",
+    "opcoes": [
+      "Violão",
+      "Violino",
+      "Bateria",
+      "Guitarra"
+    ],
+    "respostasValidas": [
+      "Bateria",
+      "Bateria (sem cordas)"
+    ],
+    "competenciaAlvo": "Propriedades Físicas",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 155,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Intruso Complexo",
+    "engineType": "INTRUDER_SELECTION",
+    "prompt": "Médico, Professor, Mesa, Bombeiro",
+    "opcoes": [
+      "Médico",
+      "Professor",
+      "Mesa",
+      "Bombeiro"
+    ],
+    "respostasValidas": [
+      "Mesa",
+      "Mesa (não é profissão)"
+    ],
+    "competenciaAlvo": "Organização Semântica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 156,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Intruso Complexo",
+    "engineType": "INTRUDER_SELECTION",
+    "prompt": "Tubarão, Baleia, Golfinho, Águia",
+    "opcoes": [
+      "Tubarão",
+      "Baleia",
+      "Golfinho",
+      "Águia"
+    ],
+    "respostasValidas": [
+      "Águia",
+      "Águia (não é marinho)"
+    ],
+    "competenciaAlvo": "Classificação Habitacional",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 157,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Intruso Complexo",
+    "engineType": "INTRUDER_SELECTION",
+    "prompt": "Portugal, Espanha, Europa, França",
+    "opcoes": [
+      "Portugal",
+      "Espanha",
+      "Europa",
+      "França"
+    ],
+    "respostasValidas": [
+      "Europa",
+      "Europa (continente)"
+    ],
+    "competenciaAlvo": "Geografia Complexa",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 158,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Intruso Complexo",
+    "engineType": "INTRUDER_SELECTION",
+    "prompt": "Camisa, Casaco, Meia, Guarda-chuva",
+    "opcoes": [
+      "Camisa",
+      "Casaco",
+      "Meia",
+      "Guarda-chuva"
+    ],
+    "respostasValidas": [
+      "Guarda-chuva",
+      "Guarda-chuva (não vestuário)"
+    ],
+    "competenciaAlvo": "Funcionalidade",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 159,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Intruso Complexo",
+    "engineType": "INTRUDER_SELECTION",
+    "prompt": "Tristeza, Raiva, Mesa, Alegria",
+    "opcoes": [
+      "Tristeza",
+      "Raiva",
+      "Mesa",
+      "Alegria"
+    ],
+    "respostasValidas": [
+      "Mesa",
+      "Mesa (não é emoção)"
+    ],
+    "competenciaAlvo": "Abstração Emocional",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 160,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Intruso Complexo",
+    "engineType": "INTRUDER_SELECTION",
+    "prompt": "Olhos, Nariz, Boca, Joelho",
+    "opcoes": [
+      "Olhos",
+      "Nariz",
+      "Boca",
+      "Joelho"
+    ],
+    "respostasValidas": [
+      "Joelho",
+      "Joelho (não no rosto)"
+    ],
+    "competenciaAlvo": "Anatomia e Agrupamento",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 161,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Intruso Complexo",
+    "engineType": "INTRUDER_SELECTION",
+    "prompt": "Primavera, Verão, Chuva, Outono",
+    "opcoes": [
+      "Primavera",
+      "Verão",
+      "Chuva",
+      "Outono"
+    ],
+    "respostasValidas": [
+      "Chuva",
+      "Chuva (não é estação)"
+    ],
+    "competenciaAlvo": "Fenómenos Climáticos",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 162,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Intruso Complexo",
+    "engineType": "INTRUDER_SELECTION",
+    "prompt": "Janeiro, Terça-feira, Março, Abril",
+    "opcoes": [
+      "Janeiro",
+      "Terça-feira",
+      "Março",
+      "Abril"
+    ],
+    "respostasValidas": [
+      "Terça-feira",
+      "Terça-feira (dia)"
+    ],
+    "competenciaAlvo": "Calendário e Estrutura",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 163,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Intruso Complexo",
+    "engineType": "INTRUDER_SELECTION",
+    "prompt": "Ouro, Prata, Ferro, Algodão",
+    "opcoes": [
+      "Ouro",
+      "Prata",
+      "Ferro",
+      "Algodão"
+    ],
+    "respostasValidas": [
+      "Algodão",
+      "Algodão (não é metal)"
+    ],
+    "competenciaAlvo": "Propriedades da Matéria",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 164,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Intruso Complexo",
+    "engineType": "INTRUDER_SELECTION",
+    "prompt": "Pato, Galinha, Peru, Leão",
+    "opcoes": [
+      "Pato",
+      "Galinha",
+      "Peru",
+      "Leão"
+    ],
+    "respostasValidas": [
+      "Leão",
+      "Leão (não é ave/bota ovo)"
+    ],
+    "competenciaAlvo": "Categorização Animal",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 165,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Intruso Complexo",
+    "engineType": "INTRUDER_SELECTION",
+    "prompt": "Português, Matemática, Ciências, Recreio",
+    "opcoes": [
+      "Português",
+      "Matemática",
+      "Ciências",
+      "Recreio"
+    ],
+    "respostasValidas": [
+      "Recreio",
+      "Recreio (não é disciplina)"
+    ],
+    "competenciaAlvo": "Conceitos Escolares",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 166,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Mania de Letra",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Letra A + Animal",
+    "opcoes": [
+      "Abelha",
+      "Bolo",
+      "Árvore"
+    ],
+    "respostasValidas": [
+      "Abelha"
+    ],
+    "competenciaAlvo": "Memória de Evocação",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 167,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Mania de Letra",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Letra B + Cor",
+    "opcoes": [
+      "Banana",
+      "Branco",
+      "Brinco"
+    ],
+    "respostasValidas": [
+      "Branco"
+    ],
+    "competenciaAlvo": "Associação Condicionada",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 168,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Mania de Letra",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Letra C + Móvel de Casa",
+    "opcoes": [
+      "Cama",
+      "Cão",
+      "Cebola"
+    ],
+    "respostasValidas": [
+      "Cama"
+    ],
+    "competenciaAlvo": "Filtragem Cognitiva",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 169,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Mania de Letra",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Letra M + Fruta",
+    "opcoes": [
+      "Mesa",
+      "Macaco",
+      "Maçã"
+    ],
+    "respostasValidas": [
+      "Maçã"
+    ],
+    "competenciaAlvo": "Flexibilidade Lexical",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 170,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Mania de Letra",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Letra P + País",
+    "opcoes": [
+      "Porta",
+      "Portugal",
+      "Parede"
+    ],
+    "respostasValidas": [
+      "Portugal"
+    ],
+    "competenciaAlvo": "Geografia e Letra Inicial",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 171,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Mania de Letra",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Letra V + Cor",
+    "opcoes": [
+      "Vidro",
+      "Vermelho",
+      "Vaca"
+    ],
+    "respostasValidas": [
+      "Vermelho"
+    ],
+    "competenciaAlvo": "Evocação por Categoria",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 172,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Mania de Letra",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Letra G + Animal",
+    "opcoes": [
+      "Gato",
+      "Gota",
+      "Gelo"
+    ],
+    "respostasValidas": [
+      "Gato"
+    ],
+    "competenciaAlvo": "Organização Semântica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 173,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Mania de Letra",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Letra E + Animal muito grande",
+    "opcoes": [
+      "Elefante",
+      "Escova",
+      "Estrela"
+    ],
+    "respostasValidas": [
+      "Elefante"
+    ],
+    "competenciaAlvo": "Associação Múltipla",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 174,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Mania de Letra",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Letra J + Animal selvagem",
+    "opcoes": [
+      "Janela",
+      "Jacaré",
+      "Jogo"
+    ],
+    "respostasValidas": [
+      "Jacaré"
+    ],
+    "competenciaAlvo": "Filtragem Lexical",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 175,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Mania de Letra",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Letra T + Fruta/Legume vermelho",
+    "opcoes": [
+      "Tatu",
+      "Tomate",
+      "Telhado"
+    ],
+    "respostasValidas": [
+      "Tomate"
+    ],
+    "competenciaAlvo": "Associação de Propriedades",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 176,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Mania de Letra",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Letra S + Calçado",
+    "opcoes": [
+      "Sol",
+      "Sapato",
+      "Sabão"
+    ],
+    "respostasValidas": [
+      "Sapato"
+    ],
+    "competenciaAlvo": "Acesso ao Vocabulário",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 177,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Mania de Letra",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Letra L + Fruta ácida/azeda",
+    "opcoes": [
+      "Lápis",
+      "Limão",
+      "Lata"
+    ],
+    "respostasValidas": [
+      "Limão"
+    ],
+    "competenciaAlvo": "Evocação Sensorial",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 178,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Mania de Letra",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Letra U + Fruta de cacho",
+    "opcoes": [
+      "Urso",
+      "Uva",
+      "Unha"
+    ],
+    "respostasValidas": [
+      "Uva"
+    ],
+    "competenciaAlvo": "Categoria Específica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 179,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Mania de Letra",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Letra O + Parte do rosto",
+    "opcoes": [
+      "Olho",
+      "Ovo",
+      "Onda"
+    ],
+    "respostasValidas": [
+      "Olho"
+    ],
+    "competenciaAlvo": "Vocabulário Anatómico",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 180,
+    "faixaEtaria": "6 a 10 anos",
+    "faseDesenvolvimento": "Segunda Infância - Alfabetização e Lógica Concreta",
+    "categoriaLogica": "Mania de Letra",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Letra D + Número",
+    "opcoes": [
+      "Dado",
+      "Dez",
+      "Dedo"
+    ],
+    "respostasValidas": [
+      "Dez"
+    ],
+    "competenciaAlvo": "Raciocínio Matemático",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 181,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Pensamento Lateral",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Tem dentes, não morde e ajuda no teu dia a dia.",
+    "opcoes": [
+      "Pente",
+      "Tubarão",
+      "Serra"
+    ],
+    "respostasValidas": [
+      "Pente"
+    ],
+    "competenciaAlvo": "Raciocínio Analógico",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 182,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Pensamento Lateral",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Quanto mais tiras de mim, maior eu fico. O que sou?",
+    "opcoes": [
+      "Dinheiro",
+      "Buraco",
+      "Pão"
+    ],
+    "respostasValidas": [
+      "Buraco"
+    ],
+    "competenciaAlvo": "Flexibilidade Cognitiva",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 183,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Pensamento Lateral",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "O que anda sem pés e voa sem asas?",
+    "opcoes": [
+      "Pássaro",
+      "Tempo/Nuvem"
+    ],
+    "respostasValidas": [
+      "Tempo/Nuvem",
+      "Tempo",
+      "Nuvem"
+    ],
+    "competenciaAlvo": "Pensamento Metafórico",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 184,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Pensamento Lateral",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Cheio de furos, mas consegue reter muita água.",
+    "opcoes": [
+      "Rede",
+      "Esponja",
+      "Peneira"
+    ],
+    "respostasValidas": [
+      "Esponja"
+    ],
+    "competenciaAlvo": "Contradição Lógica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 185,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Pensamento Lateral",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Tem cidades sem casas, rios sem água e florestas sem árvores.",
+    "opcoes": [
+      "Mapa",
+      "Globo",
+      "Planeta"
+    ],
+    "respostasValidas": [
+      "Mapa"
+    ],
+    "competenciaAlvo": "Abstração Espacial",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 186,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Pensamento Lateral",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Podes quebrar-me apenas falando o meu nome.",
+    "opcoes": [
+      "Vidro",
+      "Silêncio",
+      "Segredo"
+    ],
+    "respostasValidas": [
+      "Silêncio"
+    ],
+    "competenciaAlvo": "Metacognição",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 187,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Pensamento Lateral",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Sou de todos, ninguém me prende. Formo a praia.",
+    "opcoes": [
+      "Água",
+      "Vento",
+      "Areia"
+    ],
+    "respostasValidas": [
+      "Areia"
+    ],
+    "competenciaAlvo": "Associação Conceptual",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 188,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Pensamento Lateral",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Tenho pescoço, não tenho cabeça. Tenho corpo, não tenho braços.",
+    "opcoes": [
+      "Garrafa",
+      "Camisa",
+      "Árvore"
+    ],
+    "respostasValidas": [
+      "Garrafa"
+    ],
+    "competenciaAlvo": "Antropomorfismo Físico",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 189,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Pensamento Lateral",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "O que sempre cai, mas nunca se aleija?",
+    "opcoes": [
+      "Pedra",
+      "Chuva/Noite"
+    ],
+    "respostasValidas": [
+      "Chuva",
+      "Chuva/Noite",
+      "Noite"
+    ],
+    "competenciaAlvo": "Desconstrução de Verbos",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 190,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Pensamento Lateral",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Nasço grande e morro pequeno. O que sou?",
+    "opcoes": [
+      "Humano",
+      "Lápis/Vela"
+    ],
+    "respostasValidas": [
+      "Lápis/Vela",
+      "Lápis",
+      "Vela"
+    ],
+    "competenciaAlvo": "Raciocínio Inverso",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 191,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Pensamento Lateral",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Quem faz não quer; quem compra não usa; quem usa não vê.",
+    "opcoes": [
+      "Cama",
+      "Roupa",
+      "Caixão"
+    ],
+    "respostasValidas": [
+      "Caixão"
+    ],
+    "competenciaAlvo": "Dedução Social Paradoxal",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 192,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Pensamento Lateral",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "O que entra na água e não se molha?",
+    "opcoes": [
+      "Barco",
+      "Sombra",
+      "Peixe"
+    ],
+    "respostasValidas": [
+      "Sombra"
+    ],
+    "competenciaAlvo": "Fenómenos Óticos/Físicos",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 193,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Pensamento Lateral",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Palavra sempre escrita incorretamente no dicionário.",
+    "opcoes": [
+      "Incorretamente",
+      "Errado"
+    ],
+    "respostasValidas": [
+      "Incorretamente"
+    ],
+    "competenciaAlvo": "Metalinguagem",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 194,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Pensamento Lateral",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Pertence-te, mas as outras pessoas usam mais do que tu.",
+    "opcoes": [
+      "Telefone",
+      "O teu nome"
+    ],
+    "respostasValidas": [
+      "O teu nome",
+      "Nome"
+    ],
+    "competenciaAlvo": "Convenções Sociais",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 195,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Pensamento Lateral",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Quanto mais seca com ela, mais molhada ela fica.",
+    "opcoes": [
+      "Água",
+      "Toalha",
+      "Areia"
+    ],
+    "respostasValidas": [
+      "Toalha"
+    ],
+    "competenciaAlvo": "Dedução Funcional",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 196,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Polissemia",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "1. Fruta. / 2. A camisa tem uma ___ curta.",
+    "opcoes": [
+      "Manga",
+      "Gola"
+    ],
+    "respostasValidas": [
+      "Manga"
+    ],
+    "competenciaAlvo": "Sentido Figurado e Literal",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 197,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Polissemia",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "1. Sentar na praça. / 2. Depositar dinheiro.",
+    "opcoes": [
+      "Cadeira",
+      "Banco"
+    ],
+    "respostasValidas": [
+      "Banco"
+    ],
+    "competenciaAlvo": "Ambiguidade Lexical",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 198,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Polissemia",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "1. O relógio parou sem ___. / 2. Instrumento musical.",
+    "opcoes": [
+      "Bateria",
+      "Corda"
+    ],
+    "respostasValidas": [
+      "Bateria"
+    ],
+    "competenciaAlvo": "Flexibilidade Semântica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 199,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Polissemia",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "1. ___ de raciocínio. / 2. Costurar com agulha e ___.",
+    "opcoes": [
+      "Fio",
+      "Linha"
+    ],
+    "respostasValidas": [
+      "Linha"
+    ],
+    "competenciaAlvo": "Reconhecimento Lexical",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 200,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Polissemia",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "1. Parar de autocarro. / 2. ___ final no texto.",
+    "opcoes": [
+      "Estação",
+      "Ponto"
+    ],
+    "respostasValidas": [
+      "Ponto"
+    ],
+    "competenciaAlvo": "Adaptação de Contexto",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 201,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Polissemia",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "1. Um ___ de alho. / 2. Fica dentro da boca.",
+    "opcoes": [
+      "Pedaço",
+      "Dente"
+    ],
+    "respostasValidas": [
+      "Dente"
+    ],
+    "competenciaAlvo": "Generalização de Conceitos",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 202,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Polissemia",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "1. A aranha teceu-a. / 2. ___ Mundial de Computadores.",
+    "opcoes": [
+      "Rede/Teia",
+      "Fio"
+    ],
+    "respostasValidas": [
+      "Rede",
+      "Rede/Teia"
+    ],
+    "competenciaAlvo": "Polissemia Moderna",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 203,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Polissemia",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "1. Caiu da árvore. / 2. Escrever na ___ do caderno.",
+    "opcoes": [
+      "Folha",
+      "Letra"
+    ],
+    "respostasValidas": [
+      "Folha"
+    ],
+    "competenciaAlvo": "Múltiplos Significados",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 204,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Polissemia",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "1. Trancar a porta. / 2. A ___ da charada ou enigma.",
+    "opcoes": [
+      "Fechadura",
+      "Chave"
+    ],
+    "respostasValidas": [
+      "Chave"
+    ],
+    "competenciaAlvo": "Abstração Metáforica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 205,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Polissemia",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "1. A água a ferver está ___. / 2. A notícia do dia.",
+    "opcoes": [
+      "Quente",
+      "Fria"
+    ],
+    "respostasValidas": [
+      "Quente"
+    ],
+    "competenciaAlvo": "Contexto Informal",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 206,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Polissemia",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "1. A tartaruga escondeu-se. / 2. O ___ do navio.",
+    "opcoes": [
+      "Casco",
+      "Escudo"
+    ],
+    "respostasValidas": [
+      "Casco"
+    ],
+    "competenciaAlvo": "Vocabulário Complexo",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 207,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Polissemia",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "1. O rei e a rainha governam a ___. / 2. Ferida, rasgão.",
+    "opcoes": [
+      "Corte",
+      "País"
+    ],
+    "respostasValidas": [
+      "Corte"
+    ],
+    "competenciaAlvo": "Polissemia Histórica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 208,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Polissemia",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "1. O pássaro tem-nas. / 2. Ter ___ de alguém a chorar.",
+    "opcoes": [
+      "Pena",
+      "Asas"
+    ],
+    "respostasValidas": [
+      "Pena"
+    ],
+    "competenciaAlvo": "Emoção vs Objeto Físico",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 209,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Polissemia",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "1. Pular a ___ do vizinho. / 2. Usar nas janelas contra insetos.",
+    "opcoes": [
+      "Rede",
+      "Muro"
+    ],
+    "respostasValidas": [
+      "Rede"
+    ],
+    "competenciaAlvo": "Discriminação Funcional",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 210,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Polissemia",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "1. Da camisa. / 2. Rosa abriu em ___.",
+    "opcoes": [
+      "Botão",
+      "Fio"
+    ],
+    "respostasValidas": [
+      "Botão"
+    ],
+    "competenciaAlvo": "Analogia Botânica/Física",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 211,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Dedução Lógica",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Ana > Bia. Bia > Carla. Quem é a mais baixa?",
+    "opcoes": [
+      "Ana",
+      "Bia",
+      "Carla"
+    ],
+    "respostasValidas": [
+      "Carla"
+    ],
+    "competenciaAlvo": "Ordenação Transitiva",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 212,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Dedução Lógica",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "M=Verde. J detesta vermelho. Qual é a de Pedro (V/A/Az)?",
+    "opcoes": [
+      "Vermelho",
+      "Azul",
+      "Verde"
+    ],
+    "respostasValidas": [
+      "Vermelho"
+    ],
+    "competenciaAlvo": "Eliminação Pura",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 213,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Dedução Lógica",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Se todo o gato mia, e Rex não mia, Rex é gato?",
+    "opcoes": [
+      "Sim",
+      "Não"
+    ],
+    "respostasValidas": [
+      "Não"
+    ],
+    "competenciaAlvo": "Silogismo Básico",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 214,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Dedução Lógica",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Todos os alunos gostam de ler. Tiago é aluno. Gosta de ler?",
+    "opcoes": [
+      "Sim",
+      "Não"
+    ],
+    "respostasValidas": [
+      "Sim"
+    ],
+    "competenciaAlvo": "Lógica Dedutiva Afirmativa",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 215,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Dedução Lógica",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Carro C > Carro A > Carro B (Velocidade). Qual o mais lento?",
+    "opcoes": [
+      "Carro A",
+      "Carro B",
+      "C"
+    ],
+    "respostasValidas": [
+      "Carro B"
+    ],
+    "competenciaAlvo": "Comparação Sucessiva",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 216,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Dedução Lógica",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Gaveta 1 = Facas. Gaveta 2 = Vazia. Gaveta 3 = Colheres. Corta?",
+    "opcoes": [
+      "1",
+      "2",
+      "3"
+    ],
+    "respostasValidas": [
+      "1",
+      "1 (Superior)"
+    ],
+    "competenciaAlvo": "Raciocínio de Associação",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 217,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Dedução Lógica",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Lucas mora à Esq. de Felipe e Dir. de Bruno. Ordem?",
+    "opcoes": [
+      "B-F-L",
+      "B-L-F",
+      "L-B-F"
+    ],
+    "respostasValidas": [
+      "B-L-F",
+      "Bruno-Lucas-Felipe"
+    ],
+    "competenciaAlvo": "Posicionamento Espacial",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 218,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Dedução Lógica",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Ultrapassaste o 2º lugar. Ficas em qual posição?",
+    "opcoes": [
+      "1º",
+      "2º",
+      "3º"
+    ],
+    "respostasValidas": [
+      "2º",
+      "2º (Segundo)",
+      "2"
+    ],
+    "competenciaAlvo": "Inibição Impulsiva",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 219,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Dedução Lógica",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Quando chove, a rua fica molhada. Hoje choveu. Seca?",
+    "opcoes": [
+      "Sim",
+      "Não"
+    ],
+    "respostasValidas": [
+      "Não"
+    ],
+    "competenciaAlvo": "Causa e Efeito Necessário",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 220,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Dedução Lógica",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Luiza só estuda de noite. É de manhã. Luíza estuda?",
+    "opcoes": [
+      "Sim",
+      "Não"
+    ],
+    "respostasValidas": [
+      "Não"
+    ],
+    "competenciaAlvo": "Exclusão de Premissas",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 221,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Dedução Lógica",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Cão Tiago > Cão Paula > Cão Rita. Qual o maior?",
+    "opcoes": [
+      "Paula",
+      "Rita",
+      "Tiago"
+    ],
+    "respostasValidas": [
+      "Tiago"
+    ],
+    "competenciaAlvo": "Ordenação Lógica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 222,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Dedução Lógica",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Algumas frutas são cítricas (ex: limão). Todas são?",
+    "opcoes": [
+      "Sim",
+      "Não"
+    ],
+    "respostasValidas": [
+      "Não"
+    ],
+    "competenciaAlvo": "Quantificadores Lógicos",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 223,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Dedução Lógica",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Rel. A atrasa. B adianta. C pontual (12h). Qual marca 11:50?",
+    "opcoes": [
+      "A",
+      "B",
+      "C"
+    ],
+    "respostasValidas": [
+      "A",
+      "Relógio A"
+    ],
+    "competenciaAlvo": "Inferência de Estados",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 224,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Dedução Lógica",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Mário nunca mente à 2ªF. Hoje diz: \"Hoje é 3ª\". Hoje é 2ª?",
+    "opcoes": [
+      "Sim",
+      "Não"
+    ],
+    "respostasValidas": [
+      "Não"
+    ],
+    "competenciaAlvo": "Paradoxo Simples",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 225,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Dedução Lógica",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Fila de 5. Leo = 5º. Caio = 1º. Bia atrás Caio. Duda = 4º. Rui?",
+    "opcoes": [
+      "2º",
+      "3º",
+      "4º"
+    ],
+    "respostasValidas": [
+      "3º",
+      "3º Lugar",
+      "3"
+    ],
+    "competenciaAlvo": "Localização Matricial",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 226,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Frase Desordenada",
+    "engineType": "SENTENCE_ORDER",
+    "prompt": "Ordene a frase lógica: tarde / do que / antes / nunca / Mais.",
+    "opcoes": [
+      "tarde",
+      "do que",
+      "antes",
+      "nunca",
+      "Mais"
+    ],
+    "respostasValidas": [
+      "Mais vale tarde do que nunca",
+      "Mais antes tarde do que nunca"
+    ],
+    "competenciaAlvo": "Sintaxe e Cultura",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 227,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Frase Desordenada",
+    "engineType": "SENTENCE_ORDER",
+    "prompt": "Ordene a frase lógica: cão / morde / que / não / ladra.",
+    "opcoes": [
+      "cão",
+      "morde",
+      "que",
+      "não",
+      "ladra"
+    ],
+    "respostasValidas": [
+      "Cão que ladra não morde"
+    ],
+    "competenciaAlvo": "Organização Frásica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 228,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Frase Desordenada",
+    "engineType": "SENTENCE_ORDER",
+    "prompt": "Ordene a frase lógica: saudável / corpo / A / são / um / mente / habita.",
+    "opcoes": [
+      "saudável",
+      "corpo",
+      "A",
+      "são",
+      "um",
+      "mente",
+      "habita"
+    ],
+    "respostasValidas": [
+      "A mente sã habita um corpo saudável",
+      "A mente são habita um corpo saudável"
+    ],
+    "competenciaAlvo": "Coesão Lexical",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 229,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Frase Desordenada",
+    "engineType": "SENTENCE_ORDER",
+    "prompt": "Ordene a frase lógica: livro / capa / não / o / pela / Julgues.",
+    "opcoes": [
+      "livro",
+      "capa",
+      "não",
+      "o",
+      "pela",
+      "Julgues"
+    ],
+    "respostasValidas": [
+      "Não julgues o livro pela capa"
+    ],
+    "competenciaAlvo": "Flexibilidade Mental",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 230,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Frase Desordenada",
+    "engineType": "SENTENCE_ORDER",
+    "prompt": "Ordene a frase lógica: de / devagar / longe / vai / Quem / vai.",
+    "opcoes": [
+      "de",
+      "devagar",
+      "longe",
+      "vai",
+      "Quem",
+      "vai"
+    ],
+    "respostasValidas": [
+      "Quem vai devagar vai longe"
+    ],
+    "competenciaAlvo": "Ordenação Sintática",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 231,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Frase Desordenada",
+    "engineType": "SENTENCE_ORDER",
+    "prompt": "Ordene a frase lógica: sol / brilhando / O / hoje / forte / está.",
+    "opcoes": [
+      "sol",
+      "brilhando",
+      "O",
+      "hoje",
+      "forte",
+      "está"
+    ],
+    "respostasValidas": [
+      "O sol está brilhando forte hoje",
+      "Hoje o sol está brilhando forte"
+    ],
+    "competenciaAlvo": "Estruturação de Frase",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 232,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Frase Desordenada",
+    "engineType": "SENTENCE_ORDER",
+    "prompt": "Ordene a frase lógica: do / amanhã / o / trabalho / Não / para / deixes / hoje.",
+    "opcoes": [
+      "do",
+      "amanhã",
+      "o",
+      "trabalho",
+      "Não",
+      "para",
+      "deixes",
+      "hoje"
+    ],
+    "respostasValidas": [
+      "Não deixes para amanhã o trabalho de hoje"
+    ],
+    "competenciaAlvo": "Memória de Trabalho Larga",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 233,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Frase Desordenada",
+    "engineType": "SENTENCE_ORDER",
+    "prompt": "Ordene a frase lógica: voa / Quando / nos / tempo / divertimos / o.",
+    "opcoes": [
+      "voa",
+      "Quando",
+      "nos",
+      "tempo",
+      "divertimos",
+      "o"
+    ],
+    "respostasValidas": [
+      "O tempo voa quando nos divertimos",
+      "Quando nos divertimos o tempo voa"
+    ],
+    "competenciaAlvo": "Causa e Consequência",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 234,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Frase Desordenada",
+    "engineType": "SENTENCE_ORDER",
+    "prompt": "Ordene a frase lógica: sabedoria / livros / Os / fonte / de / são.",
+    "opcoes": [
+      "sabedoria",
+      "livros",
+      "Os",
+      "fonte",
+      "de",
+      "são"
+    ],
+    "respostasValidas": [
+      "Os livros são fonte de sabedoria"
+    ],
+    "competenciaAlvo": "Sentido Frásico Completo",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 235,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Frase Desordenada",
+    "engineType": "SENTENCE_ORDER",
+    "prompt": "Ordene a frase lógica: paciência / é / A / virtude / uma.",
+    "opcoes": [
+      "paciência",
+      "é",
+      "A",
+      "virtude",
+      "uma"
+    ],
+    "respostasValidas": [
+      "A paciência é uma virtude"
+    ],
+    "competenciaAlvo": "Identificação de Sujeito/Verbo",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 236,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Frase Desordenada",
+    "engineType": "SENTENCE_ORDER",
+    "prompt": "Ordene a frase lógica: ouro / que / reluz / tudo / Nem / é.",
+    "opcoes": [
+      "ouro",
+      "que",
+      "reluz",
+      "tudo",
+      "Nem",
+      "é"
+    ],
+    "respostasValidas": [
+      "Nem tudo que reluz é ouro"
+    ],
+    "competenciaAlvo": "Compreensão Filosófica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 237,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Frase Desordenada",
+    "engineType": "SENTENCE_ORDER",
+    "prompt": "Ordene a frase lógica: perfeição / faz / A / prática / a.",
+    "opcoes": [
+      "perfeição",
+      "faz",
+      "A",
+      "prática",
+      "a"
+    ],
+    "respostasValidas": [
+      "A prática faz a perfeição"
+    ],
+    "competenciaAlvo": "Previsão Linguística",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 238,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Frase Desordenada",
+    "engineType": "SENTENCE_ORDER",
+    "prompt": "Ordene a frase lógica: mais / silêncio / palavras / que / O / fala / muitas.",
+    "opcoes": [
+      "mais",
+      "silêncio",
+      "palavras",
+      "que",
+      "O",
+      "fala",
+      "muitas"
+    ],
+    "respostasValidas": [
+      "O silêncio fala mais que muitas palavras"
+    ],
+    "competenciaAlvo": "Paradoxos Organizacionais",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 239,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Frase Desordenada",
+    "engineType": "SENTENCE_ORDER",
+    "prompt": "Ordene a frase lógica: juntos / sempre / Somos / fortes / mais.",
+    "opcoes": [
+      "juntos",
+      "sempre",
+      "Somos",
+      "fortes",
+      "mais"
+    ],
+    "respostasValidas": [
+      "Somos sempre mais fortes juntos",
+      "Juntos somos sempre mais fortes"
+    ],
+    "competenciaAlvo": "Construção Lógica Coesa",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 240,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Frase Desordenada",
+    "engineType": "SENTENCE_ORDER",
+    "prompt": "Ordene a frase lógica: e / água / mole / dura / fura / pedra / bate / até / que.",
+    "opcoes": [
+      "e",
+      "água",
+      "mole",
+      "dura",
+      "fura",
+      "pedra",
+      "bate",
+      "até",
+      "que"
+    ],
+    "respostasValidas": [
+      "Água mole em pedra dura bate até que fura",
+      "Água mole e pedra dura bate até que fura"
+    ],
+    "competenciaAlvo": "Organização Sequencial Complexa",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 241,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Expressões Idiomáticas",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Qual o significado de \"Bater as botas\"?",
+    "opcoes": [
+      "Comprar sapatos",
+      "Morrer"
+    ],
+    "respostasValidas": [
+      "Morrer"
+    ],
+    "competenciaAlvo": "Literacia Sociocultural",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 242,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Expressões Idiomáticas",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Qual o significado de \"Cabeça dura\"?",
+    "opcoes": [
+      "Teimoso",
+      "Usar capacete"
+    ],
+    "respostasValidas": [
+      "Teimoso"
+    ],
+    "competenciaAlvo": "Transição Abstrata",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 243,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Expressões Idiomáticas",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Significado de \"Chorar sobre o leite derramado\"?",
+    "opcoes": [
+      "Lamentar o passado",
+      "Limpar"
+    ],
+    "respostasValidas": [
+      "Lamentar o passado",
+      "Lamentar o que passou"
+    ],
+    "competenciaAlvo": "Processamento Emocional Simbólico",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 244,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Expressões Idiomáticas",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Significado de \"Andar a pisar ovos\"?",
+    "opcoes": [
+      "Fazer um bolo",
+      "Ter extremo cuidado"
+    ],
+    "respostasValidas": [
+      "Ter extremo cuidado"
+    ],
+    "competenciaAlvo": "Metáforas Comportamentais",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 245,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Expressões Idiomáticas",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Significado de \"Lavar as mãos\" num conflito?",
+    "opcoes": [
+      "Não assumir responsabilidade",
+      "Ficar limpo"
+    ],
+    "respostasValidas": [
+      "Não assumir responsabilidade"
+    ],
+    "competenciaAlvo": "Ética e Expressão Figurada",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 246,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Expressões Idiomáticas",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Significado de \"Pôr as mãos no fogo\" por alguém?",
+    "opcoes": [
+      "Queimar-se",
+      "Confiar plenamente"
+    ],
+    "respostasValidas": [
+      "Confiar plenamente"
+    ],
+    "competenciaAlvo": "Avaliação de Confiança",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 247,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Expressões Idiomáticas",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Significado de ter \"Pé frio\"?",
+    "opcoes": [
+      "Precisar de meias",
+      "Ter azar"
+    ],
+    "respostasValidas": [
+      "Ter azar"
+    ],
+    "competenciaAlvo": "Associação Metonímica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 248,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Expressões Idiomáticas",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Significado de \"Pagar o pato\"?",
+    "opcoes": [
+      "Comprar jantar",
+      "Sofrer consequências alheias"
+    ],
+    "respostasValidas": [
+      "Sofrer consequências alheias",
+      "Sofrer as consequências"
+    ],
+    "competenciaAlvo": "Interpretação Complexa",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 249,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Expressões Idiomáticas",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Significado de \"Encher chouriços\"?",
+    "opcoes": [
+      "Cozinhar",
+      "Falar sem dizer nada importante"
+    ],
+    "respostasValidas": [
+      "Falar sem dizer nada importante",
+      "Falar muito sem dizer nada"
+    ],
+    "competenciaAlvo": "Filtragem Analítica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 250,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Expressões Idiomáticas",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Significado de \"Dar com os burros na água\"?",
+    "opcoes": [
+      "Fracassar",
+      "Dar banho aos animais"
+    ],
+    "respostasValidas": [
+      "Fracassar",
+      "Fracassar num plano"
+    ],
+    "competenciaAlvo": "Interpretação Narrativa",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 251,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Expressões Idiomáticas",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Significado de \"Acordar com os pés de fora\"?",
+    "opcoes": [
+      "Ter cama pequena",
+      "Acordar de mau humor"
+    ],
+    "respostasValidas": [
+      "Acordar de mau humor"
+    ],
+    "competenciaAlvo": "Avaliação Emocional",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 252,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Expressões Idiomáticas",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Significado de \"Ficar a segurar a vela\"?",
+    "opcoes": [
+      "Faltar a luz",
+      "Ser o terceiro intruso num casal"
+    ],
+    "respostasValidas": [
+      "Ser o terceiro intruso num casal",
+      "Estar a sobrar (intruso)"
+    ],
+    "competenciaAlvo": "Contexto Social Abstrato",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 253,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Expressões Idiomáticas",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Significado de \"Estar com a faca e o queijo na mão\"?",
+    "opcoes": [
+      "Comer",
+      "Ter o controlo absoluto"
+    ],
+    "respostasValidas": [
+      "Ter o controlo absoluto",
+      "Ter controlo da situação"
+    ],
+    "competenciaAlvo": "Raciocínio Analógico",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 254,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Expressões Idiomáticas",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Significado de \"Tirar o cavalinho da chuva\"?",
+    "opcoes": [
+      "Ajudar um animal",
+      "Desistir da ideia"
+    ],
+    "respostasValidas": [
+      "Desistir da ideia",
+      "Desistir de uma expetativa"
+    ],
+    "competenciaAlvo": "Desconstrução de Expetativas",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 255,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Expressões Idiomáticas",
+    "engineType": "SINGLE_CHOICE",
+    "prompt": "Significado de \"Ter o coração na boca\"?",
+    "opcoes": [
+      "Estar doente",
+      "Estar muito assustado/ansioso"
+    ],
+    "respostasValidas": [
+      "Estar muito assustado/ansioso",
+      "Estar ansioso/assustado"
+    ],
+    "competenciaAlvo": "Consciência Interoceptiva e Figurada",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 256,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Raciocínio Numérico",
+    "engineType": "NUMERIC_SEQUENCE",
+    "prompt": "Padrão Matemático: 2, 4, 6, 8, [?]",
+    "opcoes": [
+      "9",
+      "10",
+      "12"
+    ],
+    "respostasValidas": [
+      "10"
+    ],
+    "competenciaAlvo": "Progressão Aritmética",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 257,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Raciocínio Numérico",
+    "engineType": "NUMERIC_SEQUENCE",
+    "prompt": "Padrão Matemático: 1, 3, 5, 7, [?]",
+    "opcoes": [
+      "8",
+      "9",
+      "11"
+    ],
+    "respostasValidas": [
+      "9"
+    ],
+    "competenciaAlvo": "Lógica Numérica Ímpar",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 258,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Raciocínio Numérico",
+    "engineType": "NUMERIC_SEQUENCE",
+    "prompt": "Padrão Matemático: 10, 20, 30, [?], 50",
+    "opcoes": [
+      "35",
+      "40",
+      "45"
+    ],
+    "respostasValidas": [
+      "40"
+    ],
+    "competenciaAlvo": "Contagem em Dezenas",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 259,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Raciocínio Numérico",
+    "engineType": "NUMERIC_SEQUENCE",
+    "prompt": "A + A = 10. B + B = 6. Quanto é A + B?",
+    "opcoes": [
+      "8",
+      "16",
+      "12"
+    ],
+    "respostasValidas": [
+      "8"
+    ],
+    "competenciaAlvo": "Resolução de Equações Básicas",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 260,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Raciocínio Numérico",
+    "engineType": "NUMERIC_SEQUENCE",
+    "prompt": "Padrão Numérico: 1, 2, 4, 8, [?]",
+    "opcoes": [
+      "10",
+      "12",
+      "16"
+    ],
+    "respostasValidas": [
+      "16"
+    ],
+    "competenciaAlvo": "Progressão Geométrica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 261,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Raciocínio Numérico",
+    "engineType": "NUMERIC_SEQUENCE",
+    "prompt": "Sequência Decrescente: 100, 90, 80, 70, [?]",
+    "opcoes": [
+      "60",
+      "50",
+      "65"
+    ],
+    "respostasValidas": [
+      "60"
+    ],
+    "competenciaAlvo": "Subtração Sistemática",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 262,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Raciocínio Numérico",
+    "engineType": "NUMERIC_SEQUENCE",
+    "prompt": "1 triângulo=3. 1 quadrado=4. 2 triângulos + 1 quadrado = ?",
+    "opcoes": [
+      "7",
+      "10",
+      "11"
+    ],
+    "respostasValidas": [
+      "10"
+    ],
+    "competenciaAlvo": "Representação Simbólica",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 263,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Raciocínio Numérico",
+    "engineType": "NUMERIC_SEQUENCE",
+    "prompt": "Qual é a metade do dobro de 12?",
+    "opcoes": [
+      "6",
+      "12",
+      "24"
+    ],
+    "respostasValidas": [
+      "12"
+    ],
+    "competenciaAlvo": "Inferência Linguístico-Matemática",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 264,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Raciocínio Numérico",
+    "engineType": "NUMERIC_SEQUENCE",
+    "prompt": "Padrão Numérico: 3, 6, 9, 12, [?]",
+    "opcoes": [
+      "13",
+      "14",
+      "15"
+    ],
+    "respostasValidas": [
+      "15"
+    ],
+    "competenciaAlvo": "Multiplicação por 3",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 265,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Raciocínio Numérico",
+    "engineType": "NUMERIC_SEQUENCE",
+    "prompt": "Se X + 5 = 12. Qual é o valor de X?",
+    "opcoes": [
+      "6",
+      "7",
+      "8"
+    ],
+    "respostasValidas": [
+      "7"
+    ],
+    "competenciaAlvo": "Álgebra Introdutória",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 266,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Raciocínio Numérico",
+    "engineType": "NUMERIC_SEQUENCE",
+    "prompt": "Sequência Decrescente: 25, 20, 15, 10, [?]",
+    "opcoes": [
+      "5",
+      "0",
+      "-5"
+    ],
+    "respostasValidas": [
+      "5"
+    ],
+    "competenciaAlvo": "Cálculo Regressivo",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 267,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Raciocínio Numérico",
+    "engineType": "NUMERIC_SEQUENCE",
+    "prompt": "O tijolo pesa 1kg mais meio tijolo. Quanto pesa o tijolo?",
+    "opcoes": [
+      "1.5kg",
+      "2kg",
+      "1kg"
+    ],
+    "respostasValidas": [
+      "2kg",
+      "2",
+      "2kg (1kg = a outra metade)"
+    ],
+    "competenciaAlvo": "Resolução de Paradoxo Matemático",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 268,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Raciocínio Numérico",
+    "engineType": "NUMERIC_SEQUENCE",
+    "prompt": "Tenho 3 dúzias de ovos. Uso 10. Fico com quantos?",
+    "opcoes": [
+      "20",
+      "26",
+      "30"
+    ],
+    "respostasValidas": [
+      "26"
+    ],
+    "competenciaAlvo": "Operações Compostas",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 269,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Raciocínio Numérico",
+    "engineType": "NUMERIC_SEQUENCE",
+    "prompt": "Sequência: 1, 4, 9, 16, [?] (Quadrados Perfeitos)",
+    "opcoes": [
+      "20",
+      "25",
+      "24"
+    ],
+    "respostasValidas": [
+      "25"
+    ],
+    "competenciaAlvo": "Maturação Lógico-Dedutiva",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  },
+  {
+    "id": 270,
+    "faixaEtaria": "11+ anos",
+    "faseDesenvolvimento": "Operações Formais e Abstratas",
+    "categoriaLogica": "Raciocínio Numérico",
+    "engineType": "NUMERIC_SEQUENCE",
+    "prompt": "Pensei num número. Dobrei-o. Juntei 4, deu 14. Qual era o número?",
+    "opcoes": [
+      "6",
+      "5",
+      "4"
+    ],
+    "respostasValidas": [
+      "5"
+    ],
+    "competenciaAlvo": "Raciocínio em Inverso (Undo)",
+    "metadata": {
+      "caseSensitive": false,
+      "ignoreAccents": true,
+      "trimWhitespace": true,
+      "allowAlternativeAnswers": true
+    }
+  }
+]

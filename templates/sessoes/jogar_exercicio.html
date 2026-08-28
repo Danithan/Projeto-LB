@@ -1,0 +1,76 @@
+{% extends 'base_ludica.html' %}
+
+{% block title %}Exercício {{ exercicio.numero }} - {{ sessao.crianca.nome }}{% endblock %}
+
+{% block conteudo %}
+<div class="p-container-padding flex-1 flex flex-col items-center">
+    <div id="exercicios-container" class="w-full max-w-4xl" data-sessao-id="{{ sessao.id }}" data-next-url="{% if proximo_exercicio %}{% url 'sessoes:exercicio_inicio' sessao.id proximo_exercicio.id %}{% else %}{% url 'sessoes:executar_sessao' sessao.id %}{% endif %}">
+        <!-- Exercise injected via JS -->
+    </div>
+</div>
+
+<!-- Inject JS data (only for the current exercise) -->
+{{ exercicio_data|json_script:"exercicios-data" }}
+
+<script>
+    const sessaoId = document.getElementById('exercicios-container').dataset.sessaoId;
+    const nextUrl = document.getElementById('exercicios-container').dataset.nextUrl;
+
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    
+    // Override the "próximo" behavior:
+    // When the component calls this or wants to move to the next exercise,
+    // we redirect to the `nextUrl` provided by Django.
+    window.NEXT_URL = nextUrl;
+</script>
+
+{% include 'sessoes/exercicios_components.html' %}
+
+<script>
+    // Patch the default `salvarResultado` in the components script so it redirects
+    // using window.NEXT_URL after success.
+    const originalSalvarResultado = window.salvarResultado;
+    window.salvarResultado = function(exId, perc, tempo, pts) {
+        fetch(`/sessoes/${sessaoId}/exercicios/${exId}/resultado/`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrftoken')
+            },
+            body: JSON.stringify({
+                percentual_acerto: perc,
+                tempo_segundos: tempo,
+                pontuacao: pts
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if(data.ok) {
+                // Redirect sequentially to next exercise or grid
+                window.location.href = window.NEXT_URL;
+            } else {
+                console.error("Erro ao salvar resultado", data.erro);
+                // Redirect anyway to avoid getting stuck
+                window.location.href = window.NEXT_URL;
+            }
+        })
+        .catch(err => {
+            console.error(err);
+            window.location.href = window.NEXT_URL;
+        });
+    };
+</script>
+{% endblock %}

@@ -3,36 +3,98 @@
 {% block title %}Escolher sessão — {{ crianca.nome }}{% endblock %}
 
 {% block conteudo %}
-<div class="mb-5">
+<div class="mb-4">
     <a href="{% url 'crianca_lista' %}" class="text-muted small">&larr; Voltar para crianças</a>
     <h1 class="fw-bold mb-1 mt-2">Escolher sessão</h1>
-    <span class="text-muted">Atendimento de {{ crianca.nome }} ({{ crianca.idade }})</span>
+    <span class="text-muted">Atendimento de <strong>{{ crianca.nome }}</strong> ({{ crianca.idade }})</span>
 </div>
 
 {% if sessoes_modelo %}
-<div class="row g-4">
+<!-- Filtros por Tema e Faixa Etária -->
+<div class="d-flex flex-wrap gap-2 mb-4 align-items-center">
+    <span class="small fw-bold text-muted me-1">Filtrar Tema:</span>
+    <button type="button" class="btn btn-sm btn-outline-primary active filter-btn" data-filter="all">Todos</button>
+    {% for tema in temas %}
+        <button type="button" class="btn btn-sm btn-outline-primary filter-btn" data-filter="tema-{{ tema.id }}">
+            {{ tema.nome }}
+        </button>
+    {% endfor %}
+</div>
+
+<div class="row g-4" id="sessoes-grid">
     {% for sessao_modelo in sessoes_modelo %}
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-6 col-lg-4 sessao-card-item" data-tema="tema-{{ sessao_modelo.tema.id|default:'none' }}">
             <form method="post" class="h-100">
                 {% csrf_token %}
                 <input type="hidden" name="sessao_modelo_id" value="{{ sessao_modelo.id }}">
-                <button type="submit" class="card card-item h-100 w-100 text-start border-0 bg-white p-0" style="cursor: pointer;">
-                    <div class="card-body p-4">
-                        <span class="text-muted small">Sessão {{ sessao_modelo.numero }}</span>
-                        <h5 class="fw-bold mt-1 mb-2">{{ sessao_modelo.titulo }}</h5>
-                        {% if sessao_modelo.descricao %}
-                            <p class="text-muted small mb-0">{{ sessao_modelo.descricao|truncatewords:20 }}</p>
-                        {% endif %}
+                <button type="submit" class="card card-item h-100 w-100 text-start border-0 bg-white p-0 d-flex flex-column text-decoration-none" style="cursor: pointer;">
+                    <div class="card-body p-4 d-flex flex-column justify-content-between h-100">
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-light text-dark border">Sessão {{ sessao_modelo.numero }}</span>
+                                {% if sessao_modelo.tema %}
+                                    <span class="badge" style="background-color: {{ sessao_modelo.tema.cor|default:'#2D6E7E' }}; color: white;">
+                                        {{ sessao_modelo.tema.nome }}
+                                    </span>
+                                {% endif %}
+                            </div>
+
+                            <h5 class="fw-bold mt-2 mb-2" style="color: var(--color-primary);">{{ sessao_modelo.titulo }}</h5>
+                            
+                            {% if sessao_modelo.faixa_etaria and sessao_modelo.faixa_etaria != "Geral" %}
+                                <div class="mb-2">
+                                    <span class="badge bg-secondary-subtle text-secondary small">Recomendado: {{ sessao_modelo.faixa_etaria }}</span>
+                                </div>
+                            {% endif %}
+
+                            {% if sessao_modelo.objetivo %}
+                                <div class="p-2 mb-3 rounded bg-light border-start border-3" style="border-color: var(--color-primary) !important; font-size: 0.85rem;">
+                                    <strong class="text-dark">Objetivo:</strong>
+                                    <span class="text-muted d-block mt-1">{{ sessao_modelo.objetivo|truncatewords:25 }}</span>
+                                </div>
+                            {% endif %}
+
+                            {% if sessao_modelo.descricao %}
+                                <p class="text-muted small mb-0">{{ sessao_modelo.descricao|truncatewords:15 }}</p>
+                            {% endif %}
+                        </div>
+
+                        <div class="mt-3 pt-2 border-top d-flex justify-content-between align-items-center">
+                            <span class="text-primary small fw-semibold">Iniciar Atendimento &rarr;</span>
+                        </div>
                     </div>
                 </button>
             </form>
         </div>
     {% endfor %}
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const sessionCards = document.querySelectorAll('.sessao-card-item');
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+                sessionCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-tema') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    });
+</script>
 {% else %}
 <div class="empty-state">
     <h5 class="fw-bold mb-2" style="color: var(--color-text);">Nenhuma sessão cadastrada ainda</h5>
-    <p class="mb-0">Cadastre sessões e exercícios pelo admin para poder iniciar um atendimento.</p>
+    <p class="mb-0">Cadastre sessões e exercícios pelo admin ou execute o seed do catálogo para iniciar.</p>
 </div>
 {% endif %}
 {% endblock %}

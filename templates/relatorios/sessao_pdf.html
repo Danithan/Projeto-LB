@@ -9,7 +9,9 @@
     <h1>Relatório de Sessão</h1>
     <div class="meta">
         <p><strong>Criança:</strong> {{ sessao.crianca.nome }} ({{ sessao.crianca.idade }})</p>
-        <p><strong>Sessão:</strong> {{ sessao.sessao_modelo.titulo }}</p>
+        <p><strong>Sessão:</strong> Sessão {{ sessao.sessao_modelo.numero }} — {{ sessao.sessao_modelo.titulo }}</p>
+        {% if sessao.sessao_modelo.tema %}<p><strong>Tema:</strong> {{ sessao.sessao_modelo.tema.nome }}</p>{% endif %}
+        {% if sessao.sessao_modelo.objetivo %}<p><strong>Objetivo Terapêutico:</strong> {{ sessao.sessao_modelo.objetivo }}</p>{% endif %}
         <p><strong>Data:</strong> {{ sessao.data|date:"d/m/Y H:i" }}</p>
         <p><strong>Terapeuta:</strong> {{ sessao.terapeuta.get_full_name|default:sessao.terapeuta.username }}</p>
         <p><strong>Status:</strong> {{ sessao.get_status_display }}</p>

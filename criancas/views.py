@@ -1,5 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, render, redirect
+from django.contrib.auth.models import User
+from django.utils.crypto import get_random_string
 from criancas.models import Crianca
 from .forms import CriancaForm
 
@@ -10,12 +12,15 @@ def _crianca_do_terapeuta_ou_404(request, pk):
     return get_object_or_404(Crianca, pk=pk, terapeuta=request.user)
 
 
+from sessoes.models import SessaoRealizada
+
 @login_required
 def lista_criancas(request):
     if request.user.is_superuser:
         criancas_list = Crianca.objects.all()
     else:
         criancas_list = Crianca.objects.filter(terapeuta=request.user)
+        
     return render(request, 'criancas/crianca_lista.html', {'criancas': criancas_list})
 
 
@@ -53,3 +58,5 @@ def deletar_crianca(request, pk):
         crianca.delete()
         return redirect('crianca_lista')
     return render(request, 'criancas/crianca_confirmar_delete.html', {'crianca': crianca})
+
+

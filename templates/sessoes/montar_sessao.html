@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %}Montar Sessão - {{ sessao_modelo.titulo }}{% endblock %}
+
+{% block conteudo %}
+<div class="mb-4 d-flex justify-content-between align-items-center">
+    <div>
+        <a href="{% url 'sessoes:escolher_sessao' crianca.id %}" class="text-muted small">&larr; Voltar para as categorias</a>
+        <h2 class="mb-0 mt-2">Montar Sessão: {{ sessao_modelo.titulo }}</h2>
+        <p class="text-muted mb-0">Para: <strong>{{ crianca.nome }}</strong></p>
+    </div>
+    <div>
+        <span class="badge bg-primary px-3 py-2 fs-6" id="contador-selecao">0 / 9</span>
+    </div>
+</div>
+
+<form method="post" id="form-montar">
+    {% csrf_token %}
+    <div class="row g-3">
+        {% for ex in exercicios %}
+        <div class="col-12 col-md-6 col-lg-4">
+            <label class="card-item d-block h-100 position-relative" style="cursor: pointer; transition: all 0.2s;">
+                <input type="checkbox" name="exercicios" value="{{ ex.id }}" class="form-check-input exercise-checkbox position-absolute" style="top: 15px; right: 15px; z-index: 2; width: 20px; height: 20px;">
+                <div class="card-body">
+                    <h5 class="fw-bold mb-2">Exercício {{ ex.numero }}</h5>
+                    <span class="badge bg-secondary-subtle text-secondary mb-2">{{ ex.get_tipo_display }}</span>
+                    <p class="text-muted small mb-0">{{ ex.enunciado|truncatewords:15 }}</p>
+                </div>
+            </label>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="d-flex justify-content-end mt-4 position-sticky bottom-0 bg-white py-3" style="z-index: 10; border-top: 1px solid var(--color-border);">
+        <button type="submit" class="btn btn-primary" id="btn-iniciar" disabled>Criar Sessão com Exercícios Selecionados</button>
+    </div>
+</form>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const checkboxes = document.querySelectorAll('.exercise-checkbox');
+    const contador = document.getElementById('contador-selecao');
+    const btnIniciar = document.getElementById('btn-iniciar');
+    const form = document.getElementById('form-montar');
+    const maxSelecionados = 9;
+
+    function atualizarEstado() {
+        const selecionados = document.querySelectorAll('.exercise-checkbox:checked').length;
+        contador.innerText = `${selecionados} / ${maxSelecionados}`;
+        
+        btnIniciar.disabled = selecionados === 0;
+
+        checkboxes.forEach(cb => {
+            const card = cb.closest('.card-item');
+            if (cb.checked) {
+                card.style.borderColor = 'var(--color-primary)';
+                card.style.boxShadow = '0 0 0 2px var(--color-primary)';
+                card.style.backgroundColor = 'var(--color-bg)';
+            } else {
+                card.style.borderColor = 'transparent';
+                card.style.boxShadow = 'var(--shadow-card)';
+                card.style.backgroundColor = 'var(--color-surface)';
+            }
+
+            if (selecionados >= maxSelecionados && !cb.checked) {
+                cb.disabled = true;
+                card.style.opacity = '0.5';
+                card.style.cursor = 'not-allowed';
+            } else {
+                cb.disabled = false;
+                card.style.opacity = '1';
+                card.style.cursor = 'pointer';
+            }
+        });
+    }
+
+    checkboxes.forEach(cb => {
+        cb.addEventListener('change', atualizarEstado);
+    });
+
+    atualizarEstado();
+});
+</script>
+{% endblock %}

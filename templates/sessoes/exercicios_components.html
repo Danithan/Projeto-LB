@@ -606,9 +606,20 @@ document.addEventListener("DOMContentLoaded", function() {
         const card = document.createElement('div');
         card.className = "card-item p-4 mb-4 bg-white";
         
+        const header = document.createElement('div');
+        header.className = "d-flex justify-content-between align-items-center mb-3";
+        
         const title = document.createElement('h4');
-        title.className = "mb-3";
+        title.className = "mb-0";
         title.innerText = `Exercício ${ex.numero} - ${ex.tipo.replace(/_/g, ' ').toUpperCase()}`;
+        
+        const editBtn = document.createElement('a');
+        editBtn.href = `/sessoes/exercicio/${ex.id}/editar/`;
+        editBtn.className = "btn btn-outline-primary btn-sm";
+        editBtn.innerText = "Editar";
+        
+        header.appendChild(title);
+        header.appendChild(editBtn);
         
         const enunciado = document.createElement('p');
         enunciado.className = "text-muted mb-4";
@@ -617,7 +628,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const corpoExercicio = document.createElement('div');
         corpoExercicio.id = `exercicio-corpo-${ex.id}`;
         
-        card.appendChild(title);
+        card.appendChild(header);
         card.appendChild(enunciado);
         card.appendChild(corpoExercicio);
         

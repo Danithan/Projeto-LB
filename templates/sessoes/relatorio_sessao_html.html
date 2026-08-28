@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block title %}Relatório da Sessão - {{ sessao.crianca.nome }}{% endblock %}
+
+{% block conteudo %}
+<div class="d-flex justify-content-between align-items-center mb-5">
+    <div>
+        <h1 class="fw-bold mb-1">Relatório da Sessão</h1>
+        <p class="text-muted">{{ sessao.sessao_modelo.titulo }} | {{ sessao.data|date:"d/m/Y" }}</p>
+    </div>
+    <div class="d-flex gap-2">
+        <a href="{% url 'sessoes:relatorio_sessao_pdf' sessao.id %}" target="_blank" class="btn btn-outline-primary px-4 py-2">Exportar PDF</a>
+        
+        <form method="post" action="{% url 'sessoes:reiniciar_sessao' sessao.id %}" onsubmit="return confirm('ATENÇÃO: Ao reiniciar a sessão, todos os resultados anteriores desta sessão serão apagados e a criança deverá refazer os exercícios. Deseja continuar?');">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-coral px-4 py-2">Reiniciar Sessão</button>
+        </form>
+    </div>
+</div>
+
+<div class="row g-4 mb-5">
+    <!-- Métrica 1: Acerto Médio (Resultado 4) -->
+    <div class="col-md-3">
+        <div class="card card-item h-100 text-center">
+            <h5 class="text-muted mb-2">Acerto Médio</h5>
+            <h2 class="fw-bold mb-0" style="color: var(--color-primary);">{{ media_percentual|floatformat:1 }}%</h2>
+        </div>
+    </div>
+    
+    <!-- Métrica 2: Tempo Total (Resultado 2) -->
+    <div class="col-md-3">
+        <div class="card card-item h-100 text-center">
+            <h5 class="text-muted mb-2">Tempo Total</h5>
+            <h2 class="fw-bold mb-0" style="color: var(--color-secondary);">{{ tempo_total }}</h2>
+        </div>
+    </div>
+
+    <!-- Métrica 3: Respondidos (Resultado 3) -->
+    <div class="col-md-3">
+        <div class="card card-item h-100 text-center">
+            <h5 class="text-muted mb-2">Exercícios Solucionados</h5>
+            <h2 class="fw-bold mb-0" style="color: var(--color-tertiary);">{{ total_respondidos }} / {{ total_selecionados }}</h2>
+        </div>
+    </div>
+</div>
+
+<h3 class="fw-bold mb-4">Desempenho por Exercício</h3>
+<div class="table-responsive bg-white rounded shadow-sm p-4">
+    <table class="table table-borderless align-middle">
+        <thead>
+            <tr style="border-bottom: 2px solid var(--color-border);">
+                <th>Exercício</th>
+                <th>Tipo</th>
+                <th class="text-center">Acerto (%)</th>
+                <th class="text-center">Tempo (s)</th>
+                <th class="text-center">Tentativas</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for resultado in resultados %}
+            <tr>
+                <td class="fw-bold">{{ resultado.exercicio_modelo.numero }}</td>
+                <td>{{ resultado.exercicio_modelo.get_tipo_display }}</td>
+                <td class="text-center">
+                    <span class="badge" style="background-color: {% if resultado.percentual_acerto >= 70 %}var(--color-primary){% elif resultado.percentual_acerto >= 40 %}#f39c12{% else %}#e74c3c{% endif %}; font-size: 14px;">
+                        {{ resultado.percentual_acerto|floatformat:1 }}%
+                    </span>
+                </td>
+                <td class="text-center">{{ resultado.tempo_segundos }}s</td>
+                <td class="text-center">{{ resultado.tentativas }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5" class="text-center text-muted py-4">Nenhum exercício foi solucionado nesta sessão.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
