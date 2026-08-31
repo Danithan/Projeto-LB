@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block title %}Resultado da Sessão — {{ crianca.nome }}{% endblock %}
+
+{% block conteudo %}
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-4 pb-3" style="border-bottom: 1px solid var(--color-border);">
+    <div>
+        <h2 class="mb-1">Resultado da Sessão</h2>
+        <p class="text-muted mb-0">Resumo do desempenho de <strong>{{ crianca.nome }}</strong> em {{ sessao.data|date:"d/m/Y" }}</p>
+    </div>
+    <div class="d-flex gap-2">
+        <a href="{% url 'sessoes:relatorio_sessao_pdf' sessao.id %}" target="_blank" class="btn btn-outline-primary">
+            <span class="material-symbols-outlined">download</span> Exportar PDF
+        </a>
+        <a href="{% url 'sessoes:historico_crianca' crianca.pk %}" class="btn btn-coral">
+            <span class="material-symbols-outlined">history</span> Ver Histórico Completo
+        </a>
+    </div>
+</div>
+
+<div class="row g-3 mb-4">
+    <div class="col-12 col-md-4">
+        <div class="card card-item h-100 p-4 text-center">
+            <div class="mx-auto mb-2 d-flex align-items-center justify-content-center" style="width:64px; height:64px; border-radius:50%; background: var(--color-primary-container); color: var(--color-on-primary-container);">
+                <span class="material-symbols-outlined icon-fill" style="font-size:32px;">check_circle</span>
+            </div>
+            <h6 class="mb-1">Acerto Médio</h6>
+            <div style="font-family:'Quicksand',sans-serif; font-size:2.2rem; font-weight:700; color: var(--color-primary);">
+                {% if media_percentual is not None %}{{ media_percentual|floatformat:0 }}%{% else %}—{% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-4">
+        <div class="card card-item h-100 p-4 text-center">
+            <div class="mx-auto mb-2 d-flex align-items-center justify-content-center" style="width:64px; height:64px; border-radius:50%; background: var(--color-secondary-container); color: var(--color-on-secondary-container);">
+                <span class="material-symbols-outlined icon-fill" style="font-size:32px;">timer</span>
+            </div>
+            <h6 class="mb-1">Tempo Total</h6>
+            <div style="font-family:'Quicksand',sans-serif; font-size:2.2rem; font-weight:700; color: var(--color-secondary);">{{ tempo_total_formatado }}</div>
+        </div>
+    </div>
+    <div class="col-12 col-md-4">
+        <div class="card card-item h-100 p-4 text-center">
+            <div class="mx-auto mb-2 d-flex align-items-center justify-content-center" style="width:64px; height:64px; border-radius:50%; background: var(--color-tertiary-container); color: var(--color-on-tertiary-container);">
+                <span class="material-symbols-outlined icon-fill" style="font-size:32px;">exercise</span>
+            </div>
+            <h6 class="mb-1">Exercícios</h6>
+            <div style="font-family:'Quicksand',sans-serif; font-size:2.2rem; font-weight:700; color: var(--color-tertiary);">{{ total_respondidos }}/{{ total_exercicios }}</div>
+        </div>
+    </div>
+</div>
+
+<div class="card card-item overflow-hidden">
+    <div class="px-4 py-3 d-flex justify-content-between align-items-center" style="background: var(--color-surface-container-low); border-bottom: 1px solid var(--color-border);">
+        <h6 class="mb-0">Detalhamento dos Exercícios</h6>
+        <span class="text-muted small fw-bold">{{ total_exercicios }} itens</span>
+    </div>
+    <div>
+        {% for linha in linhas %}
+            <div class="px-4 py-3 d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3" style="{% if not forloop.last %}border-bottom: 1px solid var(--color-border);{% endif %}">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="d-flex align-items-center justify-content-center fw-bold" style="width:36px; height:36px; border-radius:50%; background: var(--color-surface-container-low); color: var(--color-text);">{{ linha.exercicio.numero }}</div>
+                    <div>
+                        <div class="fw-bold">Exercício {{ linha.exercicio.numero }}</div>
+                        <div class="text-muted small">{{ linha.exercicio.enunciado|truncatewords:10 }}</div>
+                    </div>
+                </div>
+                {% if linha.resultado %}
+                    <div class="d-flex align-items-center gap-4">
+                        <div class="text-end">
+                            <div class="text-muted small">Tentativas</div>
+                            <div class="fw-bold">{{ linha.resultado.tentativas }}</div>
+                        </div>
+                        <div class="text-end">
+                            <div class="text-muted small">Acerto</div>
+                            <span class="badge rounded-pill" style="font-size:0.9rem; {% if linha.resultado.percentual_acerto >= 80 %}background: var(--color-primary-container); color: var(--color-on-primary-container);{% elif linha.resultado.percentual_acerto >= 50 %}background: var(--color-secondary-container); color: var(--color-on-secondary-container);{% else %}background: var(--color-error-container); color: var(--color-error);{% endif %}">
+                                {{ linha.resultado.percentual_acerto|floatformat:0 }}%
+                            </span>
+                        </div>
+                    </div>
+                {% else %}
+                    <span class="badge rounded-pill" style="background: var(--color-surface-container-high); color: var(--color-text-muted); border:1px solid var(--color-border);">Não respondido</span>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

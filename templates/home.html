@@ -2,18 +2,30 @@
 
 {% block title %}Projeto LB — Entrar{% endblock %}
 
-{% block conteudo %}
-<div class="d-flex justify-content-center">
-    <div class="card card-item" style="max-width: 420px; width: 100%;">
+{% block extra_head %}
+<style>.form-field .form-control { padding-left: 2.75rem; }</style>
+{% endblock %}
+
+{% block conteudo_bare %}
+<div class="w-100 px-3" style="max-width: 420px;">
+    <div class="card card-item">
         <div class="card-body p-4 p-md-5">
-            <h1 class="fw-bold mb-1 text-center">Projeto LB</h1>
-            <p class="text-muted mb-4 text-center">Acompanhamento de sessões terapêuticas infantis</p>
+            <div class="text-center mb-4">
+                <div class="brand-icon mb-2"><span class="material-symbols-outlined icon-fill">psychology</span></div>
+                <h1 class="mb-1" style="color: var(--color-primary);">Projeto LB</h1>
+                <p class="text-muted mb-0">Acesso ao Painel Clínico</p>
+            </div>
             <form method="post" novalidate>
                 {% csrf_token %}
                 {% for field in form %}
                     <div class="form-field">
                         <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
-                        {{ field }}
+                        <div class="position-relative">
+                            <span class="material-symbols-outlined position-absolute text-muted" style="left: 12px; top: 50%; transform: translateY(-50%);">
+                                {% if field.name == 'password' %}lock{% else %}person{% endif %}
+                            </span>
+                            {{ field }}
+                        </div>
                         {% if field.errors %}
                             <ul class="form-errors">
                                 {% for error in field.errors %}

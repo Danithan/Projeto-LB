@@ -2,74 +2,101 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
     <title>{% block title %}Projeto LB{% endblock %}</title>
     <style>
         :root {
-            /* Paleta — docs/design-system.md */
-            --color-primary: #2D6E7E;
-            --color-primary-strong: #245A67;
-            --color-accent: #FF6F61;
-            --color-accent-hover: #E85C4F;
-            --color-bg: #F5F9FA;
-            --color-surface: #FFFFFF;
-            --color-text: #1F3A40;
-            --color-text-muted: #5C7A82;
-            --color-border: rgba(45, 110, 126, 0.16);
+            /* Paleta "Acolhimento Clínico" — docs/design-system.md, desenhada no
+               protótipo Stitch (mint/verde para ações principais, azul cerúleo para
+               navegação, lavanda para destaques secundários). */
+            --color-primary: #246a51;
+            --color-primary-container: #6baf92;
+            --color-on-primary-container: #00412e;
+            --color-primary-strong: #1b5340;
+            --color-secondary: #356287;
+            --color-secondary-container: #a8d3fe;
+            --color-on-secondary-container: #2e5b80;
+            --color-tertiary: #63578a;
+            --color-tertiary-container: #a89ad2;
+            --color-on-tertiary-container: #3c3161;
+            --color-accent: #246a51;
+            --color-accent-hover: #1b5340;
+            --color-bg: #f9f9f7;
+            --color-surface: #ffffff;
+            --color-surface-container: #eeeeec;
+            --color-surface-container-low: #f4f4f2;
+            --color-surface-container-high: #e8e8e6;
+            --color-text: #1a1c1b;
+            --color-text-muted: #3f4944;
+            --color-border: #bfc9c2;
+            --color-outline: #6f7973;
+            --color-error: #ba1a1a;
+            --color-error-container: #ffdad6;
 
-            /* Raio — moderado, cards vs. botões de ação */
-            --radius-card: 12px;
-            --radius-control: 8px;
-            --radius-pill: 50px;
+            --radius-card: 1rem;
+            --radius-control: 0.5rem;
+            --radius-pill: 9999px;
 
-            /* Profundidade — sombra suave nos cards, sem sombra nos inputs */
-            --shadow-card: 0 4px 14px rgba(0,0,0,0.08);
-            --shadow-card-hover: 0 10px 24px rgba(0,0,0,0.14);
+            --shadow-card: 0 4px 14px rgba(0,0,0,0.06);
+            --shadow-card-hover: 0 8px 24px rgba(0,0,0,0.1);
 
-            --bs-focus-ring-color: rgba(45, 110, 126, 0.25);
+            --bs-focus-ring-color: rgba(53, 98, 135, 0.2);
+            --bs-body-font-family: 'Nunito Sans', system-ui, sans-serif;
         }
 
         body {
             background-color: var(--color-bg);
             color: var(--color-text);
-            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-family: 'Nunito Sans', system-ui, sans-serif;
             -webkit-font-smoothing: antialiased;
         }
-        h1, h2, h3 {
-            color: var(--color-primary);
+        h1, h2, h3, h4, h5 {
+            font-family: 'Quicksand', 'Nunito Sans', sans-serif;
+            color: var(--color-text);
+            font-weight: 700;
             letter-spacing: -0.01em;
         }
-        a {
-            color: var(--color-primary);
-        }
-        .text-muted {
-            color: var(--color-text-muted) !important;
-        }
+        a { color: var(--color-primary); }
+        .text-muted { color: var(--color-text-muted) !important; }
 
-        /* Cards de conteúdo: sombra suave, sem borda (Padrão: Card de item) */
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+            line-height: 1;
+            display: inline-block;
+        }
+        .material-symbols-outlined.icon-fill { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+
         .card-item {
-            border: none;
+            border: 1px solid var(--color-border);
             border-radius: var(--radius-card);
-            box-shadow: var(--shadow-card);
+            box-shadow: none;
+            background-color: var(--color-surface);
             transition: transform 0.15s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.15s cubic-bezier(0.23, 1, 0.32, 1);
         }
         .card-item:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-card-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-card);
         }
 
-        /* Avatar circular */
         .avatar-circle {
             width: 56px;
             height: 56px;
             border-radius: 50%;
-            background-color: var(--color-accent);
+            background-color: var(--color-surface-container-high);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.4rem;
-            color: white;
-            font-weight: bold;
+            color: var(--color-primary);
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
             flex-shrink: 0;
         }
 
@@ -80,128 +107,203 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-weight: 600;
+            gap: 0.4rem;
+            font-weight: 700;
             transition: transform 0.1s ease, background-color 0.15s ease, box-shadow 0.15s ease;
         }
-        .btn:active {
-            transform: scale(0.97);
-        }
-        .btn-sm {
-            min-height: 40px;
-        }
+        .btn:active { transform: scale(0.97); }
+        .btn-sm { min-height: 40px; }
 
-        /* Botão primário (criar/salvar) — cor de destaque coral */
+        /* Ação primária — mantém o nome histórico .btn-coral (usado também pelo
+           JS dos exercícios) mas agora resolve para o verde-menta do Stitch. */
         .btn-coral {
-            background-color: var(--color-accent);
-            border-color: var(--color-accent);
-            color: white;
+            background-color: var(--color-primary-container);
+            border-color: var(--color-primary-container);
+            color: var(--color-on-primary-container);
         }
         .btn-coral:hover {
-            background-color: var(--color-accent-hover);
-            border-color: var(--color-accent-hover);
-            color: white;
-        }
-
-        /* Botões secundários (editar/cancelar) — outline, formato pílula */
-        .btn-outline-primary {
-            color: var(--color-primary);
-            border-color: var(--color-primary);
-        }
-        .btn-outline-primary:hover {
             background-color: var(--color-primary);
             border-color: var(--color-primary);
+            color: #fff;
         }
 
-        /* Elementos de formulário: borda sólida, sem sombra — foco em clareza */
-        .form-control,
-        .form-select {
-            border-radius: var(--radius-control);
-            border: 1px solid rgba(45, 110, 126, 0.28);
-            padding: 0.6rem 0.85rem;
-            min-height: 44px;
-        }
-        .form-control:focus,
-        .form-select:focus {
-            border-color: var(--color-primary);
-            box-shadow: 0 0 0 3px rgba(45, 110, 126, 0.18);
-        }
-        input[type="date"].form-control {
-            cursor: pointer;
-        }
-        .form-label {
-            font-weight: 600;
+        .btn-outline-primary {
             color: var(--color-text);
-            margin-bottom: 0.4rem;
+            border: 2px solid var(--color-border);
+            background: transparent;
         }
-        .form-text {
-            color: var(--color-text-muted);
+        .btn-outline-primary:hover {
+            background-color: var(--color-surface-container-low);
+            border-color: var(--color-outline);
+            color: var(--color-text);
         }
-        .form-errors {
-            list-style: none;
-            padding: 0;
-            margin: 0.4rem 0 0;
-            color: #C0392B;
-            font-size: 0.875rem;
-        }
-        .form-field {
-            margin-bottom: 1.5rem;
-        }
+        .btn-outline-danger { border-width: 2px; }
+        .btn-outline-secondary { border-width: 2px; }
 
-        /* Estado vazio */
+        .form-control, .form-select {
+            border-radius: var(--radius-control);
+            border: 1px solid var(--color-border);
+            padding: 0.65rem 0.9rem;
+            min-height: 48px;
+            background-color: var(--color-surface);
+        }
+        .form-control:focus, .form-select:focus {
+            border-color: var(--color-secondary);
+            border-width: 2px;
+            box-shadow: 0 0 0 4px rgba(53, 98, 135, 0.12);
+        }
+        input[type="date"].form-control { cursor: pointer; }
+        .form-label { font-weight: 700; color: var(--color-text); margin-bottom: 0.4rem; }
+        .form-text { color: var(--color-text-muted); }
+        .form-errors { list-style: none; padding: 0; margin: 0.4rem 0 0; color: var(--color-error); font-size: 0.875rem; }
+        .form-field { margin-bottom: 1.5rem; }
+        .form-check-input:checked { background-color: var(--color-primary); border-color: var(--color-primary); }
+        .form-check-input:focus { box-shadow: 0 0 0 3px rgba(53, 98, 135, 0.18); }
+
+        .badge.bg-primary { background-color: var(--color-primary-container) !important; color: var(--color-on-primary-container) !important; }
+        .alert-warning { background-color: var(--color-tertiary-container); color: var(--color-on-tertiary-container); border: none; border-radius: var(--radius-control); }
+
         .empty-state {
-            border: 1px dashed var(--color-border);
+            border: 2px dashed var(--color-border);
             border-radius: var(--radius-card);
             padding: 3rem 2rem;
             text-align: center;
             color: var(--color-text-muted);
         }
 
-        a:focus-visible,
-        button:focus-visible,
-        .btn:focus-visible {
+        a:focus-visible, button:focus-visible, .btn:focus-visible {
             outline: none;
-            box-shadow: 0 0 0 3px rgba(45, 110, 126, 0.35);
+            box-shadow: 0 0 0 3px rgba(53, 98, 135, 0.35);
+        }
+
+        /* ---- App shell (sidebar + topbar + bottom nav) ---- */
+        .app-shell { display: flex; min-height: 100vh; }
+        .app-sidebar {
+            width: 260px;
+            flex-shrink: 0;
+            background-color: var(--color-surface-container-low);
+            border-right: 1px solid var(--color-border);
+            padding: 1.5rem 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        .app-sidebar .brand-block { text-align: center; padding-bottom: 1.25rem; margin-bottom: 0.75rem; border-bottom: 1px solid var(--color-border); }
+        .app-sidebar .brand-icon {
+            width: 56px; height: 56px; border-radius: 50%;
+            background-color: var(--color-primary-container); color: var(--color-on-primary-container);
+            display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem;
+        }
+        .app-sidebar .brand-block h1 { font-size: 1.4rem; margin: 0; color: var(--color-primary); }
+        .app-sidebar .brand-block p { margin: 0; font-size: 0.8rem; color: var(--color-text-muted); }
+        .nav-link-app {
+            display: flex; align-items: center; gap: 0.75rem;
+            padding: 0.7rem 0.85rem; border-radius: var(--radius-control);
+            color: var(--color-text-muted); text-decoration: none; font-weight: 700; font-size: 0.95rem;
+        }
+        .nav-link-app:hover { background-color: var(--color-surface-container-high); color: var(--color-text); }
+        .nav-link-app.active { background-color: var(--color-secondary-container); color: var(--color-on-secondary-container); }
+        .app-sidebar .cta-nova-sessao { margin-top: auto; }
+
+        .app-main { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+        .app-topbar {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 1.5rem; height: 64px; background-color: var(--color-surface);
+            border-bottom: 1px solid var(--color-border); flex-shrink: 0;
+        }
+        .app-topbar .brand-mobile { display: none; font-family: 'Quicksand', sans-serif; font-weight: 700; color: var(--color-primary); font-size: 1.2rem; }
+        .app-content { flex: 1; padding: 1.75rem 1.5rem 5rem; }
+
+        .app-bottomnav {
+            display: none;
+            position: fixed; bottom: 0; left: 0; right: 0;
+            background-color: var(--color-surface-container-low);
+            border-top: 1px solid var(--color-border);
+            justify-content: space-around; align-items: center;
+            height: 64px; z-index: 40;
+        }
+        .app-bottomnav a { display: flex; flex-direction: column; align-items: center; gap: 2px; color: var(--color-text-muted); text-decoration: none; font-size: 0.65rem; font-weight: 700; padding: 0.4rem 0.6rem; border-radius: var(--radius-control); }
+        .app-bottomnav a.active { color: var(--color-on-secondary-container); background-color: var(--color-secondary-container); }
+
+        @media (max-width: 767.98px) {
+            .app-sidebar { display: none; }
+            .app-topbar .brand-mobile { display: flex; align-items: center; gap: 0.4rem; }
+            .app-topbar .desktop-links { display: none; }
+            .app-bottomnav { display: flex; }
+            .app-content { padding-bottom: 5.5rem; }
         }
     </style>
-    <style>
-        .app-nav {
-            background-color: var(--color-surface);
-            border-bottom: 1px solid var(--color-border);
-            padding: 0.9rem 0;
-        }
-        .app-nav a {
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .app-nav .brand {
-            color: var(--color-primary);
-            font-weight: 700;
-        }
-    </style>
+    {% block extra_head %}{% endblock %}
 </head>
 <body>
-    <nav class="app-nav">
-        <div class="container d-flex align-items-center justify-content-between">
-            <div class="d-flex align-items-center gap-4">
-                <a href="{% if user.is_authenticated %}{% url 'crianca_lista' %}{% else %}{% url 'home' %}{% endif %}" class="brand">Projeto LB</a>
-                {% if user.is_authenticated %}
-                    <a href="{% url 'crianca_lista' %}" class="text-muted">Crianças</a>
-                {% endif %}
-            </div>
-            {% if user.is_authenticated %}
-                <div class="d-flex align-items-center gap-3">
-                    <span class="text-muted small">{{ user.get_full_name|default:user.username }}</span>
-                    <form method="post" action="{% url 'logout' %}" class="m-0">
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-outline-primary btn-sm">Sair</button>
-                    </form>
-                </div>
-            {% endif %}
+{% if user.is_authenticated %}
+<div class="app-shell">
+    <aside class="app-sidebar">
+        <div class="brand-block">
+            <div class="brand-icon"><span class="material-symbols-outlined icon-fill">psychology</span></div>
+            <h1>Projeto LB</h1>
+            <p>Painel Clínico</p>
         </div>
-    </nav>
-    <div class="container my-5">
-        {% block conteudo %}
-        {% endblock %}
+        <a href="{% url 'crianca_lista' %}" class="nav-link-app {% if active == 'criancas' %}active{% endif %}">
+            <span class="material-symbols-outlined">child_care</span> Crianças
+        </a>
+        <a href="{% if crianca %}{% url 'sessoes:escolher_sessao' crianca.pk %}{% else %}#{% endif %}" class="nav-link-app {% if active == 'sessoes' %}active{% endif %}">
+            <span class="material-symbols-outlined">calendar_today</span> Sessões
+        </a>
+        <a href="{% if crianca %}{% url 'sessoes:historico_crianca' crianca.pk %}{% else %}#{% endif %}" class="nav-link-app {% if active == 'historico' %}active{% endif %}">
+            <span class="material-symbols-outlined">history</span> Histórico
+        </a>
+        <a href="#" class="nav-link-app">
+            <span class="material-symbols-outlined">settings</span> Configurações
+        </a>
+        {% if crianca %}
+        <div class="cta-nova-sessao">
+            <a href="{% url 'sessoes:escolher_sessao' crianca.pk %}" class="btn btn-coral w-100">
+                <span class="material-symbols-outlined" style="font-size:20px;">add</span> Nova Sessão
+            </a>
+        </div>
+        {% endif %}
+    </aside>
+    <div class="app-main">
+        <header class="app-topbar">
+            <div class="brand-mobile">
+                <span class="material-symbols-outlined icon-fill" style="color:var(--color-primary);">psychology</span>
+                Projeto LB
+            </div>
+            <div class="desktop-links d-flex gap-3">
+                <a href="{% url 'crianca_lista' %}" class="text-muted text-decoration-none fw-bold">Dashboard</a>
+                {% if crianca %}<a href="{% url 'sessoes:historico_crianca' crianca.pk %}" class="text-muted text-decoration-none fw-bold">Histórico</a>{% endif %}
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <span class="text-muted small d-none d-md-inline">{{ user.get_full_name|default:user.username }}</span>
+                <form method="post" action="{% url 'logout' %}" class="m-0">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-outline-primary btn-sm">Sair</button>
+                </form>
+            </div>
+        </header>
+        <main class="app-content">
+            {% block conteudo %}{% endblock %}
+        </main>
     </div>
+</div>
+<nav class="app-bottomnav">
+    <a href="{% url 'crianca_lista' %}" class="{% if active == 'criancas' %}active{% endif %}">
+        <span class="material-symbols-outlined">child_care</span>Crianças
+    </a>
+    <a href="{% if crianca %}{% url 'sessoes:escolher_sessao' crianca.pk %}{% else %}#{% endif %}" class="{% if active == 'sessoes' %}active{% endif %}">
+        <span class="material-symbols-outlined">calendar_today</span>Sessões
+    </a>
+    <a href="{% if crianca %}{% url 'sessoes:historico_crianca' crianca.pk %}{% else %}#{% endif %}" class="{% if active == 'historico' %}active{% endif %}">
+        <span class="material-symbols-outlined">history</span>Histórico
+    </a>
+    <a href="#"><span class="material-symbols-outlined">settings</span>Config</a>
+</nav>
+{% else %}
+<div class="d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+    {% block conteudo_bare %}{% endblock %}
+</div>
+{% endif %}
+{% block extra_scripts %}{% endblock %}
 </body>
 </html>

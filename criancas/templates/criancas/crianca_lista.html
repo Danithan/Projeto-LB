@@ -3,40 +3,60 @@
 {% block title %}Crianças cadastradas — Projeto LB{% endblock %}
 
 {% block conteudo %}
-<div class="d-flex justify-content-between align-items-center mb-5">
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-5">
     <div>
-        <h1 class="fw-bold mb-1">Crianças cadastradas</h1>
-        {% if criancas %}
-            <span class="text-muted">{{ criancas|length }} criança{{ criancas|length|pluralize:"s" }}</span>
-        {% endif %}
+        <h2 class="mb-1">Dashboard</h2>
+        <p class="text-muted mb-0">Gerencie perfis e históricos clínicos.</p>
     </div>
-    <a href="{% url 'crianca_criar' %}" class="btn btn-coral px-4 py-2">+ Nova criança</a>
+    <div class="d-flex flex-column flex-sm-row gap-2">
+        <div class="position-relative" style="min-width: 260px;">
+            <span class="material-symbols-outlined position-absolute text-muted" style="left: 12px; top: 50%; transform: translateY(-50%); font-size: 20px;">search</span>
+            <input type="search" id="busca-crianca" class="form-control" style="padding-left: 2.5rem;" placeholder="Buscar criança...">
+        </div>
+        <a href="{% url 'crianca_criar' %}" class="btn btn-coral px-4">
+            <span class="material-symbols-outlined" style="font-size:20px;">person_add</span> Nova Criança
+        </a>
+    </div>
 </div>
 
 {% if criancas %}
-<div class="row g-4">
+<div class="row g-4" id="grid-criancas">
     {% for crianca in criancas %}
-        <div class="col-12 col-md-4">
-            <div class="card card-item h-100">
-                <div class="card-body p-4 d-flex flex-column">
-                    <div class="d-flex align-items-center gap-3 mb-4">
-                        <div class="avatar-circle">{{ crianca.nome|first|upper }}</div>
-                        <div>
-                            <h5 class="mb-0 fw-bold">{{ crianca.nome }}</h5>
-                            <span class="text-muted small">{{ crianca.idade }}</span>
-                        </div>
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3 crianca-card" data-nome="{{ crianca.nome|lower }}">
+            <div class="card card-item h-100 position-relative">
+                <div class="card-body p-4 d-flex flex-column align-items-center text-center gap-3">
+                    <div class="d-flex justify-content-end w-100 gap-1" style="position:absolute; top: 0.5rem; right: 0.5rem;">
+                        <a href="{% url 'crianca_editar' crianca.pk %}" class="btn btn-outline-primary btn-sm" style="min-height:36px; width:36px; padding:0; border-width:1px;" title="Editar">
+                            <span class="material-symbols-outlined" style="font-size:18px;">edit</span>
+                        </a>
+                        <a href="{% url 'crianca_deletar' crianca.pk %}" class="btn btn-outline-danger btn-sm" style="min-height:36px; width:36px; padding:0; border-width:1px;" title="Deletar">
+                            <span class="material-symbols-outlined" style="font-size:18px;">delete</span>
+                        </a>
                     </div>
-                    <a href="{% url 'sessoes:escolher_sessao' crianca.pk %}" class="btn btn-coral btn-sm mb-2">Iniciar sessão</a>
-                    <a href="{% url 'sessoes:relatorio_consolidado_pdf' crianca.pk %}" class="btn btn-outline-primary btn-sm mb-2" target="_blank">Relatório PDF</a>
-                    <div class="d-flex gap-2 mt-auto">
-                        <a href="{% url 'crianca_editar' crianca.pk %}" class="btn btn-outline-primary btn-sm flex-fill">Editar</a>
-                        <a href="{% url 'crianca_deletar' crianca.pk %}" class="btn btn-outline-danger btn-sm flex-fill">Deletar</a>
+                    <div class="avatar-circle" style="width:88px; height:88px; font-size:2rem;">{{ crianca.nome|first|upper }}</div>
+                    <div>
+                        <h5 class="mb-0">{{ crianca.nome }}</h5>
+                        <span class="text-muted small">{{ crianca.idade }}</span>
                     </div>
+                    <a href="{% url 'sessoes:escolher_sessao' crianca.pk %}" class="btn btn-outline-primary btn-sm w-100 mt-auto">
+                        <span class="material-symbols-outlined" style="font-size:20px;">play_circle</span> Atender
+                    </a>
+                    <a href="{% url 'sessoes:historico_crianca' crianca.pk %}" class="text-muted small text-decoration-none">Ver histórico</a>
                 </div>
             </div>
         </div>
     {% endfor %}
+    <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <a href="{% url 'crianca_criar' %}" class="card h-100 text-decoration-none d-flex align-items-center justify-content-center text-center p-4" style="border: 2px dashed var(--color-border); border-radius: var(--radius-card); min-height: 260px; background: var(--color-surface-container-low);">
+            <div>
+                <div class="mb-2"><span class="material-symbols-outlined" style="font-size: 32px; color: var(--color-primary);">add_circle</span></div>
+                <h6 class="mb-1" style="color: var(--color-primary);">Nova Criança</h6>
+                <p class="text-muted small mb-0">Adicionar novo paciente</p>
+            </div>
+        </a>
+    </div>
 </div>
+<p id="busca-vazio" class="text-muted text-center mt-5 d-none">Nenhuma criança encontrada para essa busca.</p>
 {% else %}
 <div class="empty-state">
     <h5 class="fw-bold mb-2" style="color: var(--color-text);">Nenhuma criança cadastrada ainda</h5>
@@ -44,4 +64,24 @@
     <a href="{% url 'crianca_criar' %}" class="btn btn-coral px-4 py-2">+ Nova criança</a>
 </div>
 {% endif %}
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    const buscaInput = document.getElementById('busca-crianca');
+    if (buscaInput) {
+        buscaInput.addEventListener('input', function () {
+            const termo = this.value.trim().toLowerCase();
+            const cards = document.querySelectorAll('.crianca-card');
+            let visiveis = 0;
+            cards.forEach(function (card) {
+                const bate = card.dataset.nome.includes(termo);
+                card.style.display = bate ? '' : 'none';
+                if (bate) visiveis++;
+            });
+            const vazio = document.getElementById('busca-vazio');
+            if (vazio) vazio.classList.toggle('d-none', visiveis > 0 || termo === '');
+        });
+    }
+</script>
 {% endblock %}

@@ -71,3 +71,7 @@ Avisa que o resultado anterior da sessão será apagado e substituído. Confirma
 ## Fonte
 
 Wireframes criados no Claude Design (handoff `Projeto LB Wireframes.dc.html`).
+
+## Status: implementado em alta fidelidade
+
+O fluxo 1a–1j acima foi prototipado em alta fidelidade no Stitch (paleta "Acolhimento Clínico") e implementado com dados reais — ver `docs/design-system.md` para os tokens visuais e o mapeamento de cada tela para a URL/view correspondente (`sessoes/urls.py`, `criancas/urls.py`).

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Confirmar repetição — {{ crianca.nome }}{% endblock %}
+
+{% block conteudo %}
+<div class="d-flex align-items-center justify-content-center" style="min-height: 60vh;">
+    <div class="card card-item p-4" style="max-width: 480px; width: 100%;">
+        <div class="d-flex align-items-start gap-3 mb-3">
+            <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width:48px; height:48px; background: var(--color-secondary-container);">
+                <span class="material-symbols-outlined icon-fill" style="color: var(--color-secondary);">refresh</span>
+            </div>
+            <div>
+                <h5 class="mb-2">Deseja repetir a Sessão {{ sessao.sessao_modelo.numero }}?</h5>
+                <p class="text-muted mb-0">Ao repetir, o resultado anterior desta sessão será apagado e substituído pelo novo desempenho de {{ crianca.nome }}.</p>
+            </div>
+        </div>
+        <form method="post" class="d-flex flex-column-reverse flex-sm-row justify-content-end gap-2 mt-3">
+            {% csrf_token %}
+            <a href="{% url 'sessoes:escolher_sessao' crianca.pk %}" class="btn btn-outline-primary px-4">Cancelar</a>
+            <button type="submit" class="btn btn-coral px-4">Confirmar e Iniciar</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

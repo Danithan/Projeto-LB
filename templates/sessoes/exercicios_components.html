@@ -1,9 +1,9 @@
 <style>
-/* Base Game Styles */
+/* Base Game Styles — paleta Clinical Softness (docs/design-system.md) */
 .game-grid {
     display: inline-grid;
     gap: 4px;
-    background: #f0f0f0;
+    background: var(--color-surface-container-low);
     padding: 10px;
     border-radius: var(--radius-card);
 }
@@ -14,101 +14,64 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: white;
-    font-weight: bold;
-    font-size: 1.2rem;
-    border-radius: 4px;
+    background: var(--color-surface);
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 6px;
     cursor: pointer;
     user-select: none;
     transition: all 0.2s;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-border);
 }
 
 .game-cell.selected {
-    background: var(--color-primary);
-    color: white;
-    border-color: var(--color-primary-strong);
+    background: var(--color-primary-container);
+    color: var(--color-on-primary-container);
+    border-color: var(--color-primary);
 }
 
 .game-cell.found {
-    background: var(--color-accent);
-    color: white;
-    border-color: var(--color-accent-hover);
+    background: var(--color-tertiary-container);
+    color: var(--color-on-tertiary-container);
+    border-color: var(--color-tertiary);
 }
 
-/* Crossword Specific */
-.crossword-grid {
-    position: relative;
-    background: transparent;
-    padding: 0;
-}
+/* Crossword */
+.crossword-grid { position: relative; background: transparent; padding: 0; }
 .crossword-input {
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border: none;
-    outline: none;
-    background: transparent;
-    text-transform: uppercase;
+    width: 100%; height: 100%; text-align: center; font-size: 1.1rem; font-weight: 700;
+    border: none; outline: none; background: transparent; text-transform: uppercase;
 }
-.crossword-input:focus {
-    background: rgba(45, 110, 126, 0.1);
-}
+.crossword-input:focus { background: rgba(53, 98, 135, 0.1); }
 .crossword-cell-wrapper {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    background: white;
-    border: 1px solid #333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: absolute; width: 40px; height: 40px; background: var(--color-surface);
+    border: 1px solid var(--color-outline); display: flex; align-items: center; justify-content: center;
 }
-.crossword-number {
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    font-size: 0.6rem;
-    line-height: 1;
-}
+.crossword-number { position: absolute; top: 2px; left: 2px; font-size: 0.6rem; line-height: 1; color: var(--color-text-muted); }
 
 /* Unscramble */
-.unscramble-row {
-    display: flex;
-    gap: 5px;
-    margin-bottom: 10px;
-}
+.unscramble-row { display: flex; gap: 5px; margin-bottom: 10px; }
 .unscramble-input {
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border: 1px solid var(--color-primary);
-    border-radius: 4px;
-    text-transform: uppercase;
+    width: 40px; height: 40px; text-align: center; font-size: 1.1rem; font-weight: 700;
+    border: 2px solid var(--color-border); border-radius: 6px; text-transform: uppercase;
 }
-.unscramble-input.shaded {
-    background: #e0e0e0;
-}
+.unscramble-input.shaded { background: var(--color-surface-container-high); }
 
-/* Phrases Fill */
+/* Phrases fill */
 .phrase-input {
-    display: inline-block;
-    width: 150px;
-    border: none;
-    border-bottom: 2px solid var(--color-primary);
-    background: transparent;
-    text-align: center;
-    font-weight: bold;
-    outline: none;
-    color: var(--color-primary);
+    display: inline-block; width: 150px; border: none; border-bottom: 2px solid var(--color-secondary);
+    background: transparent; text-align: center; font-weight: 700; outline: none; color: var(--color-secondary);
 }
-.phrase-input:focus {
-    border-bottom-color: var(--color-accent);
+.phrase-input:focus { border-bottom-color: var(--color-primary); }
+
+/* Card do exercício — cabeçalho centralizado, no espírito do protótipo Stitch */
+.exercicio-card { max-width: 720px; margin: 0 auto; }
+.exercicio-card .exercicio-icone {
+    width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    background: var(--color-tertiary-container); color: var(--color-on-tertiary-container); margin: 0 auto 1rem;
 }
+.exercicio-card h4 { text-align: center; }
+.exercicio-card .enunciado-texto { text-align: center; max-width: 560px; margin: 0 auto 1.5rem; }
 </style>
 
 <script>
@@ -120,10 +83,10 @@ function getCookie(name) {
 function salvarResultado(ex, { percentual, pontuacao, tempoInicio }) {
     const container = document.getElementById('exercicios-container');
     const sessaoId = container && container.dataset.sessaoId;
-    if (!sessaoId) return;
+    if (!sessaoId) return Promise.resolve(null);
 
     const tempoSegundos = Math.max(0, Math.round((Date.now() - tempoInicio) / 1000));
-    fetch(`/sessoes/${sessaoId}/exercicios/${ex.id}/resultado/`, {
+    return fetch(`/sessoes/${sessaoId}/exercicios/${ex.id}/resultado/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -134,21 +97,42 @@ function salvarResultado(ex, { percentual, pontuacao, tempoInicio }) {
             tempo_segundos: tempoSegundos,
             pontuacao: pontuacao,
         }),
-    }).catch(err => console.error('Erro ao salvar resultado do exercício', ex.id, err));
+    }).then(resp => resp.json()).catch(err => {
+        console.error('Erro ao salvar resultado do exercício', ex.id, err);
+        return null;
+    });
+}
+
+function irParaProximaTela(resultado) {
+    if (resultado && resultado.proxima_url) {
+        window.location.href = resultado.proxima_url;
+    } else {
+        history.back();
+    }
+}
+
+function criarBotaoVoltar(container) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'btn btn-outline-primary mt-3';
+    btn.innerText = 'Voltar para os exercícios';
+    btn.onclick = () => history.back();
+    container.appendChild(btn);
+    return btn;
 }
 
 const ExerciseRenderers = {
-    // 1. Path Word Search & Fill Blanks
+    // 1. Lacunas com letras
     preenche_lacunas_letras: function(container, ex) {
         const config = ex.configuracao;
-        
-        // Render Grid
+        const tempoInicio = Date.now();
+
         const gridContainer = document.createElement('div');
         gridContainer.className = "game-grid mb-4";
         gridContainer.style.gridTemplateColumns = `repeat(${config.grid[0].length}, 40px)`;
-        
+
         let isDragging = false;
-        
+
         config.grid.forEach((row, rowIndex) => {
             row.forEach((letter, colIndex) => {
                 const cell = document.createElement('div');
@@ -156,101 +140,114 @@ const ExerciseRenderers = {
                 cell.innerText = letter;
                 cell.dataset.r = rowIndex;
                 cell.dataset.c = colIndex;
-                
-                // Interaction
+
                 cell.addEventListener('mousedown', () => { isDragging = true; cell.classList.toggle('selected'); });
                 cell.addEventListener('mouseenter', () => { if(isDragging) cell.classList.toggle('selected'); });
-                
+
                 gridContainer.appendChild(cell);
             });
         });
-        
+
         document.addEventListener('mouseup', () => { isDragging = false; });
-        
+
         container.appendChild(gridContainer);
-        
-        // Render Phrases
+
         const phrasesContainer = document.createElement('div');
-        config.frases.forEach((fraseTemplate, i) => {
+        (config.frases || []).forEach((fraseTemplate) => {
             const p = document.createElement('p');
             p.innerHTML = fraseTemplate.replace(/\{(\d+)\}/g, `<input type="text" class="phrase-input" data-answer-idx="$1" />`);
             phrasesContainer.appendChild(p);
         });
         container.appendChild(phrasesContainer);
-        
-        // Validation Button
+
         const btn = document.createElement('button');
         btn.className = "btn btn-coral mt-3";
         btn.innerText = "Verificar Respostas";
         btn.onclick = () => {
-            let correct = true;
-            phrasesContainer.querySelectorAll('.phrase-input').forEach(input => {
-                const answer = config.respostas[input.dataset.answerIdx];
-                if (input.value.toUpperCase() === answer.toUpperCase()) {
-                    input.style.borderBottomColor = "green";
-                    input.style.color = "green";
-                } else {
-                    input.style.borderBottomColor = "red";
-                    correct = false;
-                }
+            let corretas = 0;
+            const inputs = phrasesContainer.querySelectorAll('.phrase-input');
+            inputs.forEach(input => {
+                const answer = (config.respostas || [])[input.dataset.answerIdx];
+                const acertou = answer && input.value.toUpperCase() === answer.toUpperCase();
+                input.style.borderBottomColor = acertou ? "var(--color-primary)" : "var(--color-error)";
+                input.style.color = acertou ? "var(--color-primary)" : "var(--color-text)";
+                if (acertou) corretas++;
             });
-            if(correct) alert("Parabéns! Respostas corretas!");
+            const total = inputs.length || 1;
+            const percentual = Math.round((corretas / total) * 100);
+            btn.disabled = true;
+            btn.innerText = "Respostas salvas!";
+            salvarResultado(ex, { percentual, pontuacao: percentual, tempoInicio }).then(irParaProximaTela);
         };
         container.appendChild(btn);
     },
-    
-    // 2. Crossword
+
+    // 2. Cruzadinha
     cruzadinha: function(container, ex) {
         const config = ex.configuracao;
-        
-        // Determine grid bounds based on cell coordinates
+        const tempoInicio = Date.now();
+
         let maxX = 0, maxY = 0;
         config.celulas.forEach(c => {
             if (c.x > maxX) maxX = c.x;
             if (c.y > maxY) maxY = c.y;
         });
-        
+
         const gridWrapper = document.createElement('div');
         gridWrapper.className = "crossword-grid mb-4";
         gridWrapper.style.width = `${(maxX + 1) * 40}px`;
         gridWrapper.style.height = `${(maxY + 1) * 40}px`;
-        
+
+        const editaveis = [];
         config.celulas.forEach(cell => {
             const cellDiv = document.createElement('div');
             cellDiv.className = "crossword-cell-wrapper";
             cellDiv.style.left = `${cell.x * 40}px`;
             cellDiv.style.top = `${cell.y * 40}px`;
-            
+
             if (cell.numero) {
                 const num = document.createElement('span');
                 num.className = "crossword-number";
                 num.innerText = cell.numero;
                 cellDiv.appendChild(num);
             }
-            
+
             if (cell.editavel) {
                 const input = document.createElement('input');
                 input.className = "crossword-input";
                 input.maxLength = 1;
-                // auto-advance logic could be added here
                 cellDiv.appendChild(input);
+                editaveis.push(input);
             } else {
-                cellDiv.style.background = "#333"; // block
+                cellDiv.style.background = "var(--color-text)";
             }
-            
+
             gridWrapper.appendChild(cellDiv);
         });
-        
+
         container.appendChild(gridWrapper);
-        
+
         if (config.dicas && config.dicas.length > 0) {
             const dicas = document.createElement('div');
-            dicas.innerHTML = "<h5>Dicas:</h5><ul>" + config.dicas.map(d => `<li>${d}</li>`).join('') + "</ul>";
+            dicas.className = 'mt-3';
+            dicas.innerHTML = "<h6>Dicas:</h6><ul>" + config.dicas.map(d => `<li>${d}</li>`).join('') + "</ul>";
             container.appendChild(dicas);
         }
+
+        const btn = document.createElement('button');
+        btn.className = "btn btn-coral mt-3";
+        btn.innerText = "Concluir";
+        btn.onclick = () => {
+            const preenchidas = editaveis.filter(i => i.value.trim().length > 0).length;
+            const total = editaveis.length || 1;
+            const percentual = Math.round((preenchidas / total) * 100);
+            btn.disabled = true;
+            salvarResultado(ex, { percentual, pontuacao: percentual, tempoInicio }).then(irParaProximaTela);
+        };
+        container.appendChild(btn);
     },
-    
-    // 3. and 4. Word Search (with or without phrases)
+
+    // 3. Caça-palavras
     caca_palavras: function(container, ex) {
         const config = ex.configuracao;
         const tempoInicio = Date.now();
@@ -268,7 +265,7 @@ const ExerciseRenderers = {
         listaDiv.className = "mt-3";
 
         function atualizarLista() {
-            listaDiv.innerHTML = "<h5>Encontre:</h5><p>" + palavrasAlvo.map(w =>
+            listaDiv.innerHTML = "<h6>Encontre:</h6><p>" + palavrasAlvo.map(w =>
                 encontradas.has(w) ? `<s>${w}</s>` : w
             ).join(', ') + "</p>";
         }
@@ -302,6 +299,9 @@ const ExerciseRenderers = {
                     coords.forEach(p => p.el.classList.add('found'));
                     atualizarLista();
                     salvarProgresso();
+                    if (encontradas.size === palavrasAlvo.length) {
+                        botaoConcluir.disabled = false;
+                    }
                 }
             }
             limparSelecao();
@@ -339,10 +339,9 @@ const ExerciseRenderers = {
 
         container.appendChild(gridContainer);
 
-        // Phrases if provided (like Parachoques)
         if (config.frases) {
             const phrasesContainer = document.createElement('div');
-            config.frases.forEach((fraseTemplate, i) => {
+            config.frases.forEach((fraseTemplate) => {
                 const p = document.createElement('p');
                 p.innerHTML = fraseTemplate.replace(/\{(\d+)\}/g, `<input type="text" class="phrase-input" data-answer-idx="$1" />`);
                 phrasesContainer.appendChild(p);
@@ -354,9 +353,16 @@ const ExerciseRenderers = {
             atualizarLista();
             container.appendChild(listaDiv);
         }
+
+        const botaoConcluir = document.createElement('button');
+        botaoConcluir.className = "btn btn-coral mt-3";
+        botaoConcluir.innerText = "Concluir";
+        botaoConcluir.disabled = encontradas.size < palavrasAlvo.length;
+        botaoConcluir.onclick = () => irParaProximaTela({ proxima_url: null });
+        container.appendChild(botaoConcluir);
     },
-    
-    // 5. Unscramble & Hidden Word
+
+    // 4. Ordene as letras
     ordena_letras: function(container, ex) {
         const config = ex.configuracao;
         const tempoInicio = Date.now();
@@ -384,7 +390,6 @@ const ExerciseRenderers = {
                 row.appendChild(input);
                 inputs.push(input);
 
-                // Auto focus next
                 input.addEventListener('input', function() {
                     if (this.value && this.nextElementSibling && this.nextElementSibling.tagName === 'INPUT') {
                         this.nextElementSibling.focus();
@@ -395,10 +400,10 @@ const ExerciseRenderers = {
             palavraChecks.push({ inputs, resposta: wordObj.resposta.toUpperCase() });
         });
 
-        // Final word
         if (config.palavra_final) {
             const finalRow = document.createElement('div');
-            finalRow.className = "unscramble-row mt-4 p-3 bg-light rounded";
+            finalRow.className = "unscramble-row mt-4 p-3 rounded";
+            finalRow.style.background = "var(--color-surface-container-low)";
             finalRow.innerHTML = `<strong class="me-3">Palavra Oculta:</strong>`;
 
             for(let i=0; i<config.palavra_final.length; i++) {
@@ -418,17 +423,19 @@ const ExerciseRenderers = {
             palavraChecks.forEach(({ inputs, resposta }) => {
                 const digitado = inputs.map(i => i.value.toUpperCase()).join('');
                 const acertou = digitado === resposta;
-                inputs.forEach(i => { i.style.borderColor = acertou ? "green" : "#C0392B"; });
+                inputs.forEach(i => { i.style.borderColor = acertou ? "var(--color-primary)" : "var(--color-error)"; });
                 if (acertou) corretas++;
             });
             const total = palavraChecks.length || 1;
             const percentual = Math.round((corretas / total) * 100);
-            salvarResultado(ex, { percentual, pontuacao: percentual, tempoInicio });
+            btn.disabled = true;
+            btn.innerText = "Respostas salvas!";
+            salvarResultado(ex, { percentual, pontuacao: percentual, tempoInicio }).then(irParaProximaTela);
         };
         container.appendChild(btn);
     },
 
-    // 6. Pergunta Aberta (respostas abertas, terapeuta avalia manualmente)
+    // 5. Pergunta aberta
     pergunta_aberta: function(container, ex) {
         const config = ex.configuracao;
         const tempoInicio = Date.now();
@@ -459,14 +466,14 @@ const ExerciseRenderers = {
             const respondidos = textareas.filter(t => t.value.trim().length > 0).length;
             const total = textareas.length || 1;
             const percentual = Math.round((respondidos / total) * 100);
-            salvarResultado(ex, { percentual, pontuacao: percentual, tempoInicio });
             btn.innerText = "Respostas salvas!";
             btn.disabled = true;
+            salvarResultado(ex, { percentual, pontuacao: percentual, tempoInicio }).then(irParaProximaTela);
         };
         container.appendChild(btn);
     },
 
-    // 7. Multipla Escolha
+    // 6. Múltipla escolha
     multipla_escolha: function(container, ex) {
         const config = ex.configuracao;
         const groups = [];
@@ -491,9 +498,11 @@ const ExerciseRenderers = {
                 input.className = "form-check-input";
                 input.name = `mc-${ex.id}-${qIndex}`;
                 input.value = oIndex;
+                input.id = `mc-${ex.id}-${qIndex}-${oIndex}`;
 
                 const label = document.createElement('label');
                 label.className = "form-check-label";
+                label.setAttribute('for', input.id);
                 label.innerText = opcao;
 
                 optWrapper.appendChild(input);
@@ -515,17 +524,18 @@ const ExerciseRenderers = {
                 const selected = group.inputs.find(i => i.checked);
                 if (!selected) return;
                 const acertou = Number(selected.value) === group.correta;
-                selected.parentElement.style.color = acertou ? "green" : "red";
+                selected.parentElement.style.color = acertou ? "var(--color-primary)" : "var(--color-error)";
                 if (acertou) corretas++;
             });
             const total = groups.length || 1;
             const percentual = Math.round((corretas / total) * 100);
-            salvarResultado(ex, { percentual, pontuacao: percentual, tempoInicio });
+            btn.disabled = true;
+            salvarResultado(ex, { percentual, pontuacao: percentual, tempoInicio }).then(irParaProximaTela);
         };
         container.appendChild(btn);
     },
 
-    // 8. Verdadeiro ou Falso
+    // 7. Verdadeiro ou falso
     verdadeiro_falso: function(container, ex) {
         const config = ex.configuracao;
         const groups = [];
@@ -571,12 +581,13 @@ const ExerciseRenderers = {
                 if (!selected) return;
                 const [value] = selected;
                 const acertou = value === String(group.correta);
-                group.wrapper.style.color = acertou ? "green" : "red";
+                group.wrapper.style.color = acertou ? "var(--color-primary)" : "var(--color-error)";
                 if (acertou) corretas++;
             });
             const total = groups.length || 1;
             const percentual = Math.round((corretas / total) * 100);
-            salvarResultado(ex, { percentual, pontuacao: percentual, tempoInicio });
+            btn.disabled = true;
+            salvarResultado(ex, { percentual, pontuacao: percentual, tempoInicio }).then(irParaProximaTela);
         };
         container.appendChild(btn);
     }
@@ -585,7 +596,7 @@ const ExerciseRenderers = {
 document.addEventListener("DOMContentLoaded", function() {
     const dataElement = document.getElementById('exercicios-data');
     if (!dataElement) return;
-    
+
     let exerciciosData = [];
     try {
         exerciciosData = JSON.parse(dataElement.textContent);
@@ -600,34 +611,38 @@ document.addEventListener("DOMContentLoaded", function() {
         return;
     }
 
-    container.innerHTML = ''; // clear
+    container.innerHTML = '';
 
     exerciciosData.forEach(ex => {
         const card = document.createElement('div');
-        card.className = "card-item p-4 mb-4 bg-white";
-        
+        card.className = "card card-item exercicio-card p-4 p-md-5 mb-4";
+
+        const icone = document.createElement('div');
+        icone.className = "exercicio-icone";
+        icone.innerHTML = `<span class="material-symbols-outlined icon-fill" style="font-size:32px;">${ (ex.icone || 'quiz') }</span>`;
+
         const title = document.createElement('h4');
-        title.className = "mb-3";
-        title.innerText = `Exercício ${ex.numero} - ${ex.tipo.replace(/_/g, ' ').toUpperCase()}`;
-        
-        const enunciado = document.createElement('p');
-        enunciado.className = "text-muted mb-4";
-        enunciado.innerText = ex.enunciado;
-        
+        title.innerText = ex.enunciado;
+
+        const tipoLabel = document.createElement('p');
+        tipoLabel.className = "text-muted enunciado-texto small";
+        tipoLabel.innerText = ex.tipo.replace(/_/g, ' ');
+
         const corpoExercicio = document.createElement('div');
         corpoExercicio.id = `exercicio-corpo-${ex.id}`;
-        
+
+        card.appendChild(icone);
         card.appendChild(title);
-        card.appendChild(enunciado);
+        card.appendChild(tipoLabel);
         card.appendChild(corpoExercicio);
-        
+
         container.appendChild(card);
-        
-        // Call the specific renderer if it exists
+
         if (ExerciseRenderers[ex.tipo]) {
             ExerciseRenderers[ex.tipo](corpoExercicio, ex);
         } else {
             corpoExercicio.innerHTML = `<div class="alert alert-warning">Renderizador não implementado para o tipo: ${ex.tipo}</div>`;
+            criarBotaoVoltar(corpoExercicio);
         }
     });
 });

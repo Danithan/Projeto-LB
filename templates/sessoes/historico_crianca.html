@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block title %}Histórico — {{ crianca.nome }}{% endblock %}
+
+{% block conteudo %}
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+    <div class="d-flex align-items-center gap-3">
+        <div class="avatar-circle" style="width:72px; height:72px; font-size:1.6rem;">{{ crianca.nome|first|upper }}</div>
+        <div>
+            <div class="d-flex align-items-center gap-2">
+                <h3 class="mb-0">{{ crianca.nome }}</h3>
+                <span class="badge rounded-pill" style="background: var(--color-surface-container-high); color: var(--color-text-muted); font-weight:700;">{{ crianca.idade }}</span>
+            </div>
+            <p class="text-muted mb-0">Histórico de Sessões</p>
+        </div>
+    </div>
+    <a href="{% url 'sessoes:relatorio_consolidado_pdf' crianca.pk %}" target="_blank" class="btn btn-coral">
+        <span class="material-symbols-outlined">download</span> Exportar Relatório Consolidado
+    </a>
+</div>
+
+{% if sessoes_info %}
+<div class="d-flex flex-column gap-3">
+    {% for info in sessoes_info %}
+        <div class="card card-item p-4 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 {% if info.sessao.status != 'concluida' %}opacity-75{% endif %}">
+            <div>
+                <div class="text-muted small d-flex align-items-center gap-1 mb-1">
+                    <span class="material-symbols-outlined" style="font-size:18px;">event</span> {{ info.sessao.data|date:"d \d\e F, Y" }}
+                </div>
+                <h6 class="mb-1">Sessão {{ info.sessao.sessao_modelo.numero }} — {{ info.sessao.sessao_modelo.titulo }}</h6>
+                <span class="badge rounded-pill" style="{% if info.sessao.status == 'concluida' %}background: var(--color-primary-container); color: var(--color-on-primary-container);{% else %}background: var(--color-surface-container-high); color: var(--color-text-muted);{% endif %} font-weight:700;">
+                    {{ info.sessao.get_status_display }}
+                </span>
+            </div>
+            <div class="d-flex align-items-center gap-4 pt-3 pt-md-0 ps-md-4" style="border-top: 1px solid var(--color-border); border-left: none;">
+                <div style="min-width:120px;">
+                    <div class="d-flex justify-content-between small mb-1">
+                        <span class="text-muted fw-bold">Acerto</span>
+                        <span class="fw-bold" style="color: var(--color-primary);">{% if info.media_percentual is not None %}{{ info.media_percentual|floatformat:0 }}%{% else %}—{% endif %}</span>
+                    </div>
+                    <div style="height:10px; border-radius:999px; background: var(--color-surface-container-high); overflow:hidden;">
+                        <div style="height:100%; width: {{ info.media_percentual|default:0|floatformat:0 }}%; background: var(--color-primary-container);"></div>
+                    </div>
+                </div>
+                <div class="d-flex gap-1">
+                    <a href="{% url 'sessoes:repetir_sessao' info.sessao.id %}" class="btn btn-outline-primary btn-sm" style="min-height:40px; width:40px; padding:0;" title="Repetir sessão">
+                        <span class="material-symbols-outlined" style="font-size:18px;">replay</span>
+                    </a>
+                    <a href="{% url 'sessoes:relatorio_sessao_pdf' info.sessao.id %}" target="_blank" class="btn btn-outline-primary btn-sm" style="min-height:40px; width:40px; padding:0;" title="Baixar PDF">
+                        <span class="material-symbols-outlined" style="font-size:18px;">picture_as_pdf</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% if tem_mais %}
+    <div class="text-center mt-4">
+        <a href="?todas=1" class="btn btn-outline-primary px-4">Carregar Sessões Anteriores</a>
+    </div>
+{% endif %}
+{% else %}
+<div class="empty-state">
+    <h5 class="fw-bold mb-2" style="color: var(--color-text);">Nenhuma sessão realizada ainda</h5>
+    <p class="mb-4">Inicie uma sessão para começar a acompanhar o histórico.</p>
+    <a href="{% url 'sessoes:escolher_sessao' crianca.pk %}" class="btn btn-coral px-4">Iniciar sessão</a>
+</div>
+{% endif %}
+{% endblock %}

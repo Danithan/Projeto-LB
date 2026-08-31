@@ -16,7 +16,7 @@ def lista_criancas(request):
         criancas_list = Crianca.objects.all()
     else:
         criancas_list = Crianca.objects.filter(terapeuta=request.user)
-    return render(request, 'criancas/crianca_lista.html', {'criancas': criancas_list})
+    return render(request, 'criancas/crianca_lista.html', {'criancas': criancas_list, 'active': 'criancas'})
 
 
 @login_required
@@ -30,7 +30,7 @@ def criar_crianca(request):
             return redirect('crianca_lista')
     else:
         form = CriancaForm()
-    return render(request, 'criancas/crianca_form.html', {'form': form})
+    return render(request, 'criancas/crianca_form.html', {'form': form, 'active': 'criancas'})
 
 
 @login_required
@@ -43,7 +43,7 @@ def editar_crianca(request, pk):
             return redirect('crianca_lista')
     else:
         form = CriancaForm(instance=crianca)
-    return render(request, 'criancas/crianca_form.html', {'form': form})
+    return render(request, 'criancas/crianca_form.html', {'form': form, 'crianca': crianca, 'active': 'criancas'})
 
 
 @login_required
@@ -52,4 +52,4 @@ def deletar_crianca(request, pk):
     if request.method == 'POST':
         crianca.delete()
         return redirect('crianca_lista')
-    return render(request, 'criancas/crianca_confirmar_delete.html', {'crianca': crianca})
+    return render(request, 'criancas/crianca_confirmar_delete.html', {'crianca': crianca, 'active': 'criancas'})

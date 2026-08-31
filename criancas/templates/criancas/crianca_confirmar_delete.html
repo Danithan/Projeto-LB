@@ -3,16 +3,22 @@
 {% block title %}Confirmar exclusão — Projeto LB{% endblock %}
 
 {% block conteudo %}
-<h1 class="fw-bold mb-4 text-danger">Confirmar exclusão</h1>
-<div class="card card-item p-4" style="max-width: 480px;">
-    <p class="mb-1">Tem certeza que deseja deletar a criança <strong>{{ crianca.nome }}</strong>?</p>
-    <p class="text-muted small mb-4">Essa ação não pode ser desfeita.</p>
-    <form method="POST">
-        {% csrf_token %}
-        <div class="d-flex gap-2">
-            <a href="{% url 'crianca_lista' %}" class="btn btn-outline-secondary px-4">Cancelar</a>
-            <button type="submit" class="btn btn-danger px-4">Deletar</button>
+<div class="d-flex align-items-center justify-content-center" style="min-height: 60vh;">
+    <div class="card card-item p-4" style="max-width: 480px; width: 100%;">
+        <div class="d-flex align-items-start gap-3 mb-3">
+            <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width:48px; height:48px; background: var(--color-error-container);">
+                <span class="material-symbols-outlined icon-fill" style="color: var(--color-error);">delete</span>
+            </div>
+            <div>
+                <h5 class="mb-2">Deseja deletar {{ crianca.nome }}?</h5>
+                <p class="text-muted mb-0">Todos os dados de sessões e resultados dessa criança serão apagados permanentemente. Essa ação não pode ser desfeita.</p>
+            </div>
         </div>
-    </form>
+        <form method="POST" class="d-flex flex-column-reverse flex-sm-row justify-content-end gap-2 mt-3">
+            {% csrf_token %}
+            <a href="{% url 'crianca_lista' %}" class="btn btn-outline-primary px-4">Cancelar</a>
+            <button type="submit" class="btn btn-danger px-4">Deletar</button>
+        </form>
+    </div>
 </div>
 {% endblock %}

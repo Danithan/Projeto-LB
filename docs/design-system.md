@@ -4,6 +4,8 @@ Este documento registra as decisões de design visual do projeto, pra manter con
 
 Inspirado nos princípios de design system do repositório [interface-design](https://github.com/Dammyjay93/interface-design) (Craft · Memory · Consistency), adaptados manualmente aqui já que o projeto usa Django + templates, não Claude Code.
 
+> **Atualização**: a direção visual abaixo substitui a paleta "azul-petróleo + coral" original. As telas foram prototipadas em alta fidelidade no [Stitch](https://stitch.withgoogle.com) (protótipo "Portal PsicoPedagógico Interativo") e implementadas em cima do CRUD/fluxo real já existente — os tokens deste documento agora refletem exatamente o que está em `templates/base.html`.
+
 ## Contexto de uso
 
 Dois públicos usam a interface, com necessidades diferentes:
@@ -14,102 +16,97 @@ Isso empurrou as escolhas pro meio-termo: acolhedor mas sóbrio, nunca "infantil
 
 ## Direção
 
-**Personalidade**: Acolhimento com presença — espaçamento generoso e cantos arredondados (acolhedor), mas com contraste de cor mais forte que o usual pra garantir clareza visual pra quem não tem intimidade com tecnologia.
+**Personalidade**: "Acolhimento Clínico" — uma base off-white (reduz fadiga visual em sessões longas) com formas orgânicas e paleta suave, mas mantendo rigor profissional via grid estruturado e tipografia bem definida. Evita tanto o visual frio/corporativo quanto o infantilizado.
 
-**Referência mais próxima** (dos direcionamentos do interface-design): *Warmth & Approachability* (espaçamento generoso, sombras suaves), com um pouco mais de contraste de cor puxado de *Boldness & Clarity*.
+**Elevação**: sem sombras pesadas — profundidade vem de camadas tonais (fundo do sidebar mais escuro que o conteúdo) e bordas finas de 1px, não de `box-shadow` forte.
 
 ## Paleta de cores
 
-| Papel | Cor | Hex |
+| Papel | Uso | Hex |
 |---|---|---|
-| Primária (ações principais, títulos, links) | Azul-petróleo | `#2D6E7E` |
-| Destaque (ações de sucesso/criar, elementos de atenção positiva) | Coral | `#FF6F61` |
-| Fundo da página | Cinza-azulado bem claro | `#F5F9FA` |
-| Perigo (deletar, avisos) | Vermelho Bootstrap padrão (`btn-danger`) | — |
+| `--color-primary` | Ações principais, títulos, links, progresso | Verde-menta escuro `#246a51` |
+| `--color-primary-container` | Fundo de botão primário, avatar/ícone de destaque | `#6baf92` |
+| `--color-secondary` | Navegação ativa, foco de inputs | Azul cerúleo `#356287` |
+| `--color-secondary-container` | Badge/estado "em andamento" | `#a8d3fe` |
+| `--color-tertiary` | Progresso, acentos secundários | Lavanda `#63578a` |
+| `--color-tertiary-container` | Ícone de exercícios, barra de progresso | `#a89ad2` |
+| `--color-bg` | Fundo da página | Off-white `#f9f9f7` |
+| `--color-surface` | Fundo de cards/inputs | `#ffffff` |
+| `--color-surface-container-low/high` | Sidebar, tonal layers | `#f4f4f2` / `#e8e8e6` |
+| `--color-text` / `--color-text-muted` | Texto principal / secundário | `#1a1c1b` / `#3f4944` |
+| `--color-error` / `--color-error-container` | Deletar, alerta | `#ba1a1a` / `#ffdad6` |
 
-**Regra**: os tipos de exercício (pergunta aberta, caça-palavras, organizar letras) **não** ganham cor própria — usam a mesma paleta acima em todas as telas. Mantém o visual previsível independente de qual exercício a criança está fazendo.
-
-**Sem emojis/ícones decorativos** — visual limpo, texto e cor fazem o trabalho de comunicar hierarquia.
+**Regra**: os tipos de exercício não ganham cor própria de marca — usam a mesma paleta acima (ícone por tipo, ver `sessoes/views.py::ICONE_POR_TIPO`), mantendo o visual previsível independente do exercício.
 
 ## Tokens
 
+### Tipografia
+- **Quicksand** (600/700) para títulos — terminações arredondadas, aproximável para crianças.
+- **Nunito Sans** (400/700) para corpo de texto e rótulos — legibilidade alta para a terapeuta.
+- Carregadas via Google Fonts (`templates/base.html`), junto com o ícone **Material Symbols Outlined**.
+
 ### Espaçamento
-Generoso — prioriza respiro visual sobre densidade de informação por tela. Na prática (classes Bootstrap já usadas): `mb-4`, `mb-5`, `p-4`, `gap-3`/`gap-4`.
+Generoso — prioriza respiro visual sobre densidade de informação por tela (`gap-3`/`gap-4`, `p-4`/`p-md-5`).
 
 ### Raio de borda
-Moderado — 8 a 12px. Nem reto (frio demais), nem "pill" total (infantilizado demais).
-- Cards: `border-radius: 12px` (ou `20px` nos cards de destaque tipo listagem de crianças, avaliar caso a caso)
-- Botões: `border-radius: 50px` (formato pílula) — decisão já tomada nos botões existentes, mantida como exceção intencional pro elemento de ação principal
+- `--radius-card`: `1rem` — cards de conteúdo.
+- `--radius-control`: `0.5rem` — inputs, ícones em caixa.
+- `--radius-pill`: `9999px` — botões (`.btn`), badges de status.
 
 ### Profundidade (sombra vs. borda)
-Mistura, dependendo do elemento:
-- **Cards de conteúdo** (crianças, sessões, exercícios): sombra suave (`box-shadow: 0 4px 14px rgba(0,0,0,0.08)`), sem borda visível — sensação de "flutuar"
-- **Elementos de formulário/inputs**: borda sólida simples (padrão Bootstrap), sem sombra — foco em clareza de onde clicar/digitar
+- **Cards**: borda de 1px (`--color-border` = `#bfc9c2`), sem sombra em repouso; sombra suave só no `:hover` (`--shadow-card`).
+- **Inputs**: borda sólida de 1px, engrossa pra 2px + anel azul no `:focus` — sem sombra decorativa.
 
-### Tipografia
-`'Segoe UI', system-ui, sans-serif` — fonte do sistema, sem carregar fonte externa (mantém carregamento rápido, importante pra uso em tablet).
+## Layout — casca do app (sidebar + topo + navegação inferior)
+
+Toda tela autenticada (exceto login) usa a casca definida em `templates/base.html`:
+- **Sidebar** (desktop, ≥768px): logo, navegação (Crianças / Sessões / Histórico / Configurações) e CTA "Nova Sessão" (só aparece com uma criança no contexto).
+- **Barra superior**: breadcrumbs simples (Dashboard/Histórico) + usuário + Sair.
+- **Navegação inferior** (mobile, <768px): mesmos 4 itens da sidebar, sidebar escondida.
+
+A view passa `active` (`'criancas' | 'sessoes' | 'historico'`) e, quando aplicável, `crianca` no contexto — isso é o que liga os links "Sessões"/"Histórico" da sidebar à criança certa.
 
 ## Padrões (componentes)
 
-### Card de item (ex.: criança, sessão)
-- Borda: nenhuma
-- Raio: 12–20px
-- Sombra: `0 4px 14px rgba(0,0,0,0.08)`, com hover elevando pra `0 10px 24px rgba(0,0,0,0.14)` + leve translação pra cima (`translateY(-4px)`)
-- Padding interno: `p-4`
-- Uso: listagem de crianças (grid de cards), e deve se repetir nas próximas listagens (sessões, histórico)
+### Card de item (criança, sessão, exercício)
+- `.card-item`: borda 1px + `--radius-card`, sem sombra em repouso, eleva levemente no hover.
+- Padding interno generoso (`p-4` a `p-md-5`).
 
 ### Avatar circular (inicial do nome)
-- 56x56px, círculo, texto centralizado, cor de fundo em gradiente laranja/coral
-- Uso: ao lado do nome em cards de listagem, pra dar identidade visual rápida sem depender de foto
+- 56–88px conforme o contexto, círculo com a inicial do nome em `Quicksand` sobre `--color-surface-container-high`.
 
-### Botão primário (ação de criar/salvar)
-- Formato pílula (`border-radius: 50px`)
-- Cor: verde Bootstrap (`btn-success`) pra ações de criar/salvar — considerar migrar pro coral (`#FF6F61`) como cor de destaque própria do projeto, ainda pendente de decisão
-- Padding generoso: `px-4 py-2`
+### Botão primário — `.btn-coral`
+O nome da classe é histórico (era coral, hoje resolve pro verde-menta `--color-primary-container`) e é reutilizado tanto nos templates quanto no JS do motor de exercícios (`templates/sessoes/exercicios_components.html`) — **não renomear sem atualizar os dois lugares**.
 
-### Botão secundário (editar, cancelar)
-- Mesmo formato pílula
-- Outline, não preenchido (`btn-outline-primary`, `btn-outline-secondary`)
+### Botão secundário / de perigo
+- Secundário: `.btn-outline-primary`, borda 2px, sem preenchimento.
+- Perigo: outline vermelho na listagem, preenchido (`.btn-danger`) só na tela de confirmação — reforça que a confirmação é o ponto de não-retorno.
 
-### Botão de perigo (deletar)
-- Outline vermelho (`btn-outline-danger`) na listagem; preenchido (`btn-danger`) na tela de confirmação — reforça que a confirmação é o ponto de não-retorno
-
-## Tokens CSS (implementação)
-
-Desde a refinação do CRUD de Criança, a paleta e a escala de raio/sombra deixaram de existir só como valores soltos no `<style>` de `templates/base.html` e passaram a ser variáveis CSS em `:root`, reaproveitáveis por qualquer tela nova (sessões, exercícios, histórico):
-
-```css
---color-primary       /* #2D6E7E — ações principais, títulos, links */
---color-accent        /* #FF6F61 — ação de criar/salvar */
---color-bg            /* #F5F9FA — fundo da página */
---color-text / --color-text-muted
---radius-card          /* 12px */
---radius-control       /* 8px — inputs */
---radius-pill          /* 50px — botões */
---shadow-card / --shadow-card-hover
-```
-
-Telas novas devem consumir essas variáveis em vez de repetir hex/px soltos.
+### Badges de status
+Pílula com peso 700, cor por estado: `primary-container` (concluída/feito), `secondary-container` (em andamento/continuar), `surface-container-high` (pendente/não feita), `error-container` (abaixo de 50% de acerto).
 
 ## Botões — alvo de toque
 
-Todo `.btn` tem `min-height: 44px` (WCAG, pensando em uso em tablet pela terapeuta) e feedback tátil (`scale(0.97)` no `:active`). `.btn-sm` (usado nos cards da listagem) fica em 40px — abaixo do ideal, mas aceitável para ações secundárias (Editar/Deletar) dentro de um card já compacto.
+Todo `.btn` tem `min-height: 44px` (WCAG, pensando em uso em tablet) e feedback tátil (`scale(0.97)` no `:active`).
 
 ## Ordem de botões em confirmação destrutiva
 
-Na tela de confirmar exclusão, o botão "Cancelar" vem **antes** do "Deletar" (nessa ordem, da esquerda pra direita) — a ação mais segura fica na posição que o usuário toca primeiro/por hábito, reduzindo risco de exclusão acidental num público que não tem intimidade com tecnologia. O botão "Deletar" continua preenchido em vermelho (`btn-danger`) pra não perder a clareza de que é uma ação de risco.
+Em qualquer confirmação (deletar criança, repetir sessão), o botão de cancelar/voltar vem **antes** da ação na ordem visual esquerda→direita — reduz risco de ação acidental num público sem muita intimidade com tecnologia.
 
 ## Estados de formulário
 
-Os campos do `CriancaForm` usam `form-control` explícito no widget (Bootstrap não estiliza `<input>` sozinho) e são renderizados campo a campo no template (não `{{ form.as_p }}`), com label, texto de ajuda e lista de erros próprios (`.form-errors`) — abre espaço pra customizar cada campo conforme os próximos formulários (sessão, exercício) forem criados. O foco dos inputs usa anel na cor primária (`--color-primary`) em vez do azul padrão do Bootstrap, pra manter a paleta consistente.
+Campos usam `.form-control`/`.form-select` explícitos, renderizados campo a campo (não `{{ form.as_p }}`), com label, texto de ajuda e lista de erros própria (`.form-errors`). Foco usa anel na cor secundária (`--color-secondary`), não o azul padrão do Bootstrap.
+
+## Fluxo de exercícios (sessão)
+
+Cada sessão tem uma tela de seleção de exercícios (grid com ícone por tipo + badge Feito/Pendente) e uma tela por exercício (`sessoes:exercicio_detail`), reaproveitando o motor de renderização já existente (`ExerciseRenderers` em `exercicios_components.html`) — um exercício por vez, com "Voltar"/redirecionamento automático pra grid ao salvar. Ver `docs/03-wireframes.md` para o fluxo completo (1a–1j).
 
 ## Pendências / próximas decisões
 
-- [x] Cor dos botões de ação já usa coral (`#FF6F61`) via `.btn-coral` — paleta e código estavam alinhados, item fechado.
-- [x] Raio dos cards padronizado em 12px (`--radius-card`) — não existe mais nenhuma classe `.card-crianca` com 20px no código.
-- [x] `<input type="date">` estilizado junto dos demais campos via `.form-control` + `--radius-control`.
-- [ ] Definir estilo visual das telas de sessão e exercício (ainda não construídas) seguindo os mesmos tokens deste documento.
-- [ ] Avaliar se `.btn-sm` (40px) nos cards da listagem deveria virar tamanho padrão (44px) conforme o uso real em tablet for testado com a terapeuta.
+- [x] Paleta, tipografia e ícones migrados para o sistema "Acolhimento Clínico" (protótipo Stitch).
+- [x] Telas de seleção de sessão/exercício, resultado da sessão, histórico da criança e confirmação de repetição implementadas com dados reais.
+- [ ] Padronizar `.btn-sm` (40px, usado nos ícones de editar/deletar do card de criança) para 44px se o uso em tablet mostrar necessidade.
+- [ ] Tipos de exercício `cruzadinha` e `preenche_lacunas_letras` ainda não têm dados reais cadastrados para validar visualmente (só piloto com os outros 6 tipos).
 
 ---
-*Última atualização: refinação de craft do CRUD de Criança (tokens CSS, formulário campo a campo, estado vazio, ordem de botões destrutivos)*
+*Última atualização: migração da identidade visual para o protótipo Stitch ("Acolhimento Clínico"), com telas de resultado, histórico e repetição de sessão conectadas ao backend real.*
