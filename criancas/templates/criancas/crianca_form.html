@@ -14,11 +14,17 @@
         <p class="text-muted mb-0">Insira os dados básicos para {% if form.instance.pk %}atualizar{% else %}iniciar{% endif %} o acompanhamento clínico.</p>
     </div>
     <div class="card card-item p-4 p-md-5">
-        <form method="POST" novalidate>
+        <form method="POST" enctype="multipart/form-data" novalidate>
             {% csrf_token %}
             {% for field in form %}
                 <div class="form-field">
                     <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                    {% if field.name == 'foto' and crianca.foto %}
+                        <div class="d-flex align-items-center gap-3 mb-2">
+                            <img src="{{ crianca.foto.url }}" alt="Foto de {{ crianca.nome }}" style="width:64px; height:64px; border-radius:50%; object-fit:cover; border:1px solid var(--color-border);">
+                            <span class="text-muted small">Foto atual — escolha um novo arquivo pra substituir.</span>
+                        </div>
+                    {% endif %}
                     {{ field }}
                     {% if field.name == 'data_nascimento' %}
                         <div class="d-flex align-items-center gap-2 mt-2 px-3 py-2" style="background: var(--color-surface-container-low); border: 1px solid var(--color-border); border-radius: var(--radius-control);">

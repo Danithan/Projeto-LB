@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -98,6 +99,13 @@
             font-family: 'Quicksand', sans-serif;
             font-weight: 700;
             flex-shrink: 0;
+        }
+
+        .avatar-circle-img {
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+            border: 1px solid var(--color-border);
         }
 
         /* Botões — pílula, alvo de toque generoso (uso em tablet) */
@@ -240,7 +248,11 @@
 <div class="app-shell">
     <aside class="app-sidebar">
         <div class="brand-block">
-            <div class="brand-icon"><span class="material-symbols-outlined icon-fill">psychology</span></div>
+            {% if logo_static_path %}
+                <img src="{% static logo_static_path %}" alt="Projeto LB" style="max-width: 56px; max-height: 56px; margin: 0 auto 0.5rem; display: block;">
+            {% else %}
+                <div class="brand-icon"><span class="material-symbols-outlined icon-fill">psychology</span></div>
+            {% endif %}
             <h1>Projeto LB</h1>
             <p>Painel Clínico</p>
         </div>
@@ -267,7 +279,11 @@
     <div class="app-main">
         <header class="app-topbar">
             <div class="brand-mobile">
-                <span class="material-symbols-outlined icon-fill" style="color:var(--color-primary);">psychology</span>
+                {% if logo_static_path %}
+                    <img src="{% static logo_static_path %}" alt="" style="max-width: 24px; max-height: 24px;">
+                {% else %}
+                    <span class="material-symbols-outlined icon-fill" style="color:var(--color-primary);">psychology</span>
+                {% endif %}
                 Projeto LB
             </div>
             <div class="desktop-links d-flex gap-3">

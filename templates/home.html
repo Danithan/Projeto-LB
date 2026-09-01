@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Projeto LB — Entrar{% endblock %}
 
@@ -11,7 +12,11 @@
     <div class="card card-item">
         <div class="card-body p-4 p-md-5">
             <div class="text-center mb-4">
-                <div class="brand-icon mb-2"><span class="material-symbols-outlined icon-fill">psychology</span></div>
+                {% if logo_static_path %}
+                    <img src="{% static logo_static_path %}" alt="Projeto LB" style="max-width: 64px; max-height: 64px; margin: 0 auto 0.5rem; display: block;">
+                {% else %}
+                    <div class="brand-icon mb-2"><span class="material-symbols-outlined icon-fill">psychology</span></div>
+                {% endif %}
                 <h1 class="mb-1" style="color: var(--color-primary);">Projeto LB</h1>
                 <p class="text-muted mb-0">Acesso ao Painel Clínico</p>
             </div>

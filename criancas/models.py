@@ -6,6 +6,7 @@ class Crianca(models.Model):
     terapeuta = models.ForeignKey(User, on_delete=models.CASCADE, related_name="criancas", null=True, blank=True)
     nome = models.CharField(max_length=100)
     data_nascimento = models.DateField()
+    foto = models.ImageField(upload_to='criancas/', blank=True, null=True)
     criada_em = models.DateTimeField(auto_now_add=True)
     @property
     def idade(self):

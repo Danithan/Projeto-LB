@@ -33,7 +33,11 @@
                             <span class="material-symbols-outlined" style="font-size:18px;">delete</span>
                         </a>
                     </div>
-                    <div class="avatar-circle" style="width:88px; height:88px; font-size:2rem;">{{ crianca.nome|first|upper }}</div>
+                    {% if crianca.foto %}
+                        <img src="{{ crianca.foto.url }}" alt="Foto de {{ crianca.nome }}" class="avatar-circle-img" style="width:88px; height:88px;">
+                    {% else %}
+                        <div class="avatar-circle" style="width:88px; height:88px; font-size:2rem;">{{ crianca.nome|first|upper }}</div>
+                    {% endif %}
                     <div>
                         <h5 class="mb-0">{{ crianca.nome }}</h5>
                         <span class="text-muted small">{{ crianca.idade }}</span>

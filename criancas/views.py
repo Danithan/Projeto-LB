@@ -22,7 +22,7 @@ def lista_criancas(request):
 @login_required
 def criar_crianca(request):
     if request.method == 'POST':
-        form = CriancaForm(request.POST)
+        form = CriancaForm(request.POST, request.FILES)
         if form.is_valid():
             crianca = form.save(commit=False)
             crianca.terapeuta = request.user
@@ -37,7 +37,7 @@ def criar_crianca(request):
 def editar_crianca(request, pk):
     crianca = _crianca_do_terapeuta_ou_404(request, pk)
     if request.method == 'POST':
-        form = CriancaForm(request.POST, instance=crianca)
+        form = CriancaForm(request.POST, request.FILES, instance=crianca)
         if form.is_valid():
             form.save()
             return redirect('crianca_lista')

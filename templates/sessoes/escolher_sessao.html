@@ -5,7 +5,11 @@
 {% block conteudo %}
 <div class="card card-item p-4 mb-4 d-flex flex-column flex-md-row align-items-md-center justify-content-md-between gap-3">
     <div class="d-flex align-items-center gap-3">
-        <div class="avatar-circle" style="width:72px; height:72px; font-size:1.6rem;">{{ crianca.nome|first|upper }}</div>
+        {% if crianca.foto %}
+            <img src="{{ crianca.foto.url }}" alt="Foto de {{ crianca.nome }}" class="avatar-circle-img" style="width:72px; height:72px;">
+        {% else %}
+            <div class="avatar-circle" style="width:72px; height:72px; font-size:1.6rem;">{{ crianca.nome|first|upper }}</div>
+        {% endif %}
         <div>
             <a href="{% url 'crianca_lista' %}" class="text-muted small text-decoration-none d-inline-flex align-items-center gap-1">
                 <span class="material-symbols-outlined" style="font-size:16px;">arrow_back</span> Voltar para pacientes
