@@ -37,6 +37,7 @@ class ExercicioResultado(models.Model):
     tentativas = models.IntegerField()
     tempo_segundos = models.IntegerField()
     pontuacao = models.IntegerField()
+    respostas = models.JSONField(blank=True, default=dict)
     respondido_em = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -46,6 +47,10 @@ class ExercicioResultado(models.Model):
                 name='resultado_unico_por_exercicio_sessao',
             )
         ]
+
+    @property
+    def correto(self):
+        return self.percentual_acerto == 100
 
     def __str__(self):
         return f"{self.exercicio_modelo} - {self.percentual_acerto}%"

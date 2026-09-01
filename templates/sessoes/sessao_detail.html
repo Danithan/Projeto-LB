@@ -8,6 +8,8 @@
     @media (min-width: 768px) { .sessao-cta-bar { bottom: 0; } }
     .app-content { padding-bottom: 6rem; }
     @media (max-width: 767.98px) { .app-content { padding-bottom: 9rem; } }
+    .exercicio-card.com-erro { border: 2px solid var(--color-error); }
+    #aviso-erros { display: none; }
 </style>
 {% endblock %}
 
@@ -23,49 +25,28 @@
     <div class="d-flex align-items-center gap-3">
         <div class="text-end">
             <div class="text-muted small fw-bold">Progresso</div>
-            <div class="fw-bold" style="color: var(--color-primary);">{{ total_feitos }}/{{ total_exercicios }}</div>
+            <div class="fw-bold" id="progresso-texto" style="color: var(--color-primary);">0/{{ total_exercicios }}</div>
         </div>
         <div style="width: 96px; height: 10px; border-radius: 999px; background: var(--color-surface-container-high); overflow: hidden;">
-            <div style="height:100%; width: {% widthratio total_feitos total_exercicios 100 %}%; background: var(--color-tertiary-container);"></div>
+            <div id="progresso-barra" style="height:100%; width: 0%; background: var(--color-tertiary-container);"></div>
         </div>
     </div>
 </div>
 
-<h5 class="mb-1">Exercícios Planejados</h5>
-<p class="text-muted mb-4">Selecione uma atividade para iniciar.</p>
-
-<div class="row g-3 mb-5">
-    {% for ex in exercicios_modelo %}
-        <div class="col-12 col-sm-6 col-lg-4">
-            <a href="{% url 'sessoes:exercicio_detail' sessao.id ex.id %}" class="card card-item h-100 text-decoration-none d-block position-relative overflow-hidden">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-start mb-3">
-                        <div class="d-flex align-items-center justify-content-center" style="width:48px; height:48px; border-radius: var(--radius-control); background: var(--color-surface-container-low); color: var(--color-primary);">
-                            <span class="material-symbols-outlined">{{ ex.icone }}</span>
-                        </div>
-                        {% if ex.feito %}
-                            <span class="badge rounded-pill" style="background: var(--color-primary); color:#fff; font-weight:700;">Feito</span>
-                        {% else %}
-                            <span class="badge rounded-pill" style="background: var(--color-surface-container-high); color: var(--color-text-muted); font-weight:700; border:1px solid var(--color-border);">Pendente</span>
-                        {% endif %}
-                    </div>
-                    <h6 class="mb-1" style="color: var(--color-text);">Exercício {{ ex.numero }}</h6>
-                    <p class="text-muted small mb-0">{{ ex.enunciado|truncatewords:14 }}</p>
-                </div>
-                {% if ex.feito %}<div style="position:absolute; left:0; bottom:0; width:100%; height:4px; background: var(--color-primary);"></div>{% endif %}
-            </a>
-        </div>
-    {% empty %}
-        <div class="empty-state">Nenhum exercício configurado para esta sessão.</div>
-    {% endfor %}
+<div id="aviso-erros" class="alert alert-warning d-flex align-items-center gap-2 mb-4">
+    <span class="material-symbols-outlined">error</span>
+    <span>Alguns exercícios ainda não estão certos. Corrija-os e clique em Enviar novamente.</span>
 </div>
+
+{% csrf_token %}
+<div id="exercicios-container" data-sessao-id="{{ sessao.id }}"></div>
+{{ exercicios_data|json_script:"exercicios-data" }}
 
 <div class="sessao-cta-bar d-flex justify-content-center p-3" style="background: rgba(249,249,247,0.92); backdrop-filter: blur(4px); border-top: 1px solid var(--color-border);">
-    <form method="post" action="{% url 'sessoes:finalizar_sessao' sessao.id %}" class="w-100" style="max-width: 420px;">
-        {% csrf_token %}
-        <button type="submit" class="btn btn-coral w-100">
-            <span class="material-symbols-outlined">analytics</span> Encerrar sessão e ver resultado
-        </button>
-    </form>
+    <button type="button" id="btn-enviar-sessao" class="btn btn-coral w-100" style="max-width: 420px;" disabled>
+        <span class="material-symbols-outlined">analytics</span> Enviar sessão
+    </button>
 </div>
+
+{% include 'sessoes/exercicios_components.html' %}
 {% endblock %}

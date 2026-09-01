@@ -99,7 +99,7 @@ Campos usam `.form-control`/`.form-select` explícitos, renderizados campo a cam
 
 ## Fluxo de exercícios (sessão)
 
-Cada sessão tem uma tela de seleção de exercícios (grid com ícone por tipo + badge Feito/Pendente) e uma tela por exercício (`sessoes:exercicio_detail`), reaproveitando o motor de renderização já existente (`ExerciseRenderers` em `exercicios_components.html`) — um exercício por vez, com "Voltar"/redirecionamento automático pra grid ao salvar. Ver `docs/03-wireframes.md` para o fluxo completo (1a–1j).
+A sessão é um fluxo único e contínuo: todos os exercícios da sessão são renderizados em sequência numa mesma página (`sessoes:sessao_detail`), reaproveitando o motor de renderização já existente (`ExerciseRenderers` em `exercicios_components.html`). Cada "Verificar" só atualiza o estado local (JS) — nada é salvo no servidor até o clique em "Enviar sessão", no rodapé. Se tudo estiver certo (regra: `percentual_acerto == 100` por exercício), a sessão é marcada como concluída; se algo estiver errado, as respostas são salvas mesmo assim e a criança é levada de volta ao primeiro exercício errado (destacado em vermelho) para tentar de novo. Ver issue #28 e `docs/03-wireframes.md` (fluxo 1a–1j, desatualizado quanto à tela por exercício).
 
 ## Pendências / próximas decisões
 

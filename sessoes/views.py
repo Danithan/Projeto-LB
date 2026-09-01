@@ -35,6 +35,39 @@ def _formatar_duracao(total_segundos):
     return f"{segundos}s"
 
 
+def _formatar_respostas(exercicio, respostas):
+    """Traduz o JSON bruto salvo em ExercicioResultado.respostas para texto legível na PDF."""
+    if not respostas:
+        return ''
+
+    config = exercicio.configuracao or {}
+
+    if exercicio.tipo == 'multipla_escolha':
+        perguntas = config.get('perguntas', [])
+        partes = []
+        for i, idx in enumerate(respostas.get('opcoes_selecionadas', [])):
+            opcoes = perguntas[i].get('opcoes', []) if i < len(perguntas) else []
+            partes.append(opcoes[idx] if idx is not None and 0 <= idx < len(opcoes) else '—')
+        return '; '.join(partes)
+
+    if exercicio.tipo == 'verdadeiro_falso':
+        return '; '.join('—' if v is None else ('V' if v else 'F') for v in respostas.get('valores', []))
+
+    if exercicio.tipo == 'ordena_letras':
+        return '; '.join(respostas.get('palavras', []))
+
+    if exercicio.tipo == 'pergunta_aberta':
+        return '; '.join(t for t in respostas.get('textos', []) if t)
+
+    if exercicio.tipo == 'caca_palavras':
+        return '; '.join(respostas.get('palavras_encontradas', []))
+
+    valores = next(iter(respostas.values()), [])
+    if isinstance(valores, list):
+        return '; '.join(str(v) for v in valores)
+    return str(valores)
+
+
 def _linhas_resultado(sessao_realizada):
     exercicios_modelo = ExercicioModelo.objects.filter(
         sessao_modelo=sessao_realizada.sessao_modelo
@@ -44,7 +77,13 @@ def _linhas_resultado(sessao_realizada):
         for r in ExercicioResultado.objects.filter(sessao_realizada=sessao_realizada)
     }
     linhas = [
-        {'exercicio': ex, 'resultado': resultados_por_exercicio.get(ex.id)}
+        {
+            'exercicio': ex,
+            'resultado': resultados_por_exercicio.get(ex.id),
+            'respostas_formatadas': _formatar_respostas(
+                ex, resultados_por_exercicio[ex.id].respostas
+            ) if resultados_por_exercicio.get(ex.id) else '',
+        }
         for ex in exercicios_modelo
     ]
     respondidos = [linha['resultado'] for linha in linhas if linha['resultado']]
@@ -115,115 +154,101 @@ ICONE_POR_TIPO = {
 
 @login_required
 def sessao_detail(request, sessao_id):
-    """Tela 1e — grade de exercícios da sessão em andamento."""
+    """Tela de atendimento — todos os exercícios da sessão em um único fluxo,
+    com envio único no final (ver issue #28)."""
     sessao_realizada = _sessao_do_terapeuta_ou_404(request, sessao_id)
 
     exercicios_modelo = list(
         ExercicioModelo.objects.filter(sessao_modelo=sessao_realizada.sessao_modelo).order_by('numero')
     )
-    feitos_ids = set(
-        ExercicioResultado.objects.filter(sessao_realizada=sessao_realizada)
-        .values_list('exercicio_modelo_id', flat=True)
-    )
-    for ex in exercicios_modelo:
-        ex.feito = ex.id in feitos_ids
-        ex.icone = ICONE_POR_TIPO.get(ex.tipo, 'extension')
+    exercicios_data = [{
+        'id': ex.id,
+        'numero': ex.numero,
+        'tipo': ex.tipo,
+        'enunciado': ex.enunciado,
+        'configuracao': ex.configuracao,
+        'icone': ICONE_POR_TIPO.get(ex.tipo, 'quiz'),
+    } for ex in exercicios_modelo]
 
     return render(request, 'sessoes/sessao_detail.html', {
         'sessao': sessao_realizada,
         'crianca': sessao_realizada.crianca,
-        'exercicios_modelo': exercicios_modelo,
-        'total_feitos': len(feitos_ids),
+        'exercicios_data': exercicios_data,
         'total_exercicios': len(exercicios_modelo),
         'active': 'sessoes',
     })
 
 
 @login_required
-def exercicio_detail(request, sessao_id, exercicio_id):
-    """Telas 1f/1g — um exercício por vez."""
-    sessao_realizada = _sessao_do_terapeuta_ou_404(request, sessao_id)
-    exercicio = get_object_or_404(
-        ExercicioModelo, pk=exercicio_id, sessao_modelo=sessao_realizada.sessao_modelo
-    )
-
-    exercicios_data = [{
-        'id': exercicio.id,
-        'numero': exercicio.numero,
-        'tipo': exercicio.tipo,
-        'enunciado': exercicio.enunciado,
-        'configuracao': exercicio.configuracao,
-        'icone': ICONE_POR_TIPO.get(exercicio.tipo, 'quiz'),
-    }]
-
-    return render(request, 'sessoes/exercicio_detail.html', {
-        'sessao': sessao_realizada,
-        'crianca': sessao_realizada.crianca,
-        'exercicio': exercicio,
-        'exercicios_data': exercicios_data,
-        'active': 'sessoes',
-    })
-
-
-@login_required
 @require_POST
-def salvar_resultado(request, sessao_id, exercicio_id):
+def enviar_sessao(request, sessao_id):
+    """Envio único da sessão: recebe o resultado local de cada exercício,
+    salva tudo e só marca a sessão como concluída se todos estiverem certos."""
     sessao_realizada = _sessao_do_terapeuta_ou_404(request, sessao_id)
-
-    exercicio = get_object_or_404(
-        ExercicioModelo, pk=exercicio_id, sessao_modelo=sessao_realizada.sessao_modelo
-    )
 
     try:
         payload = json.loads(request.body)
     except (json.JSONDecodeError, TypeError):
         return JsonResponse({'erro': 'JSON inválido'}, status=400)
 
-    try:
-        percentual_acerto = Decimal(str(payload.get('percentual_acerto', 0)))
-    except InvalidOperation:
-        return JsonResponse({'erro': 'percentual_acerto inválido'}, status=400)
+    resultados_payload = payload.get('resultados', [])
+    exercicios_modelo = {
+        ex.id: ex
+        for ex in ExercicioModelo.objects.filter(sessao_modelo=sessao_realizada.sessao_modelo)
+    }
 
-    tempo_segundos = int(payload.get('tempo_segundos', 0) or 0)
-    pontuacao = int(payload.get('pontuacao', 0) or 0)
+    resultados_salvos = {}
+    for item in resultados_payload:
+        exercicio = exercicios_modelo.get(item.get('exercicio_id'))
+        if exercicio is None:
+            continue
 
-    resultado = ExercicioResultado.objects.filter(
-        sessao_realizada=sessao_realizada, exercicio_modelo=exercicio
-    ).first()
+        try:
+            percentual_acerto = Decimal(str(item.get('percentual_acerto', 0)))
+        except InvalidOperation:
+            return JsonResponse({'erro': 'percentual_acerto inválido'}, status=400)
 
-    if resultado is None:
-        proxima_ordem = ExercicioResultado.objects.filter(sessao_realizada=sessao_realizada).count() + 1
-        resultado = ExercicioResultado.objects.create(
+        tentativas = int(item.get('tentativas', 1) or 1)
+        tempo_segundos = int(item.get('tempo_segundos', 0) or 0)
+        pontuacao = int(item.get('pontuacao', 0) or 0)
+        respostas = item.get('respostas') or {}
+
+        resultado, criado = ExercicioResultado.objects.update_or_create(
             sessao_realizada=sessao_realizada,
             exercicio_modelo=exercicio,
-            ordem_execucao=proxima_ordem,
-            percentual_acerto=percentual_acerto,
-            tentativas=1,
-            tempo_segundos=tempo_segundos,
-            pontuacao=pontuacao,
+            defaults={
+                'ordem_execucao': exercicio.numero,
+                'percentual_acerto': percentual_acerto,
+                'tentativas': tentativas,
+                'tempo_segundos': tempo_segundos,
+                'pontuacao': pontuacao,
+                'respostas': respostas,
+            },
         )
-    else:
-        resultado.tentativas += 1
-        resultado.percentual_acerto = percentual_acerto
-        resultado.tempo_segundos = tempo_segundos
-        resultado.pontuacao = pontuacao
-        resultado.save()
+        resultados_salvos[exercicio.id] = resultado
+
+    completo = len(resultados_salvos) == len(exercicios_modelo)
+    tudo_certo = completo and all(r.correto for r in resultados_salvos.values())
+
+    primeiro_erro_id = None
+    if not tudo_certo:
+        pendentes = [
+            ex for ex in exercicios_modelo.values()
+            if ex.id not in resultados_salvos or not resultados_salvos[ex.id].correto
+        ]
+        if pendentes:
+            primeiro_erro_id = min(pendentes, key=lambda ex: ex.numero).id
+
+    if tudo_certo:
+        sessao_realizada.status = 'concluida'
+        sessao_realizada.save(update_fields=['status'])
 
     return JsonResponse({
         'ok': True,
-        'tentativas': resultado.tentativas,
-        'percentual_acerto': str(resultado.percentual_acerto),
-        'proxima_url': reverse('sessoes:sessao_detail', args=[sessao_realizada.id]),
+        'concluida': tudo_certo,
+        'primeiro_erro_exercicio_id': primeiro_erro_id,
+        'proxima_url': reverse('sessoes:resultado_sessao', args=[sessao_realizada.id]) if tudo_certo else None,
     })
-
-
-@login_required
-@require_POST
-def finalizar_sessao(request, sessao_id):
-    sessao_realizada = _sessao_do_terapeuta_ou_404(request, sessao_id)
-    sessao_realizada.status = 'concluida'
-    sessao_realizada.save(update_fields=['status'])
-    return redirect('sessoes:resultado_sessao', sessao_id=sessao_realizada.id)
 
 
 @login_required

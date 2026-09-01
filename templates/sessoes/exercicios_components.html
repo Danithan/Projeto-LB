@@ -80,35 +80,32 @@ function getCookie(name) {
     return match ? decodeURIComponent(match.pop()) : null;
 }
 
-function salvarResultado(ex, { percentual, pontuacao, tempoInicio }) {
-    const container = document.getElementById('exercicios-container');
-    const sessaoId = container && container.dataset.sessaoId;
-    if (!sessaoId) return Promise.resolve(null);
+// Estado local dos resultados — nada é enviado ao servidor até o clique em "Enviar sessão" (issue #28).
+const resultadosLocais = {};
+const cardsPorExercicioId = {};
 
-    const tempoSegundos = Math.max(0, Math.round((Date.now() - tempoInicio) / 1000));
-    return fetch(`/sessoes/${sessaoId}/exercicios/${ex.id}/resultado/`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-CSRFToken': getCookie('csrftoken'),
-        },
-        body: JSON.stringify({
-            percentual_acerto: percentual,
-            tempo_segundos: tempoSegundos,
-            pontuacao: pontuacao,
-        }),
-    }).then(resp => resp.json()).catch(err => {
-        console.error('Erro ao salvar resultado do exercício', ex.id, err);
-        return null;
-    });
+function registrarResultadoLocal(ex, { percentual, pontuacao, tempoInicio, respostas }) {
+    const anterior = resultadosLocais[ex.id];
+    resultadosLocais[ex.id] = {
+        exercicio_id: ex.id,
+        percentual_acerto: percentual,
+        pontuacao: pontuacao,
+        tempo_segundos: Math.max(0, Math.round((Date.now() - tempoInicio) / 1000)),
+        tentativas: anterior ? anterior.tentativas + 1 : 1,
+        respostas: respostas || {},
+    };
+    const card = cardsPorExercicioId[ex.id];
+    if (card) card.classList.remove('com-erro');
+    atualizarProgresso();
 }
 
-function irParaProximaTela(resultado) {
-    if (resultado && resultado.proxima_url) {
-        window.location.href = resultado.proxima_url;
-    } else {
-        history.back();
-    }
+function atualizarProgresso() {
+    const total = Object.keys(cardsPorExercicioId).length;
+    const feitos = Object.keys(resultadosLocais).length;
+    const progressoTexto = document.getElementById('progresso-texto');
+    const progressoBarra = document.getElementById('progresso-barra');
+    if (progressoTexto) progressoTexto.innerText = `${feitos}/${total}`;
+    if (progressoBarra) progressoBarra.style.width = `${total ? Math.round((feitos / total) * 100) : 0}%`;
 }
 
 function criarBotaoVoltar(container) {
@@ -175,9 +172,9 @@ const ExerciseRenderers = {
             });
             const total = inputs.length || 1;
             const percentual = Math.round((corretas / total) * 100);
-            btn.disabled = true;
-            btn.innerText = "Respostas salvas!";
-            salvarResultado(ex, { percentual, pontuacao: percentual, tempoInicio }).then(irParaProximaTela);
+            const respostas = Array.from(inputs).map(input => input.value);
+            btn.innerText = "Verificar novamente";
+            registrarResultadoLocal(ex, { percentual, pontuacao: percentual, tempoInicio, respostas: { valores: respostas } });
         };
         container.appendChild(btn);
     },
@@ -236,13 +233,14 @@ const ExerciseRenderers = {
 
         const btn = document.createElement('button');
         btn.className = "btn btn-coral mt-3";
-        btn.innerText = "Concluir";
+        btn.innerText = "Verificar Respostas";
         btn.onclick = () => {
             const preenchidas = editaveis.filter(i => i.value.trim().length > 0).length;
             const total = editaveis.length || 1;
             const percentual = Math.round((preenchidas / total) * 100);
-            btn.disabled = true;
-            salvarResultado(ex, { percentual, pontuacao: percentual, tempoInicio }).then(irParaProximaTela);
+            const respostas = editaveis.map(i => i.value);
+            btn.innerText = "Verificar novamente";
+            registrarResultadoLocal(ex, { percentual, pontuacao: percentual, tempoInicio, respostas: { valores: respostas } });
         };
         container.appendChild(btn);
     },
@@ -270,10 +268,15 @@ const ExerciseRenderers = {
             ).join(', ') + "</p>";
         }
 
-        function salvarProgresso() {
+        function registrarProgresso() {
             const total = palavrasAlvo.length || 1;
             const percentual = Math.round((encontradas.size / total) * 100);
-            salvarResultado(ex, { percentual, pontuacao: percentual, tempoInicio });
+            registrarResultadoLocal(ex, {
+                percentual,
+                pontuacao: percentual,
+                tempoInicio,
+                respostas: { palavras_encontradas: Array.from(encontradas) },
+            });
         }
 
         function limparSelecao() {
@@ -298,9 +301,9 @@ const ExerciseRenderers = {
                     encontradas.add(achou);
                     coords.forEach(p => p.el.classList.add('found'));
                     atualizarLista();
-                    salvarProgresso();
+                    registrarProgresso();
                     if (encontradas.size === palavrasAlvo.length) {
-                        botaoConcluir.disabled = false;
+                        statusDiv.innerText = "Todas as palavras encontradas!";
                     }
                 }
             }
@@ -354,12 +357,10 @@ const ExerciseRenderers = {
             container.appendChild(listaDiv);
         }
 
-        const botaoConcluir = document.createElement('button');
-        botaoConcluir.className = "btn btn-coral mt-3";
-        botaoConcluir.innerText = "Concluir";
-        botaoConcluir.disabled = encontradas.size < palavrasAlvo.length;
-        botaoConcluir.onclick = () => irParaProximaTela({ proxima_url: null });
-        container.appendChild(botaoConcluir);
+        const statusDiv = document.createElement('p');
+        statusDiv.className = "text-muted small mt-3 mb-0";
+        statusDiv.innerText = "Encontre as palavras arrastando na grade.";
+        container.appendChild(statusDiv);
     },
 
     // 4. Ordene as letras
@@ -428,9 +429,9 @@ const ExerciseRenderers = {
             });
             const total = palavraChecks.length || 1;
             const percentual = Math.round((corretas / total) * 100);
-            btn.disabled = true;
-            btn.innerText = "Respostas salvas!";
-            salvarResultado(ex, { percentual, pontuacao: percentual, tempoInicio }).then(irParaProximaTela);
+            const respostas = palavraChecks.map(({ inputs }) => inputs.map(i => i.value.toUpperCase()).join(''));
+            btn.innerText = "Verificar novamente";
+            registrarResultadoLocal(ex, { percentual, pontuacao: percentual, tempoInicio, respostas: { palavras: respostas } });
         };
         container.appendChild(btn);
     },
@@ -466,9 +467,9 @@ const ExerciseRenderers = {
             const respondidos = textareas.filter(t => t.value.trim().length > 0).length;
             const total = textareas.length || 1;
             const percentual = Math.round((respondidos / total) * 100);
-            btn.innerText = "Respostas salvas!";
-            btn.disabled = true;
-            salvarResultado(ex, { percentual, pontuacao: percentual, tempoInicio }).then(irParaProximaTela);
+            const respostas = textareas.map(t => t.value);
+            btn.innerText = "Atualizar respostas";
+            registrarResultadoLocal(ex, { percentual, pontuacao: percentual, tempoInicio, respostas: { textos: respostas } });
         };
         container.appendChild(btn);
     },
@@ -529,8 +530,12 @@ const ExerciseRenderers = {
             });
             const total = groups.length || 1;
             const percentual = Math.round((corretas / total) * 100);
-            btn.disabled = true;
-            salvarResultado(ex, { percentual, pontuacao: percentual, tempoInicio }).then(irParaProximaTela);
+            const respostas = groups.map(group => {
+                const selected = group.inputs.find(i => i.checked);
+                return selected ? Number(selected.value) : null;
+            });
+            btn.innerText = "Verificar novamente";
+            registrarResultadoLocal(ex, { percentual, pontuacao: percentual, tempoInicio, respostas: { opcoes_selecionadas: respostas } });
         };
         container.appendChild(btn);
     },
@@ -586,8 +591,12 @@ const ExerciseRenderers = {
             });
             const total = groups.length || 1;
             const percentual = Math.round((corretas / total) * 100);
-            btn.disabled = true;
-            salvarResultado(ex, { percentual, pontuacao: percentual, tempoInicio }).then(irParaProximaTela);
+            const respostas = groups.map(group => {
+                const selected = Object.entries(group.inputs).find(([, input]) => input.checked);
+                return selected ? selected[0] === 'true' : null;
+            });
+            btn.innerText = "Verificar novamente";
+            registrarResultadoLocal(ex, { percentual, pontuacao: percentual, tempoInicio, respostas: { valores: respostas } });
         };
         container.appendChild(btn);
     }
@@ -616,10 +625,16 @@ document.addEventListener("DOMContentLoaded", function() {
     exerciciosData.forEach(ex => {
         const card = document.createElement('div');
         card.className = "card card-item exercicio-card p-4 p-md-5 mb-4";
+        card.id = `exercicio-card-${ex.id}`;
+        cardsPorExercicioId[ex.id] = card;
 
         const icone = document.createElement('div');
         icone.className = "exercicio-icone";
         icone.innerHTML = `<span class="material-symbols-outlined icon-fill" style="font-size:32px;">${ (ex.icone || 'quiz') }</span>`;
+
+        const numeroLabel = document.createElement('p');
+        numeroLabel.className = "text-muted small mb-1 text-center";
+        numeroLabel.innerText = `Exercício ${ex.numero} de ${exerciciosData.length}`;
 
         const title = document.createElement('h4');
         title.innerText = ex.enunciado;
@@ -632,6 +647,7 @@ document.addEventListener("DOMContentLoaded", function() {
         corpoExercicio.id = `exercicio-corpo-${ex.id}`;
 
         card.appendChild(icone);
+        card.appendChild(numeroLabel);
         card.appendChild(title);
         card.appendChild(tipoLabel);
         card.appendChild(corpoExercicio);
@@ -645,5 +661,51 @@ document.addEventListener("DOMContentLoaded", function() {
             criarBotaoVoltar(corpoExercicio);
         }
     });
+
+    atualizarProgresso();
+
+    const btnEnviar = document.getElementById('btn-enviar-sessao');
+    const avisoErros = document.getElementById('aviso-erros');
+    if (btnEnviar) {
+        btnEnviar.disabled = false;
+        btnEnviar.onclick = () => {
+            const sessaoId = container.dataset.sessaoId;
+            const resultados = exerciciosData.map(ex => resultadosLocais[ex.id] || {
+                exercicio_id: ex.id,
+                percentual_acerto: 0,
+                pontuacao: 0,
+                tempo_segundos: 0,
+                tentativas: 0,
+                respostas: {},
+            });
+
+            btnEnviar.disabled = true;
+            fetch(`/sessoes/${sessaoId}/enviar/`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCookie('csrftoken'),
+                },
+                body: JSON.stringify({ resultados }),
+            }).then(resp => resp.json()).then(data => {
+                btnEnviar.disabled = false;
+                if (data && data.concluida && data.proxima_url) {
+                    window.location.href = data.proxima_url;
+                    return;
+                }
+                if (avisoErros) avisoErros.style.display = 'flex';
+                if (data && data.primeiro_erro_exercicio_id) {
+                    const cardComErro = cardsPorExercicioId[data.primeiro_erro_exercicio_id];
+                    if (cardComErro) {
+                        cardComErro.classList.add('com-erro');
+                        cardComErro.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }
+            }).catch(err => {
+                console.error('Erro ao enviar sessão', err);
+                btnEnviar.disabled = false;
+            });
+        };
+    }
 });
 </script>

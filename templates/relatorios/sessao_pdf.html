@@ -38,6 +38,7 @@
                 <th>Tentativas</th>
                 <th>Tempo</th>
                 <th>Pontuação</th>
+                <th>Respostas</th>
             </tr>
         </thead>
         <tbody>
@@ -51,8 +52,9 @@
                 <td>{{ linha.resultado.tentativas }}</td>
                 <td>{{ linha.resultado.tempo_segundos }}s</td>
                 <td>{{ linha.resultado.pontuacao }}</td>
+                <td>{{ linha.respostas_formatadas|default:"—"|truncatechars:80 }}</td>
                 {% else %}
-                <td colspan="4" class="sem-resposta">Não respondido</td>
+                <td colspan="5" class="sem-resposta">Não respondido</td>
                 {% endif %}
             </tr>
             {% endfor %}
